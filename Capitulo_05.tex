@@ -1,0 +1,26 @@
+\chapter{Conclusiones}
+
+\section{Conclusiones del proyecto}
+La Inteligencia Artificial juega un papel cada vez mas importante en nuestras vidas, desde los asistentes personales en nuestros móviles, hasta la optimización de procesos en la industria. Dentro de las diversas técnicas de IA, la Lógica Difusa, permite modelar situaciones del mundo real de una manera elegante, sencilla y fácil.
+
+En este proyecto se abordó el problema de la congestión en los cruces semáforizados. Una de las principales causas de la congestión es la configuración de tiempos estáticos que a menudo ``desperdicia el tiempo'' en avenidas donde la cantidad de autos es nula o mínima.
+
+La solución propuesta fue un Sistema de Inferencia Difusa que asignara tiempos de acuerdo a la cantidad de vehículos en las avenidas que se intersectan. El sistema fue capaz de reaccionar de manera adecuada frente a diversas situaciones. 
+
+Cabe destacar que durante el diseño del FIS, no fue esencial conocer a fondo el modelo matemático de los semáforos, siendo esto uno de los principales atractivos de esta técnica de IA. Además, permitió definir el problema en jerga común, esto es, en términos coloquiales donde la imprecisión dificulta la asignación de rangos bien definidos a dichos términos.
+
+En conclusión, la técnica seleccionada permitió dar solución al problema de una manera acertada. 
+\section{Recomendaciones}
+Aún queda un largo camino por recorrer, un proyecto multidisciplinario como este, necesita de diferentes expertos en diferentes áreas para tratar algunos detalles finos. Las recomendaciones que emitimos en pro de mejorar la eficacia del algoritmo son las siguientes:
+
+\paragraph{Acerca del ciclo del semáforo}
+Si bien, el sistema es capaz de asignar tiempos de manera dinámica en respuesta a la cantidad de vehículos en la intersección, sugerimos analizar la posibilidad de añadir una capa extra al sistema. Una capa encargada de determinar la longitud del ciclo. La salida de dicha capa extra sería un factor de multiplicación para alargar o acortar la duración del ciclo, y sus entradas podrían ser la longitud media de la cola de vehículos u otros factores como la hora pico o el clima, factores que afectan el tiempo de reacción de los automovilistas.
+
+\paragraph{Acerca del algoritmo de visión computacional}
+Para el conteo de automóviles en las avenidas, se recomienda el uso del algoritmo propuesto en \cite{ittap} cuya implementación en C++ facilitamos en el apéndice \ref{apendice:b}  por motivos de eficiencia y compatibilidad. 
+
+Dicho trabajo arroja un algoritmo implementado en \emph{Python} que, según los resultados de la propia investigación, ha probado tener una eficacia (con buena iluminación) de hasta un 95\%.
+
+El tiempo de ejecución del algoritmo sugerido por \textsc{estrada \& recinos \& vidal (2017)}: ``Detección de vehículos mediante imagen de fondo '' es de 1.5 segundos (implementado en Python), sin embargo al implementarse en C++ alcanza un tiempo de 0.03 segundos, es decir, 3 centésimas de segundo. Por lo que se recomienda el uso de este algoritmo implementado en C++.
+
+\textbf{Mejoras:} A tal algoritmo se le recomienda agregar una fase donde se compense la perspectiva desde la cual se tome la foto, ya que debido a esto, los autos más lejanos podrían no cubrir la cuota de pixeles mínima y por ende pasarían desapercibidos para el semáforo.

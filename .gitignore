@@ -1,0 +1,9 @@
+*.aux
+*.lof
+*.out
+*.log
+*.toc
+*.gz
+*.pdf
+!Portada.pdf
+!ReporteResidencia.pdf

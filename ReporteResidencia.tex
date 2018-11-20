@@ -1,0 +1,119 @@
+\documentclass[letterpaper,12pt,openany]{book}
+%\usepackage[total={16.59cm,22.94cm},top=3cm,left=3cm]{geometry}
+\usepackage[total={16.59cm,21.94cm},top=3cm,left=3cm]{geometry}
+\usepackage{helvet}
+%\renewcommand{\baselinestretch}{1.5}
+
+%\linespread{1.6}
+
+%Paquete para símbolos matematicos
+\usepackage{amsmath,amssymb,amsfonts,latexsym,cancel} %paquetes para simbolos matematicos
+\usepackage[utf8]{inputenc} % codificación de entrada
+\usepackage[T1]{fontenc} % fundición de salida
+
+\usepackage[x11names,table]{xcolor}
+
+\usepackage{pdfpages}
+\usepackage{tikz} %graficos
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{trees}
+\usetikzlibrary{positioning}
+\usepackage{tikz-uml}
+\usepackage{pgf-pie}
+\usepackage{listingsutf8}
+\usepackage{wrapfig} %figuras flotantes
+%\usepackage{pgfplots} %ploteo
+\usepackage[rtlf]{floatflt} %figuras
+\usepackage{float}
+\usepackage{subfigure}
+\usepackage{caption} %texto en las figuras
+\usepackage{longtable, booktabs, multirow, multicol} %tablas
+\usepackage[shortlabels]{enumitem}
+\usepackage{graphicx} %insercción de graficos
+
+\usepackage[spanish,es-noshorthands]{babel} %partición de palabras
+\usepackage[breaklinks=true]{hyperref} %enlaces
+
+\newcommand{\conditional}[2]{\textsc{if} #1 \textsc{then} #2}
+\newcommand{\statement}[2]{\emph{#1} es \emph{#2}}
+\newcommand{\ifthen}[4]{\conditional{\statement{#1}{#2}}{\statement{#3}{#4}}}
+\begin{document}
+
+%define el título
+\author{Escobar Zamora Carlos\\Camacho Bello Darcy Michelle\\Farrera Ramos Javier Antonio}
+\title{Implementación de un algoritmo de sincronización de semáforos usando Inteligencia Artificial}
+
+% genera el título
+%\maketitle
+\includepdf{Portada}
+
+% inserta el índice
+{\setlength{\baselineskip}{1.1\baselineskip}
+\tableofcontents
+\listoffigures}
+
+\lstset{literate=
+	{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+	{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+	{à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+	{À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+	{ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+	{Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+	{â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+	{Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+	{œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+	{ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+	{ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+	{€}{{\EUR}}1 {£}{{\pounds}}1 {ñ}{{\H{n}}}1 {~} {$\sim$}{1} 
+}
+
+
+\definecolor{background}{HTML}{FCFCFD}
+\definecolor{numbercolor}{rgb}{0.5,0.5,0.5}
+\lstdefinestyle{ezam}
+{
+	%caption={[Definición de \lstname] arcivo \lstname},
+	language=C++,
+	mathescape=true,
+	captionpos=b,
+	%title=ashasha \lstname,
+	backgroundcolor=\color{background},
+	breakatwhitespace=false,
+	breaklines=true,
+	tabsize=2,
+	showtabs=false,
+	showspaces=false,
+	showstringspaces=false,
+	numbers=left, numberstyle=\tiny\color{numbercolor}, numbersep=5pt,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\color[HTML]{0071A8}, %218100 C30000
+	commentstyle=\color[HTML]{777777},
+	morecomment=[1]=\color{Crimson},
+	stringstyle=\color[HTML]{534bae},
+	identifierstyle=\color[HTML]{C30000} %002171 0071A8
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+\setlength{\baselineskip}{1.5\baselineskip}
+
+\include{Capitulo_01}
+
+\include{Capitulo_02}
+
+\include{Capitulo_03}
+
+\include{Capitulo_04}
+
+\include{Capitulo_05}
+
+\appendix
+\include{Appendice_A}
+\include{Appendice_B}
+
+
+\include{Bibliografia}
+
+
+
+\end{document}

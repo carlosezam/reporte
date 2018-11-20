@@ -1,0 +1,340 @@
+\chapter{Generalidades del proyecto}
+
+\section{Introducción}
+
+En la ciudad de Tapachula Chiapas el índice demográfico se encuentra en constante crecimiento por lo que la movilidad urbana o el total de desplazamientos que se realizan en la ciudad es un factor importante que afecta el congestionamiento vehicular.
+
+La adecuada operación de los semáforos en las intersecciones es otro factor importante, debido a que, son estos quienes dirigen el flujo del tráfico. Desafortunadamente los semáforos convencionales tienen asignados tiempos fijos para el cambio de luces, esto a menudo ocasiona largos tiempos de espera innecesarios.  
+
+En el presente documento se redacta el desarrollo de un sistema “inteligente” que hará uso de herramientas y técnicas de Inteligencia Artificial para la sincronización de los semáforos.
+
+El sistema desarrollado será capaz de gestionar los semáforos de una intersección de 4 vías con doble sentido. Para esto el sistema reaccionará a variables de su entorno como:
+
+{\setlength{\baselineskip}{0.7\baselineskip}
+\begin{itemize}
+	\item Cantidad de carriles de las avenidas.
+	\item Congestión de toda la intersección.
+\end{itemize}}
+
+Con este proyecto se espera alentar a los alumnos a que sigan investigando sobre el tema, ya que una buena gestión de tráfico no solo favorece la movilidad vehicular, sino también, disminuye la emisión de gases contaminantes (producto de los autos varados en los cruces), lo cual es un tema muy importante actualmente debido al calentamiento global.
+
+\section{Descripción de la empresa}
+
+En el presente capítulo se describen los datos del “Instituto Tecnológico de Tapachula” lugar en donde se desarrolló el proyecto, también se encuentra información acerca de la localización y el área en donde se elaboró el proyecto.
+
+\subsection*{Nombre o Razón Social}
+Instituto Tecnológico de Tapachula.
+
+\subsection*{Breve descripción de la empresa}
+El instituto tecnológico de Tapachula es una institución educativa perteneciente al sistema nacional de institutos tecnológicos, que a su vez forma parte de la dirección general de educación superior tecnológica. Cuenta con las siguientes carreras: 
+\begin{multicols}{2}
+{\setlength{\baselineskip}{0.7\baselineskip}\begin{itemize}
+	\item Ing. Civil
+	\item Ing. Industrial
+	\item Ing. Química
+	\item Ing. Electromecánica
+	\item Ing. En Sistemas Computacionales.
+	\item Ing. En Gestión Empresarial
+\end{itemize}}
+\end{multicols}
+
+\subsection*{Antecedentes del ITT}
+
+El Instituto Tecnológico de Tapachula pertenece al Tecnológico Nacional de México, que está integrada por 218 Institutos Tecnológicos y Centros Especializados, distribuidos en el territorio Mexicano. De ellos, 110 son de carácter federal, entre los que destacan 104 Institutos Tecnológicos Industriales, dos Centros Especializados y cuatro Centros de Desarrollos Tecnológico. A lo mismo se unen 108 Tecnológicos Descentralizados, los cuales han servido al país durante más de 57 años de vida, siempre con el compromiso de hacer el mejor de sus esfuerzos; procurando que la educación que se imparten en dichas Instituciones Educativas responda a las exigencias de los más altos estándares de calidad educativa.
+
+Atendiendo a las líneas de desarrollo regional para asegurar la pertenecía de los planes y programas de estudio; conscientes de que representan una vía de desarrollo, de esperanza, de inclusión y de movilidad social para los jóvenes de la provincia mexicana. El 16 de Mayo de 1983, el Instituto Tecnológico de Tapachula, abre sus puerta a la superación profesional a través de la carrera de Ingeniería Civil, además continua a 148 alumnos con nivel medio superior con una carrera terminal en tecnólogos en construcción y tecnólogos en electrotecnia, de igual manera absorbe a la población de nivel de licenciatura del CeRETI, en las carreras de Ingeniería Industrial en alimentos e Ingeniería Civil, permitiendo a los alumnos de ésta última cambiarse al plan de tecnológico.
+
+Se autoriza el 15 de Noviembre de 1984; la apertura de la carrera de ingeniería Química, inscribiéndose para el semestre inicial, Septiembre 85 - Febrero 86, un total de 73 alumnos, en ese entonces el C. Ing. Jorge Elí Castellanos Martínez, como director del plantel, fue el encargado de darles la bienvenida.
+
+El 29 de Mayo de 1985, siendo el director del plantel el C. Jorge Carlos García Revilla, se autoriza la carrera de Ingeniería Industrial, matriculando 54 alumnos para el semestre Septiembre 86 - Febrero 87. Uno de los objetivos primordiales del instituto es brindar a la juventud estudiosa del estado de Chiapas, la oportunidad de formación y superación profesional a través de las diferentes carreras que se imparten, ampliando la oferta educativa; es por ello que en 1990 se crea la carrera de licenciatura en Informática, con una población de 70 alumnos, y es el C. Ing. Víctor Manuel Ibarra Balderas, director del plantel, el encargado de darle la bienvenida a los alumnos de nuevo ingreso.
+
+Un nuevo estudio sobre la demanda educativa en el estado, muestra la necesidad de proporcionar una nueva opción de formación profesional, en respuesta a ello el 28 de Enero de 1993, siendo el director el C. Ing. José Luis Méndez Navarro, se autoriza la carrera de Ingeniería Electromecánica, iniciándose en el mes de Agosto del mismo año con una población de 29 alumnos. Las necesidades de la región, así como un nuevo estudio de expectativas, dieron como resultado que el 18 de Junio del 2002, autorizaran la carrera de Ingeniería en Sistemas computacionales. El C. M.A. Juan Amado Rueda Ibarra, como máxima autoridad de la institución les da la bienvenida, el 18 de Agosto de 2003, a los 45 miembros de la primera generación de esta carrera. También comparte el conocimiento científico y tecnológico con el público en general, a través de su programa de educación continua, el cual está compuesto por diferentes cursos de interés general, destacándose los del idioma de idioma de inglés en sus diferentes niveles. Los programas de servicio social y residencia profesional han permitido atender en las peticiones a más de 150 Instituciones municipales, estatales y federales de los sectores públicos y privado.
+
+Como parte del compromiso que se tiene con la sociedad como institución educativa, el Instituto Tecnológico de Tapachula orgullosamente ha obtenido la certificación del proceso educativo de acuerdo a la norma ISO 9001:2000, cuyo certificado RSGC 247 le fue entregado el 2 de Octubre de 2006, y que en nombre de los trabajadores del Instituto Tecnológico lo recibió el Ing. Herman Calderón Pineda, en ese entonces director.
+
+Tapachula, Abril 14.- Con entusiasmo fue recibida la noticia por la “comunidad tecnológica” la designación del maestro en ciencias de la administración, Miguel Cid del Prado Martínez, como nuevo Director del Instituto Tecnológico de Tapachula (ITT); designación realizada con fecha 24 de marzo del año en curso por el doctor Carlos Alfonso García Ibarra, Director General de Educación Superior Tecnológica de la SEP.
+
+Correspondió al Doctor Héctor Francisco Macías Díaz, Director de Capacitación y Desarrollo de la DGEST, quien en calidad de representante del Director General hizo la presentación del nuevo director, Del Prado Martínez, quien -dijo- venía fungiendo como  subdirector de los servicios administrativos del Instituto Tecnológico de Tuxtla Gutiérrez, donde además desempeñó los cargos de profesor de licenciatura y posgrado, fue Jefe de la División de Estudios de Posgrado e Investigación, Jefe del Departamento de Ingeniería Química, Coordinador de la Especialización en Ingeniería Ambiental, Coordinador de la Maestría en Ciencias de la Administración y Coordinador de Educación a Distancia.
+
+El Ing. Pedro Ancheyta Bringas, en su calidad de Director del Instituto Tecnológico de Tapachula, manifestó el doble compromiso que para él representa la nueva encomienda: como lealtad y responsabilidad por ser egresado del Tecnológico de Tapachula, pero hoy asume dicha función con todos los deseos de sumarse al trabajo”
+
+
+El 5 de Abril del 2017.- El Maestro Manuel Quintero Quintero Director General del Tecnológico Nacional de México (TecNM), nombró a la maestra Rosa Aidé Domínguez Ochoa como nueva Directora del Instituto Tecnológico de Tapachula, quien asumió sus funciones con esta fecha.
+
+
+Actualmente, se cuenta con una población estudiantil de: 1 mil 801 alumnos, distribuidos en las diferentes carreras. 
+
+El Instituto Tecnológico de Tapachula Nº 51 se dedica a contribuir a la conformación de una sociedad más justa, humana y con amplia cultura científico-tecnológica, mediante un sistema integrado de educación superior tecnológica, equitativo en su cobertura y de alta calidad.
+
+El Departamento de Sistemas y Computación del Instituto Tecnológico de Tapachula su giro es público.\\
+
+
+\parbox[t]{0.48\textwidth}{
+{\setlength{\baselineskip}{1.5\baselineskip}
+\textbf{Misión}\\
+Contribuir a la conformación de una sociedad más justa, humana y con amplia cultura científico-tecnológica, mediante un sistema integrado de educación superior tecnológica, equitativo en su cobertura y de alta calidad.\par}
+}\hfill
+\parbox[t]{0.48\textwidth}{
+{\setlength{\baselineskip}{1.3\baselineskip}
+\textbf{Visión}\\
+El Sistema Nacional de Institutos Tecnológicos se consolidará como un sistema de educación superior tecnológica de vanguardia, así como uno de los soportes fundamentales del desarrollo sostenido, sustentable y equitativo de la nación y del fortalecimiento de su diversidad cultural.\par}
+}
+
+\subsection*{Valores}
+\begin{multicols}{3}
+\begin{itemize}
+\item El ser humano
+\item El liderazgo
+\item La calidad
+\item El espíritu de servicio
+\item El trabajo en equipo
+\item El alto desempeño
+\end{itemize}
+\end{multicols}
+%\subsection*{Políticas de Calidad}
+
+\subsection*{Organigrama}
+
+La figura~\ref{fig:organigrama} muestra el organigrama.
+
+\begin{figure}[H]
+\begin{tikzpicture}[edge from parent fork down, sibling distance=15mm, level distance=15mm,
+every node/.style={fill=gray!10,rounded corners,align=center},
+primary/.style={text width=2.5cm, font=\scriptsize , inner sep=3pt },
+depto/.style={anchor=north, minimum height=4.2em, text width=1.8cm, font=\scriptsize},
+depto2/.style={anchor=north, minimum height=4em, text width=2.5cm, font=\scriptsize},
+proyec/.style={anchor=north, minimum height=4em, text width=1.8cm, font=\scriptsize},
+office/.style={anchor=west, minimum height=3.2em, text width=2.2cm, font=\scriptsize},
+line/.style={draw, semithick }]
+\node[primary] (direc) {\textsc{Dirección}};
+
+\node[primary, anchor=east] at (-2,-0.7) (cdp) {\textsc{Comité de planeación}};
+\node[primary, anchor=west,text width=5cm] at ( 2,-0.7) (comgtv) {\textsc{Comité de gestión tecnológica y vinculación}};
+
+\node [primary] at (-6,-2.1) (subv) {\textsc{Subdirección de planeación y vinculación}};
+\node [primary] at (0,-2) (suba) {\textsc{Subdirección académica}};
+\node [primary] at (6,-2.1) (subs) {\textsc{Subdirección de servicios administrativos}};
+
+\node [primary] at (-6,-3.1) (conedit) {\textsc{Consejo editorial}};
+\node [primary] at (2,-3) (comadm) {\textsc{Comité académico}};	
+
+\node [depto] at (-6.6,-4.2) (depcb) {\textsc{Depto. de ciencias básicas}};
+\node [depto] at (-4.4,-4.2) (depsc) {\textsc{Depto. de sistemas y computación}};
+\node [depto] at (-2.2,-4.2) (depct) {\textsc{Depto. de ciencias de la tierra}};
+\node [depto] at (0,-4.2) (depii) {\textsc{Depto. de ingeniería industrial}};
+\node [depto] at (2.2,-4.2) (depqb) {\textsc{Depto. de ingenieria quimica y bioquimica}};
+\node [depto] at (4.4,-4.2) (depea) {\textsc{Depto. de ciencias económico administrativas}};
+\node [depto] at (6.6,-4.2) (depep) {\textsc{División de estudios profesionales}};
+
+\node [proyec] at (-6.6,-6.1) (procb) {\textsc{Proyectos de docencia investigación y vinculación}};
+\node [proyec] at (-4.4,-6.1) (prosc) {\textsc{Proyectos de docencia investigación y vinculación}};
+\node [proyec] at (-2.2,-6.1) (proct) {\textsc{Proyectos de docencia investigación y vinculación}};
+\node [proyec] at (0,-6.1) (proii) {\textsc{Proyectos de docencia investigación y vinculación}};
+\node [proyec] at (2.2,-6.1) (proqb) {\textsc{Proyectos de docencia investigación y vinculación}};
+\node [proyec] at (4.4,-6.1) (proea) {\textsc{Proyectos de docencia investigación y vinculación}};
+\node [proyec] at (6.6,-6.1) (proep) {\textsc{Proyectos de docencia investigación y vinculación}};
+
+\node [shape=circle, draw, inner sep=1pt] at (0,-8.5) (conector) {{\scriptsize 1}};
+
+\node [depto2] at (-6,-9) (depdp) {\textsc{Depto. de desarrollo y programación}};
+\node [depto2] at (-3,-9) (depgv) {\textsc{Depto. de gestión y vinculación}};
+\node [depto2] at (0,-9) (depae) {\textsc{Depto. de actividades extraescolares}};
+\node [depto2] at (3,-9) (depci) {\textsc{Centro de información}};
+\node [depto2] at (6,-9) (depse) {\textsc{Depto. de servicios escolares}};
+
+\node [office] at (-7,-12) (officea1) {\textsc{Oficina de desarrollo institucional}};
+\node [office] at (-4,-12) (officea2) {\textsc{Oficina de prácticas y promoción profesional}};
+\node [office] at (-1,-12) (officea3) {\textsc{Oficina de promoción cultural}};
+\node [office] at (2,-12) (officea4) {\textsc{Oficina de control escolar}};
+\node [office] at (5,-12) (officea5) {\textsc{Oficina de organización bibliográfica}};
+
+\node [office] at (-7,-13.5) (officeb1) {\textsc{Oficina de programación y evaluación presupuestaria}};
+\node [office] at (-4,-13.5) (officeb2) {\textsc{Oficina de servicio social y desarrollo comunitario}};
+\node [office] at (-1,-13.5) (officeb3) {\textsc{Oficina de promoción deportiva}};
+\node [office] at (2,-13.5) (officeb4) {\textsc{Oficina de servicios estudiantiles}};
+\node [office] at (5,-13.5) (officeb5) {\textsc{Oficina de servicios a usuario}};
+
+\node [office] at (-7,-15) (officec1) {\textsc{Oficina de servicios externos}};
+\node [office] at (-4,-15) (officec2) {\textsc{Oficina de construcción y equipamiento}};
+\node [office] at (-1,-15) (officec3) {\textsc{Oficina de comunicación y difusión}};
+%\node [office] at (2,-15) (depci) {\textsc{Oficina de servicios estudiantiles}};
+\node [office] at (5,-15) (officec5) {\textsc{Oficina de servicios especializados}};
+
+\begin{scope}[every path/.style=line]
+
+\path (direc) -- (suba);
+\path (0,-0.7) -- (cdp);
+\path (0,-0.7) -- (comgtv);
+
+
+\path (direc) +(0,-1.4) -| (subv);
+\path (direc) +(0,-1.4) -| (subs);
+
+\path (0,-3) -- (comadm);
+
+\path (conedit.west) -- ++(-0.4,0) -- ++(0,-4.9) -- ++(15.5,0) |- (subs.east);
+\path (conedit.west) ++(-0.4,0) |- (subv.west);
+
+\path (suba) -- ++(0,-2) -| (depcb);
+\path (suba)  ++(0,-2) -| (depsc);
+\path (suba)  ++(0,-2) -| (depct);
+\path (suba)  ++(0,-2) -| (depii);
+\path (suba)  ++(0,-2) -| (depqb);
+\path (suba)  ++(0,-2) -| (depea);
+\path (suba)  ++(0,-2) -| (depep);
+
+\path (depcb) -- (procb);
+\path (depsc) -- (prosc);
+\path (depct) -- (proct);
+\path (depii) -- (proii);
+\path (depqb) -- (proqb);
+\path (depea) -- (proea);
+\path (depep) -- (proep);
+
+%segunda parte
+\path (conector.south) -- ++(0,-0.2);
+\path (conector.south) ++(0,-0.2) -| (depdp);
+\path (conector.south) ++(0,-0.2) -| (depgv);
+\path (conector.south) ++(0,-0.2) -| (depae);
+\path (conector.south) ++(0,-0.2) -| (depci);
+\path (conector.south) ++(0,-0.2) -| (depse);
+
+\path (depdp.south) -- ++(0,-0.4) -- ++(-1.2,0);
+\path (depdp.south) ++(0,-0.4) ++(-1.2,0) |- (officea1.west);
+\path (depdp.south) ++(0,-0.4) ++(-1.2,0) |- (officeb1.west);
+\path (depdp.south) ++(0,-0.4) ++(-1.2,0) |- (officec1.west);
+
+\path (depgv.south) -- ++(0,-0.4) -- ++(-1.2,0);
+\path (depgv.south) ++(0,-0.4) ++(-1.2,0) |- (officea2.west);
+\path (depgv.south) ++(0,-0.4) ++(-1.2,0) |- (officeb2.west);
+\path (depgv.south) ++(0,-0.4) ++(-1.2,0) |- (officec2.west);
+
+\path (depae.south) -- ++(0,-0.4) -- ++(-1.2,0);
+\path (depae.south) ++(0,-0.4) ++(-1.2,0) |- (officea3.west);
+\path (depae.south) ++(0,-0.4) ++(-1.2,0) |- (officeb3.west);
+\path (depae.south) ++(0,-0.4) ++(-1.2,0) |- (officec3.west);
+
+\path (depci.south) -- ++(0,-0.4) -- ++(-1.2,0);
+\path (depci.south) ++(0,-0.4) ++(-1.2,0) |- (officea4.west);
+\path (depci.south) ++(0,-0.4) ++(-1.2,0) |- (officeb4.west);
+%\path (depci.south) ++(0,-0.4) ++(-1.2,0) |- (officec2.west);
+
+\path (depse.south) -- ++(0,-0.4) -- ++(-1.2,0);
+\path (depse.south) ++(0,-0.4) ++(-1.2,0) |- (officea5.west);
+\path (depse.south) ++(0,-0.4) ++(-1.2,0) |- (officeb5.west);
+\path (depse.south) ++(0,-0.4) ++(-1.2,0) |- (officec5.west);
+\end{scope}
+\end{tikzpicture}
+\caption{Organigrama del Instituto Tecnológico de Tapachula}\label{fig:organigrama}
+\end{figure}
+
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=12cm,height=10cm]{sources/organigramaA.png}
+%\caption{Organigrama-A del Instituto Tecnológico de Tapachula}\label{fig:ogngmA}
+%\end{figure}
+
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=14cm,height=6cm]{sources/organigramaB.png}
+%\caption{Organigrama-B del Instituto Tecnológico de Tapachula}\label{fig:ogngmB}
+%\end{figure}
+
+\newpage
+
+\subsection*{Ubicación del Instituto Tecnológico}
+El Instituto Tecnológico de Tapachula, se encuentra ubicado en el Km. 2 Carretera a Puerto Madero. C.P. 30700 Tapachula, Chiapas.
+
+%
+\subsection*{Macro-localización}
+
+La figura~\ref{fig:macroloc} muestra una vista aérea de la Macro Localización.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.8]{sources/macrolocalizacion.png}
+\caption{Macro Localización del Instituto Tecnológico de Tapachula}\label{fig:macroloc}
+\end{figure}
+
+%\newpage
+\pagebreak
+\subsection*{Ubicación del Área en donde se elaboró el proyecto}
+
+El proyecto “implementación de un algoritmo de sincronización de semáforos usando inteligencia artificial” se desarrolla en el Departamento de Sistemas y Computación, en el área de Investigación y Desarrollo del Instituto Tecnológico de Tapachula, ubicado en el edificio “Centro de información”.
+
+\begin{figure}[!hb]
+\centering
+\includegraphics[scale=0.8]{sources/microlocalizacion.png}
+\caption{Micro Localización del Instituto Tecnológico de Tapachula}\label{fig:microloc}
+\end{figure}
+
+\subsection*{Características del Área o Departamento}
+
+% subsection subsection_name (end)
+\subsubsection*{Departamento de Investigación y Desarrollo}
+
+{\setlength{\baselineskip}{0.8\baselineskip}
+\begin{enumerate}
+\item Planear, coordinar y evaluar las actividades de docencia, investigación y vinculación de las áreas correspondientes a sistemas y computación que se imparten en el Instituto Tecnológico de Tapachula, de conformidad a las normas y lineamientos establecidos por la secretaria de educación pública.
+
+\item Elaborar el programa operativo anual y el anteproyecto de presupuesto y los procedimientos establecidos.
+
+\item Aplicar la estructura orgánica autorizada para el departamento y los procedimientos establecidos 
+
+\item  Coordinar con las divisiones de estudios profesionales y postgrado e investigación, y la aplicación de los programas de estudio y con el departamento de desarrollo académico los materiales y apoyo didáctico de las asignaturas correspondientes a las áreas de sistemas y computación que se imparten en el Instituto Tecnológico y controlar su desarrollo
+
+\item Coordinar los proyectos de investigación educativa, científica y tecnológica en las áreas de sistemas y computación que se llevan a cabo en el Instituto Tecnológico y controlar su desarrollo 
+
+\item Coordinar los proyectos de producción académica y de investigación científica y tecnológica en las áreas de sistemas y computación relacionas con la vinculación del instituto tecnológico con el sector productivo de bienes, servicios de la región y controlar su desarrollo.
+
+\item Proponer a la subdirección académica el desarrollo de cursos y eventos que propicien la superación y actualización profesional del personal docente de las áreas de sistemas y computación en el Instituto Tecnológico.
+
+\item Apoya a la división de estudios profesionales en el proceso de titulación de los alumnos del instituto.
+
+\item Supervisar y evaluar el funcionamiento del departamento y con base en los resultados, proponer las medidas que mejoren su operación.
+
+\item Coordinar las actividades del departamento con las demás áreas den la subdirección académica 
+
+\item Presentar reportes periódicos de las actividades desarrolladas a la subdirección académica.
+
+\end{enumerate}
+}
+\subsubsection*{Funciones}
+
+Planear, organizar, dirigir, controlar y evaluar de acuerdo con las normas y lineamientos establecidos, las actividades de docencia, investigación y vinculación del instituto tecnológico. Elaborar el programa operativo anual y el anteproyecto propuesto a la subdirección del instituto tecnológico para lo conducente. Coordinar las actividades de la subdirección con las demás áreas para los cumplimientos de los objetivos del instituto tecnológico.
+
+
+\chapter{Descripción del proyecto}
+En este capítulo se presenta la descripción del proyecto “Implementación de un algoritmo de sincronización de semáforos usando inteligencia artificial”, en donde se da a conocer la razón por la cual se decidió desarrollar la investigación, así como también, los objetivos que se deben cumplir, los problemas que resuelve el mismo, los alcances y limitaciones que se presentan.
+
+\section{Problemas a resolver}
+En la ciudad de Tapachula, no existen semáforos inteligentes que sean capaces de resolver los problemas que todos los días se presentan a consecuencia de la gran cantidad de automóviles que circulan en las calles.
+
+Debido a ello en un futuro se pretende la creación de estos semáforos, pero para su desarrollo es necesario el uso de un algoritmo de sincronización que permita la comunicación entre semáforos de avenidas intersectadas y decida el estatus de cada uno de ellos.
+
+\section{Alcances y Limitaciones}
+\subsection*{Alcances del proyecto}
+\begin{itemize}
+\item El algoritmo contará con un tiempo de respuesta en el orden de milisegundos para su implementación en el control de semáforos.
+\end{itemize}
+
+\subsection*{Limitaciones del proyecto}
+\begin{itemize}
+\item El algoritmo sólo comunicará los semáforos de cuatro avenidas que se intersectan.
+\end{itemize}
+
+\section{Objetivos}
+
+\subsection*{Objetivo general}
+Implementar un algoritmo de sincronización de semáforos utilizando inteligencia artificial.
+
+\subsubsection*{Objetivos específicos}
+\begin{itemize}
+\item Seleccionar la técnica de inteligencia artificial que resuelva la sincronización entre los semáforos.
+\item Implementar un algoritmo que use la técnica seleccionada y que determine el estatus de cada semáforo y el tiempo que permanecerá dicho estatus.
+\end{itemize}
+
+\section{Justificación}
+Las ciudades son lugares en donde se realiza una alta actividad económica y en donde transportarse forma parte de la vida cotidiana de las personas; mientras que para las empresas representa una parte esencial de su operación diaria. Estos factores hacen que en las calles principales de la ciudad exista tráfico vehicular y aumente la contaminación del medio ambiente, lo cual es perjudicial para las personas y el ambiente mismo.
+
+Tomando en cuenta los puntos antes mencionados, se considera importante, que en la ciudad de Tapachula, Chiapas, se debe de contar con un sistema inteligente que permita controlar de manera eficiente el flujo vehicular y peatonal, para lograr este objetivo será necesario que el sistema sea capaz de realizar el conteo de los automóviles de una forma rápida, logrando con ello tener un control que permita administrar el tiempo de espera para ceder el paso a los automóviles y así mismo a los peatones.
