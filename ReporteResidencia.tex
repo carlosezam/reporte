@@ -14,10 +14,12 @@
 \usepackage[x11names,table]{xcolor}
 
 \usepackage{pdfpages}
+\usepackage{comment}
 \usepackage{tikz} %graficos
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{trees}
 \usetikzlibrary{positioning}
+\usetikzlibrary{intersections}
 \usepackage{tikz-uml}
 \usepackage{pgf-pie}
 \usepackage{listingsutf8}
@@ -37,6 +39,7 @@
 \newcommand{\conditional}[2]{\textsc{if} #1 \textsc{then} #2}
 \newcommand{\statement}[2]{\emph{#1} es \emph{#2}}
 \newcommand{\ifthen}[4]{\conditional{\statement{#1}{#2}}{\statement{#3}{#4}}}
+\newcommand{\fullref}[1]{\ref{#1} de la página \pageref{#1}}
 \begin{document}
 
 %define el título
@@ -97,22 +100,22 @@
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
 \setlength{\baselineskip}{1.5\baselineskip}
 
-\include{Capitulo_01}
+%\include{Capitulo_01}
 
 \include{Capitulo_02}
 
-\include{Capitulo_03}
+%\include{Capitulo_03}
 
-\include{Capitulo_04}
+%\include{Capitulo_04}
 
-\include{Capitulo_05}
+%\include{Capitulo_05}
 
-\appendix
-\include{Appendice_A}
-\include{Appendice_B}
+%\appendix
+%\include{Appendice_A}
+%\include{Appendice_B}
 
 
-\include{Bibliografia}
+%\include{Bibliografia}
 
 
 
