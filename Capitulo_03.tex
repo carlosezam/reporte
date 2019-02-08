@@ -11,7 +11,7 @@ Posteriormente en la \textbf{sección \ref{section:desarrolloAlgoritmo}} se mode
 \section{Preliminares}
 Antes de continuar con el diseño del sistema, se considera adecuado aclarar algunos puntos acerca de:
 
-\paragraph{El enfoque} presentado en este proyecto difiere con el resto en que, fue diseñado para ser embebido dentro de un algoritmo de sincronización de semáforos más general, de esta manera la tarea del \textit{FIS} se centra en determinar el tiempo en verde, dejando los detalles de sincronización en manos de un segundo algoritmo (también propuesto y desarrollado en este proyecto).
+\paragraph{El enfoque}presentado en este proyecto difiere con el resto en que, fue diseñado para ser embebido dentro de un algoritmo de sincronización de semáforos más general, de esta manera la tarea del \textit{FIS} se centra en determinar el tiempo en verde, dejando los detalles de sincronización en manos de un segundo algoritmo (también propuesto y desarrollado en este proyecto).
 
 %El segundo algoritmo se encarga no solo del \emph{pre} y \emph{post} procesamiento de los datos de entrada y salida, sino que también define un marco de trabajo para la implementación final por parte del usuario final, valga la redundancia.
 
@@ -30,29 +30,31 @@ Antes de continuar con el diseño del sistema, se considera adecuado aclarar alg
 
 C++ es uno de los más eficientes, con herramientas como punteros y referencias que evitan el desperdicio de memoria además de la \emph{semántica de movimiento} incluida en el estándar \textsc{C++11} que, aligera el paso de objetos de gran tamaño entre funciones (como los vectores usados en el proceso de inferencia). Por lo dicho anteriormente y por su amplia disponibilidad de compiladores en casi todas las plataformas, C++ resulta la elección perfecta para este proyecto.
 
-\textbf{Paradigma} C++ es un lenguaje multiparadigma, permite trabajar usando programación estructurada, orientada a objetos e incluso funcional. En este proyecto se decidió hacer uso del paradigma orientado a objetos, debido a que se busca crear piezas de software altamente reutilizables y expresivas.
+C++ es un lenguaje \textbf{multiparadigma}, permite trabajar usando programación estructurada, orientada a objetos e incluso funcional. En este proyecto se decidió hacer uso del paradigma orientado a objetos, debido a que se busca crear piezas de software altamente reutilizables y expresivas.
 
 \section{Selección de la técnica}\label{section:selecciontecnica}
 Después de investigar acerca de las principales ramas de la Inteligencia Artificial (véase sección \ref{cap:ramasdelaia}), se decidió optar por el uso de una técnica de Lógica Difusa; a saber, un \emph{Sistema Inferencia Difusa (FIS por sus siglas en inglés)}. Cabe mencionar que esta técnica está siendo ampliamente usada en la optimización del tráfico vehicular (véase la tabla \ref{table:estadodelarte}), esto se debe en parte, a que permite razonar sobre términos imprecisos como ``\emph{muchos carros}'' o ``\emph{poca congestión}''.
 
 La elección de esta técnica sobre las otras se debe a varios factores: 
 
-\paragraph{Algoritmos Genéticos} son una buena opción ya que podrían permitir probar diferentes asignaciones de tiempo, evaluar su desempeño y, así, ir depurando hasta encontrar la configuración optima de tiempos. Sin embargo, debido que la evaluación del desempeño podría ocasionar una congestión bastante alta, no es factible evaluarlo en un entorno real. Otra opción es evaluar el algoritmo en un entorno simulado, por desgracia, el tiempo requerido para la desarrollo del AG, del entorno de simulación y su correspondiente modelo matemático, va más allá del disponible para este proyecto.
+\textbf{a) Algoritmos Genéticos.} Son una buena opción ya que podrían permitir probar diferentes asignaciones de tiempo, evaluar su desempeño y, así, ir depurando hasta encontrar la configuración optima de tiempos. Sin embargo, debido que la evaluación del desempeño podría ocasionar una congestión bastante alta, no es factible evaluarlo en un entorno real. Otra opción es evaluar el algoritmo en un entorno simulado, por desgracia, el tiempo requerido para la desarrollo del AG, del entorno de simulación y su correspondiente modelo matemático, va más allá del disponible para este proyecto.
 
-\paragraph{Redes Neuronales Artificiales} estás son de gran ayuda en tareas como reconocimiento de voz, clasificación automática, tratamiento de imágenes entre otros. Sin embargo, desarrollar de una RNA para determinar el cambio de fase de un semáforo, podría llevar a lidiar con dificultades innecesarias, dificultades inherentes al entrenamiento de la propia red.
+\textbf{b) Redes Neuronales Artificiales.} Estas son de gran ayuda en tareas como reconocimiento de voz, clasificación automática, tratamiento de imágenes entre otros. Sin embargo, desarrollar de una RNA para determinar el cambio de fase de un semáforo, podría llevar a lidiar con dificultades innecesarias, dificultades inherentes al entrenamiento de la propia red.
 
-\paragraph{Sistemas Expertos} a primera vista puede parecer una buena idea, sin embargo, los problemas vienen al momento de expresar el conocimiento del experto en términos cuantitativos ya que no es muy fácil decidir en qué punto se le debe ceder el paso a una avenida u otra.
+\textbf{c) Sistemas Expertos.} A primera vista puede parecer una buena idea, sin embargo, los problemas vienen al momento de expresar el conocimiento del experto en términos cuantitativos ya que no es muy fácil decidir en qué punto se le debe ceder el paso a una avenida u otra.
 
 Una variante, son los sistemas difusos. Aquí sucede algo importante: los controladores difusos y los sistemas expertos difusos son en esencia lo mismo: Sistema de Inferencia Difusa. Es decir, ambos se basan en la inferencia difusa, por ejemplo: la inferencia de mamdani.
 
-\paragraph{Sistema de Inferencia Difusa} la gran ventaja de estos sistemas es que, gracias a que usan lógica difusa, permiten expresar el conocimiento (reglas) en términos coloquiales que poseen cierto grado de incertidumbre. Así, es posible modelar un sistema que de preferencia a las avenidas con muchos carros y, definir el término muchos carros con una función de membresía centrada en 7. De esta manera, entre más cercano sea a 7 el valor evaluado, mayor peso tendrá en la decisión tomada por el sistema.
+\textbf{d) Sistema de Inferencia Difusa.} La gran ventaja de estos sistemas es que, gracias a que usan lógica difusa, permiten expresar el conocimiento (reglas) en términos coloquiales que poseen cierto grado de incertidumbre. Así, es posible modelar un sistema que de preferencia a las avenidas con muchos carros y, definir el término muchos carros con una función de membresía centrada en 7. De esta manera, entre más cercano sea a 7 el valor evaluado, mayor peso tendrá en la decisión tomada por el sistema.
 
-Estos sistemas permiten lidiar con la información que no es tan precisa o, en el caso de este proyecto, permite razonar sobre términos como muchos carros o poca congestión. Términos para los cuales, no es fácil asignar un intervalo de valores. Es por eso que se decidió usar un Sistema de Inferencia Difusa para dotar de cierto grado de \textit{``inteligencia''} a un algoritmo de control de semáforos.
+Estos sistemas permiten lidiar con la información que no es tan precisa o, en el caso de este proyecto, permite razonar sobre términos como \textit{``muchos carros''} o \textit{``poca congestión''}. Términos para los cuales, no es fácil asignar un intervalo de valores. Es por eso que se decidió usar un Sistema de Inferencia Difusa para dotar de cierto grado de ``inteligencia'' a un algoritmo de control de semáforos.
 
-\section{Diseño del Sistema de Inferencia}\label{section:desarrolloFIS}
+\section{Diseño del sistema de inferencia}\label{section:desarrolloFIS}
 En esta sección se expone de manera metodológica las diferentes configuraciones, resultados y conclusiones que se obtuvieron en el desarrollo del sistema. Para la configuración se sigue una estrategia de mejora iterativa hasta alcanzar el resultado deseado.
 
 \subsection{Configuraciones aplicadas de manera general}
+\textbf{Selección del método de inferencia}\\
+Se optó por el método de \textbf{Mamdani} debido a que emula mejor el razonamiento humano.
 
 \textbf{Selección de operadores}\\ 
 Debido a la variedad de operadores que pueden ser usados en la inferencia difusa, a continuación se muestran los operadores usados en este proyecto.
@@ -66,6 +68,7 @@ Debido a la variedad de operadores que pueden ser usados en la inferencia difusa
 	\item \textbf{Defuzzificación:} centroide \emph{$\frac{\sum \mu(x).x}{\sum \mu(x)}$}.
 \end{itemize}
 \end{multicols}
+\newpage
 \subsubsection{Selección de variables}
 Como se mencionó, el diseño del sistema difuso, se enfoca en el cálculo de tiempos óptimos para las fases verdes de los semáforos, para ello, se consideran tres aspectos, a saber: la cantidad de autos a los que se les cederá el paso, la cantidad de autos que quedarán en espera y, el número de carriles por avenida. Estos datos permitirán al sistema de inferencia dar preferencia a aquellas avenidas con un mayor número de carriles y/o mayor número de autos.
 
@@ -76,8 +79,8 @@ Al seleccionar las variables hay que cuidar que estás estén correlacionadas co
 Habiendo dicho lo anterior, se presenta la selección de variables, así, como una breve justificación de su elección. \\
 
 \textbf{Variables de entrada}\\
-\textit{a) Vehículos} La variable vehículos indica la cantidad de autos que se encuentran en la avenida a la que se le dará el paso\\
-\textit{b) Congestión} La variable congestión se propone como un indicador que sume de manera ponderada la cantidad de automóviles y carriles. A saber, la suma ponderada se define como:
+\textit{a) Vehículos.} La variable vehículos indica la cantidad de autos que se encuentran en la avenida a la que se le dará el paso.\\
+\textit{b) Congestión.} La variable congestión se propone como un indicador que sume de manera ponderada la cantidad de automóviles y carriles. A saber, la suma ponderada se define como:
 
 \begin{displaymath}
 \frac{\sum_{i=1}^{n} x_i * w_i}{\sum_{i=1}^{n} w_i}
@@ -102,13 +105,13 @@ Donde:
 De esta manera el sistema resulta lo suficientemente flexible para ser aplicado a intersecciones de 2, 4, 8 o cualquier numero $n$ de avenidas (siempre y cuando tenga sentido).\\
 
 \textbf{Variables de salida}\\
-\textit{a) Tiempo} Con el fin de hacer el sistema fácilmente escalable, se propone como variable de salida la cantidad de segundos de la fase verde del semáforo en cuestión. Esto permitirá integrar el sistema de inferencia dentro de un algoritmo clásico de control de semáforos. Así, la \textit{inteligencia} se encuentra en la optima asignación de tiempos.
+\textit{a) Tiempo.} Con el fin de hacer el sistema fácilmente escalable, se propone como variable de salida la cantidad de segundos de la fase verde del semáforo en cuestión. Esto permitirá integrar el sistema de inferencia dentro de un algoritmo clásico de control de semáforos. Así, la \textit{inteligencia} se encuentra en la optima asignación de tiempos.
 
 \newpage
 \subsection{Configuración A}
 La configuración presentada a continuación mantiene al mínimo el número de términos dentro de las variables de entrada y salida. 
 
-\paragraph{Variable de entrada Vehículos} referente a la cantidad de vehículos en la avenida a la cual se le asignará la fase verde. La variable se encuentra definida en un universo de discurso $U = [0,12]$.
+\textbf{Variable de entrada Vehículos.} Referente a la cantidad de vehículos en la avenida a la cual se le asignará la fase verde. La variable se encuentra definida en un universo de discurso $U = [0,12]$.
 
 \begin{table}[!h]
 	\centering
@@ -121,7 +124,7 @@ La configuración presentada a continuación mantiene al mínimo el número de t
 \end{table}
 
 
-\paragraph{Variable de entrada Congestión} se refiere al índice ponderado de la cantidad de vehículos en las avenidas que quedaran a la espera durante la fase verde actual. La variable se encuentra definida en un universo de discurso $U = [0,12]$.
+\textbf{Variable de entrada Congestión.} Se refiere al índice ponderado de la cantidad de vehículos en las avenidas que quedaran a la espera durante la fase verde actual. La variable se encuentra definida en un universo de discurso $U = [0,12]$.
 
 \begin{table}[!h]
 	\centering
@@ -141,7 +144,7 @@ La configuración presentada a continuación mantiene al mínimo el número de t
 \end{figure}
 
 \newpage
-\paragraph{Variable de salida Tiempo} se refiere al tiempo en segundos que le será asignada a la fase verde actual. La variable se encuentra definida en un universo de discurso $U = [0,90]$.
+\textbf{Variable de salida Tiempo.} Se refiere al tiempo en segundos que le será asignada a la fase verde actual. La variable se encuentra definida en un universo de discurso $U = [0,90]$.
 
 \begin{table}[!h]
 	\centering
@@ -215,7 +218,7 @@ Después de evaluar el desempeño de la primera configuración se observa como e
 \subsection{Configuración B}
 La configuración presentada en esta sección, ajusta los parámetros de las funciones de membresía de la variable de salida Tiempo. La configuración pasa a ser la siguiente: 
 
-\paragraph{Variable de entrada Vehículos} Se mantiene sin cambios.
+\textbf{Variable de entrada Vehículos.} Se mantiene sin cambios.
 
 \begin{table}[!h]
 	\centering
@@ -228,7 +231,7 @@ La configuración presentada en esta sección, ajusta los parámetros de las fun
 \end{table}
 
 
-\paragraph{Variable de entrada Congestión} se mantiene sin cambios desde la configuración anterior.
+\textbf{Variable de entrada Congestión.} Se mantiene sin cambios desde la configuración anterior.
 
 
 \begin{table}[!h]
@@ -249,7 +252,7 @@ La configuración presentada en esta sección, ajusta los parámetros de las fun
 \end{figure}
 
 \pagebreak
-\paragraph{Variable de salida Tiempo}
+\textbf{Variable de salida Tiempo.}
 En esta ocasión los parámetros de las funciones de membresía fueron ajustados para generar tiempos más acertados. La nueva configuración de esta variable se muestra a continuación:
 
 
@@ -314,7 +317,7 @@ Después de evaluar el desempeño de la segunda configuración se observa como e
 \subsection{Configuración C}
 En está ocasión los reajustes serán mayores a los de la configuración anterior. Puesto que se agregaran un nuevo termino lingüístico a las variables Vehículos y Tiempo.
 
-\paragraph{Variable de entrada Vehículos} Se agrega un nuevo término lingüístico para aumentar la flexibilidad del sistema.
+\textbf{Variable de entrada Vehículos.} Se agrega un nuevo término lingüístico para aumentar la flexibilidad del sistema.
 
 \begin{table}[!h]
 	\centering
@@ -328,7 +331,7 @@ En está ocasión los reajustes serán mayores a los de la configuración anteri
 \end{table}
 
 
-\paragraph{Variable de entrada Congestión} se mantiene sin cambios desde la configuración anterior.
+\textbf{Variable de entrada Congestión.} Se mantiene sin cambios desde la configuración anterior.
 
 
 \begin{table}[!h]
@@ -349,7 +352,7 @@ En está ocasión los reajustes serán mayores a los de la configuración anteri
 \end{figure}
 
 \pagebreak
-\paragraph{Variable de salida Tiempo} al igual que la variable vehículos, se ha agregado un nuevo término lingüístico para aumentar la flexibilidad. Además los parámetros de las funciones fueron reajustados ligeramente al igual que sus etiquetas.
+\textbf{Variable de salida Tiempo.} Al igual que la variable vehículos, se ha agregado un nuevo término lingüístico para aumentar la flexibilidad. Además los parámetros de las funciones fueron reajustados ligeramente al igual que sus etiquetas.
 
 \begin{table}[!h]
 	\centering
@@ -417,7 +420,7 @@ Donde: la columna V son los valores de prueba de la variable Vehículos, la fila
 \subsection{Configuración D}\label{section:configd}
 Existen funciones de membresía que modelan mejor el modo de clasificación que realiza la mente humana, estas funciones son las curvas tales como: \textit{Sigmoidales, Gaussianas y Campanas Generalizadas}; en esta configuración se explota el potencial de las primeras dos.
 
-\paragraph{Variable de entrada Vehículos} las funciones de membresía \textit{triangulares} se remplazan por funciones \textit{Sigmoidales y Gaussianas}, estás modelan de manera más eficiente la manera en que el ser humano suele clasificar los fenómenos.
+\textbf{Variable de entrada Vehículos.} Las funciones de membresía \textit{triangulares} se remplazan por funciones \textit{Sigmoidales y Gaussianas}, estás modelan de manera más eficiente la manera en que el ser humano suele clasificar los fenómenos.
 \begin{center}
 	\begin{tabular}{llr} \toprule
 		Termino lingüístico & Función de membresía & Parámetros \\ \midrule
@@ -428,7 +431,7 @@ Existen funciones de membresía que modelan mejor el modo de clasificación que 
 	\captionof{table}{Variable lingüística \textit{Vehículos}}
 \end{center}
 
-\paragraph{Variable de entrada Congestión} también se remplaza las funciones triangulares por \textit{funciones Sigmoidales}.
+\textbf{Variable de entrada Congestión.} También se remplaza las funciones triangulares por \textit{funciones Sigmoidales}.
 
 \begin{table}[!h]
 	\centering
@@ -446,7 +449,7 @@ Existen funciones de membresía que modelan mejor el modo de clasificación que 
 	\caption[Gráficas de las variables lingüísticas vehículos y congestión]{Representación gráfica de las variables lingüísticas Vehículos y Congestión }
 \end{figure}
 
-\paragraph{Variable de salida Tiempo} esta variable únicamente tiene un ajuste menor en el término lingüístico \textit{Mínimo}, el resto de términos permanece intacto.
+\textbf{Variable de salida Tiempo.} Esta variable únicamente tiene un ajuste menor en el término lingüístico \textit{Mínimo}, el resto de términos permanece intacto.
 
 \begin{table}[!h]
 	\centering
@@ -511,11 +514,11 @@ Después de haber culminado el desarrollo del sistema de inferencia, el cual rep
 
 El modelo propuesto, es a su vez un marco de trabajo para la implementación última, por parte del usuario final.
 
-A lo largo de las siguientes páginas se modela el desarrollo del algoritmo mediante diagramas UML, empleando solo aquellos diagramas que ayuden a tener una perspectiva general del proyecto.
+A lo largo de las siguientes páginas se modela el desarrollo del algoritmo mediante diagramas UML, empleando solo aquellos diagramas que ayuden a tener una perspectiva general del proyecto:
 \begin{itemize}
-	\item Diagrama de Actividades del flujo general del sistema
-	\item Diagrama de Clases de todo el sistema
-	\item Diagrama de Secuencia del bucle principal
+	\item \textbf{Diagrama de actividades} del flujo general del sistema.
+	\item \textbf{Diagrama de clases} de todo el sistema.
+	\item \textbf{Diagrama de secuencia} del bucle principal.
 \end{itemize}
 
 \begin{figure}[H]

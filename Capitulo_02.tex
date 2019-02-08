@@ -684,21 +684,8 @@ Donde:
 	\item $U$ es el universo de discurso.
 \end{description}}
 
-\subsection{Reglas difusas}
-En lógica difusa las proposiciones del tipo ``\ifthen{temperatura}{alta}{ventilador}{máximo}'' son usadas para modelar el conocimiento del experto sobre un fenómeno en un lenguaje natural y cotidiano. A estas proposiciones que operan sobre conjuntos difusos se les conoce como reglas difusas.
 
-El objetivo de las reglas difusas es capturar el conocimiento empírico del experto y al conjunto de reglas se le denomina Base de Conocimientos.
-
-Supongamos una proposición sencilla:
-\begin{center}
-\ifthen{x}{a}{y}{b}.
-\end{center}
-
-En los sistemas de reglas clásicos, si el antecedente es cierto, el consecuente también lo es. En un sistema difuso donde el antecedente es difuso, todas las reglas se ejecutan parcialmente, el consecuente es cierto, pero solo en cierto grado.
  
-\subsection{Método de Inferencia}
-
-%\subsection{Defuzzificación}
 \subsection{Sistema difuso}
 Un sistema de inferencia difuso (\textit{FIS}) consta, conceptualmente, de tres etapas. En la primer etapa se transforman (fuzzifican) las variables de entrada obteniendo valores de difusos. Posteriormente dichos valores son manejados por un sistema de inferencia que genera una salida, también difusa, a partir de las reglas establecidas y los propios valores de entrada. Finalmente el resultado pasa por un proceso llamado defuzzificación, a través del cual, se obtiene la salida real del sistema ya en valores concretos. La figura \ref{fig:digfis} muestra el diagrama esquemático del controlador
 difuso.
@@ -761,7 +748,18 @@ Los conjuntos difusos son caracterizados mediante funciones de membresía ajusta
 	\label{fig:fuzzify}
 \end{figure}
 
- 
+\subsubsection*{Reglas difusas}
+%\subsection{Reglas difusas}
+En lógica difusa las proposiciones del tipo ``\ifthen{temperatura}{alta}{ventilador}{máximo}'' son usadas para modelar el conocimiento del experto sobre un fenómeno en un lenguaje natural y cotidiano. A estas proposiciones que operan sobre conjuntos difusos se les conoce como reglas difusas.
+
+El objetivo de las reglas difusas es capturar el conocimiento empírico del experto y al conjunto de reglas se le denomina Base de Conocimientos.
+
+Supongamos una proposición sencilla:
+\begin{center}
+	\ifthen{x}{a}{y}{b}.
+\end{center}
+
+En los sistemas de reglas clásicos, si el antecedente es cierto, el consecuente también lo es. En un sistema difuso donde el antecedente es difuso, todas las reglas se ejecutan parcialmente, el consecuente es cierto, pero solo en cierto grado.
 
 \subsubsection*{Inferencia}
 En la segunda etapa se proponen reglas lingüísticas (\textit{inferencia}) que servirán para inferir la salida del sistema.
