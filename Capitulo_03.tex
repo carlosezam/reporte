@@ -23,7 +23,7 @@ Antes de continuar con el diseño del sistema, se considera adecuado aclarar alg
 
 \begin{wrapfigure}{r}{4cm}
 	\includegraphics[width=4cm]{Sources/logo_cpp11.jpg}
-	%\captionof{figure}{C++ 11}
+	\captionof{figure}{C++ 11}
 \end{wrapfigure}
 
 \paragraph{La elección del lenguaje de programación} para la implementación del algoritmo fue bastante sencilla. Se requería un lenguaje eficiente que permitiera tener un control fino del proceso de inferencia, además de que permitiera que el algoritmo fuese portable entre plataformas. Por ello, se optó por el lenguaje de programación \emph{C++}, en específico, el estándar \emph{ISO C++11}.
@@ -37,15 +37,15 @@ Después de investigar acerca de las principales ramas de la Inteligencia Artifi
 
 La elección de esta técnica sobre las otras se debe a varios factores: 
 
-\textbf{a) Algoritmos Genéticos.} Son una buena opción ya que podrían permitir probar diferentes asignaciones de tiempo, evaluar su desempeño y, así, ir depurando hasta encontrar la configuración optima de tiempos. Sin embargo, debido que la evaluación del desempeño podría ocasionar una congestión bastante alta, no es factible evaluarlo en un entorno real. Otra opción es evaluar el algoritmo en un entorno simulado, por desgracia, el tiempo requerido para la desarrollo del AG, del entorno de simulación y su correspondiente modelo matemático, va más allá del disponible para este proyecto.
+\textbf{a) Algoritmos genéticos.} Son una buena opción ya que podrían permitir probar diferentes asignaciones de tiempo, evaluar su desempeño y, así, ir depurando hasta encontrar la configuración optima de tiempos. Sin embargo, debido que la evaluación del desempeño podría ocasionar una congestión bastante alta, no es factible evaluarlo en un entorno real. Otra opción es evaluar el algoritmo en un entorno simulado, por desgracia, el tiempo requerido para la desarrollo del AG, del entorno de simulación y su correspondiente modelo matemático, va más allá del disponible para este proyecto.
 
-\textbf{b) Redes Neuronales Artificiales.} Estas son de gran ayuda en tareas como reconocimiento de voz, clasificación automática, tratamiento de imágenes entre otros. Sin embargo, desarrollar de una RNA para determinar el cambio de fase de un semáforo, podría llevar a lidiar con dificultades innecesarias, dificultades inherentes al entrenamiento de la propia red.
+\textbf{b) Redes neuronales artificiales.} Estas son de gran ayuda en tareas como reconocimiento de voz, clasificación automática, tratamiento de imágenes entre otros. Sin embargo, desarrollar de una RNA para determinar el cambio de fase de un semáforo, podría llevar a lidiar con dificultades innecesarias, dificultades inherentes al entrenamiento de la propia red.
 
-\textbf{c) Sistemas Expertos.} A primera vista puede parecer una buena idea, sin embargo, los problemas vienen al momento de expresar el conocimiento del experto en términos cuantitativos ya que no es muy fácil decidir en qué punto se le debe ceder el paso a una avenida u otra.
+\textbf{c) Sistemas expertos.} A primera vista puede parecer una buena idea, sin embargo, los problemas vienen al momento de expresar el conocimiento del experto en términos cuantitativos ya que no es muy fácil decidir en qué punto se le debe ceder el paso a una avenida u otra.
 
 Una variante, son los sistemas difusos. Aquí sucede algo importante: los controladores difusos y los sistemas expertos difusos son en esencia lo mismo: Sistema de Inferencia Difusa. Es decir, ambos se basan en la inferencia difusa, por ejemplo: la inferencia de mamdani.
 
-\textbf{d) Sistema de Inferencia Difusa.} La gran ventaja de estos sistemas es que, gracias a que usan lógica difusa, permiten expresar el conocimiento (reglas) en términos coloquiales que poseen cierto grado de incertidumbre. Así, es posible modelar un sistema que de preferencia a las avenidas con muchos carros y, definir el término muchos carros con una función de membresía centrada en 7. De esta manera, entre más cercano sea a 7 el valor evaluado, mayor peso tendrá en la decisión tomada por el sistema.
+\textbf{d) Sistema de inferencia difusa.} La gran ventaja de estos sistemas es que, gracias a que usan lógica difusa, permiten expresar el conocimiento (reglas) en términos coloquiales que poseen cierto grado de incertidumbre. Así, es posible modelar un sistema que de preferencia a las avenidas con muchos carros y, definir el término muchos carros con una función de membresía centrada en 7. De esta manera, entre más cercano sea a 7 el valor evaluado, mayor peso tendrá en la decisión tomada por el sistema.
 
 Estos sistemas permiten lidiar con la información que no es tan precisa o, en el caso de este proyecto, permite razonar sobre términos como \textit{``muchos carros''} o \textit{``poca congestión''}. Términos para los cuales, no es fácil asignar un intervalo de valores. Es por eso que se decidió usar un Sistema de Inferencia Difusa para dotar de cierto grado de ``inteligencia'' a un algoritmo de control de semáforos.
 

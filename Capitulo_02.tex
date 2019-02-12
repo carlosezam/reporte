@@ -606,7 +606,7 @@ Donde
 
 Una sigmoidal es una función con derivada continua y abierta. Su gráfica recuerda la forma de un escalón. Tiene un parámetro $a$ que determina su pendiente, es decir, determina la suavidad de la transición entre los valores de membresía 0 a 1. Además el parámetro a también determina si la función abrirá por la izquierda o por la derecha. Un valor positivo de $a$ genera un gráfica abierta por la derecha
 y un valor negativo genera que l gráfica se abra por la izquierda.
-En la imagen \ref{fig:sigmf} podemos observar una función sigmoidal abierta por la izquierda.\\\\
+En la figura \ref{fig:sigmf} podemos observar una función sigmoidal abierta por la izquierda.\\\\
 Su definición matemática es la siguiente:
 \begin{displaymath}
 	f(x;a,x_0) = \frac{1}{1+e^{-a(x-x_0)}}
@@ -715,7 +715,7 @@ La primera etapa se basa en un proceso donde las variables tienen un grado de in
 Cuando el sistema obtiene variables, pasan por un proceso de \textit{fuzzificación}
 que consiste en pasar dichos valores a un rango de pertenencia entre cero (0) y uno (1).
 Se busca determinar el grado de pertenencia del valor de entrada a un conjunto difuso.
-Los conjuntos difusos son caracterizados mediante funciones de membresía ajustadas a las necesidades del sistema. La imagen \ref{fig:fuzzify} muestra la interpretación grafica de la fuzzificación.
+Los conjuntos difusos son caracterizados mediante funciones de membresía ajustadas a las necesidades del sistema. La figura \ref{fig:fuzzify} muestra la interpretación grafica de la fuzzificación.
 
 \begin{figure}[H]
 	\centering
@@ -798,12 +798,13 @@ conjunto difuso que caracteriza a las salidas.
 	\label{fig:inference}
 \end{figure}
 
-En la imagen \ref{fig:fuzzify} se aprecia gráficamente un ejemplo de un proceso de inferenciación, a saber, de tipo mamdani. Existen varios mecanismos de inferencia, la elección de uno de ellos dependerá de la situación. Algunos de los métodos de inferencia más usados son:
-{\setlength{\baselineskip}{0.7\baselineskip}\begin{description}
+\newpage
+En la figura \ref{fig:fuzzify} se aprecia gráficamente un ejemplo de un proceso de inferenciación, a saber, de tipo mamdani. Existen varios mecanismos de inferencia, la elección de uno de ellos dependerá de la situación. Algunos de los métodos de inferencia más usados son:
+{\setlength{\baselineskip}{0.7\baselineskip}\begin{itemize}
 		\item Mamdani.
 		\item Sugeno.
 		\item Tsukamoto.
-\end{description}}
+\end{itemize}}
 \subsubsection*{Defuzzificación}
 Una vez obtenidas las consecuencias, la tercera etapa es un proceso para determinar los valores
 óptimos de salida, conocido como defuzzificación, y que consiste en pasar el grado de pertenencia,
