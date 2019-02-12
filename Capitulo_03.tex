@@ -33,7 +33,7 @@ C++ es uno de los más eficientes, con herramientas como punteros y referencias 
 C++ es un lenguaje \textbf{multiparadigma}, permite trabajar usando programación estructurada, orientada a objetos e incluso funcional. En este proyecto se decidió hacer uso del paradigma orientado a objetos, debido a que se busca crear piezas de software altamente reutilizables y expresivas.
 
 \section{Selección de la técnica}\label{section:selecciontecnica}
-Después de investigar acerca de las principales ramas de la Inteligencia Artificial (véase sección \ref{cap:ramasdelaia}), se decidió optar por el uso de una técnica de Lógica Difusa; a saber, un \emph{Sistema Inferencia Difusa (FIS por sus siglas en inglés)}. Cabe mencionar que esta técnica está siendo ampliamente usada en la optimización del tráfico vehicular (véase la tabla \ref{table:estadodelarte}), esto se debe en parte, a que permite razonar sobre términos imprecisos como ``\emph{muchos carros}'' o ``\emph{poca congestión}''.
+Después de investigar acerca de las principales ramas de la Inteligencia Artificial (véase sección \ref{cap:ramasdelaia}), se decidió optar por el uso de una técnica de Lógica Difusa; a saber, un \emph{Sistema Inferencia Difusa (FIS por sus siglas en inglés)}. Cabe mencionar que esta técnica está siendo ampliamente usada en la optimización del tráfico vehicular (véase el cuadro \ref{table:estadodelarte}), esto se debe en parte, a que permite razonar sobre términos imprecisos como ``\emph{muchos carros}'' o ``\emph{poca congestión}''.
 
 La elección de esta técnica sobre las otras se debe a varios factores: 
 
@@ -165,7 +165,7 @@ La configuración presentada a continuación mantiene al mínimo el número de t
 \end{figure}
 
 \subsubsection{Base de conocimientos}
-La siguiente tabla muestra las reglas difusas empleadas en esta configuración.
+El siguiente cuadro muestra las reglas difusas empleadas en esta configuración.
 \begin{longtable}[c]{lclcl} \toprule
 	\multicolumn{3}{c}{Antecedente} & & Consecuente \\ \midrule
 	Vehículos Pocos & Y & Congestión Baja& $\rightarrow$ & Verde Medio \\
@@ -179,7 +179,7 @@ La siguiente tabla muestra las reglas difusas empleadas en esta configuración.
 \subsubsection{Resultados}
 
 
-Una vez diseñado e implementado el sistema de inferencia, se le suministraron valores de prueba para evaluar su desempeño. Los resultados de dicha evaluación se reflejan en la tabla siguiente:
+Una vez diseñado e implementado el sistema de inferencia, se le suministraron valores de prueba para evaluar su desempeño. Los resultados de dicha evaluación se reflejan en el cuadro siguiente:
 
 \begin{table}[H]
 	\centering
@@ -275,7 +275,7 @@ En esta ocasión los parámetros de las funciones de membresía fueron ajustados
 \end{figure}
 
 \subsubsection{Base de conocimientos}
-La siguiente tabla muestra las reglas difusas empleadas en esta configuración que se mantiene sin cambios.
+El siguiente cuadro muestra las reglas difusas empleadas en esta configuración que se mantiene sin cambios.
 \begin{longtable}[c]{lclcl} \toprule
 	\multicolumn{3}{c}{Antecedente} & & Consecuente \\ \midrule
 	Vehículos Pocos & Y & Congestión Baja& $\rightarrow$ & Verde Medio \\
@@ -287,7 +287,7 @@ La siguiente tabla muestra las reglas difusas empleadas en esta configuración q
 
 \pagebreak
 \subsubsection{Resultados}
-Una vez reajustados los parámetros del sistema de inferencia, se le suministraron lo mismos valores de prueba para evaluar su desempeño respecto a la configuración anterior. Los resultados de dicha evaluación se reflejan en la tabla siguiente:
+Una vez reajustados los parámetros del sistema de inferencia, se le suministraron lo mismos valores de prueba para evaluar su desempeño respecto a la configuración anterior. Los resultados de dicha evaluación se reflejan en el cuadro siguiente:
 
 \begin{longtable}[c]{cccccc} \toprule
 	$V \backslash C$ &  0 & 3 & 6 & 9 & 12 \\ \midrule
@@ -374,7 +374,7 @@ En está ocasión los reajustes serán mayores a los de la configuración anteri
 \end{figure}
 
 \subsubsection{Base de conocimientos}
-La siguiente tabla muestra las reglas difusas empleadas en esta configuración que se mantiene sin cambios.
+El siguiente cuadro muestra las reglas difusas empleadas en esta configuración que se mantiene sin cambios.
 \begin{longtable}[c]{lclcl} \toprule
 	\multicolumn{3}{c}{Antecedente} & & Consecuente \\ \midrule
 	\multicolumn{3}{c}{Vehículos Pocos} & $\rightarrow$ & Verde Mínimo \\
@@ -387,7 +387,7 @@ La siguiente tabla muestra las reglas difusas empleadas en esta configuración q
 
 \pagebreak
 \subsubsection{Resultados}
-Una vez reajustados los parámetros del sistema de inferencia, se le suministraron lo mismos valores de prueba para evaluar su desempeño respecto a la configuración anterior. Los resultados de dicha evaluación se reflejan en la tabla siguiente:
+Una vez reajustados los parámetros del sistema de inferencia, se le suministraron lo mismos valores de prueba para evaluar su desempeño respecto a la configuración anterior. Los resultados de dicha evaluación se reflejan en el cuadro siguiente:
 
 \begin{longtable}[c]{cccccc} \toprule
 	$V \backslash C$ &  0 & 3 & 6 & 9 & 12 \\ \midrule
@@ -471,7 +471,7 @@ Existen funciones de membresía que modelan mejor el modo de clasificación que 
 \end{figure}
 
 \subsubsection{Base de conocimientos}
-La siguiente tabla muestra las reglas difusas empleadas en esta configuración que se mantiene sin cambios.
+El siguiente cuadro muestra las reglas difusas empleadas en esta configuración que se mantiene sin cambios.
 \begin{longtable}[c]{lclcl} \toprule
 	\multicolumn{3}{c}{Antecedente} & & Consecuente \\ \midrule
 	\multicolumn{3}{c}{Vehículos Pocos} & $\rightarrow$ & Verde Mínimo \\
@@ -484,7 +484,7 @@ La siguiente tabla muestra las reglas difusas empleadas en esta configuración q
 
 \pagebreak
 \subsubsection{Resultados}
-Después de remplazar algunas de las funciones de membresía y realizar los ajustes necesarios, se le suministró los mismos valores de prueba para evaluar su desempeño respecto a la configuración anterior. Los resultados de dicha evaluación se reflejan en la tabla siguiente:
+Después de remplazar algunas de las funciones de membresía y realizar los ajustes necesarios, se le suministró los mismos valores de prueba para evaluar su desempeño respecto a la configuración anterior. Los resultados de dicha evaluación se reflejan en el cuadro siguiente:
 
 \begin{longtable}[c]{cccccc} \toprule
 	$V \backslash C$ &  0 & 3 & 6 & 9 & 12 \\ \midrule
