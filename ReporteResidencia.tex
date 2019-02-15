@@ -33,13 +33,15 @@
 \usepackage[shortlabels]{enumitem}
 \usepackage{graphicx} %insercción de graficos
 
-\usepackage[spanish,es-noshorthands]{babel} %partición de palabras
+\usepackage[spanish,es-noshorthands,es-tabla]{babel} %partición de palabras
 \usepackage[breaklinks=true]{hyperref} %enlaces
 
 %\addto\captionsenglish{\renewcommand{\figurename}{Fig.}}
 
 \captionsetup[figure]{labelfont={bf,footnotesize},textfont={sl,small},labelsep=period}
 \captionsetup[table]{labelfont={bf,footnotesize},textfont={sl,small},labelsep=period}
+
+
 
 \newcommand{\conditional}[2]{\textsc{if} #1 \textsc{then} #2}
 \newcommand{\statement}[2]{\emph{#1} es \emph{#2}}
@@ -58,7 +60,9 @@
 % inserta el índice
 {\setlength{\baselineskip}{1.1\baselineskip}
 \tableofcontents
-\listoffigures}
+\listoffigures
+\listoftables
+}
 
 \lstset{literate=
 	{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
