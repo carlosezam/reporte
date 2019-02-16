@@ -13,14 +13,15 @@ En conclusión, la técnica seleccionada permitió dar solución al problema de 
 \section{Recomendaciones}
 Aún queda un largo camino por recorrer, un proyecto multidisciplinario como este, necesita de diferentes expertos en diferentes áreas para tratar algunos detalles finos. Las recomendaciones que emitimos en pro de mejorar la eficacia del algoritmo son las siguientes:
 
-\paragraph{Acerca del ciclo del semáforo.}
+\textbf{Acerca del ciclo del semáforo.}
 Si bien, el sistema es capaz de asignar tiempos de manera dinámica en respuesta a la cantidad de vehículos en la intersección, sugerimos analizar la posibilidad de añadir una capa extra al sistema. Una capa encargada de determinar la longitud del ciclo. La salida de dicha capa extra sería un factor de multiplicación para alargar o acortar la duración del ciclo, y sus entradas podrían ser la longitud media de la cola de vehículos u otros factores como la hora pico o el clima, factores que afectan el tiempo de reacción de los automovilistas.
 
-\paragraph{Acerca del algoritmo de visión computacional.}
+\textbf{Acerca del algoritmo de visión computacional.}
 Para el conteo de automóviles en las avenidas, se recomienda el uso del algoritmo propuesto en \cite{ittap} cuya implementación en C++ facilitamos en el apéndice \ref{apendice:b}  por motivos de eficiencia y compatibilidad. 
 
 Dicho trabajo arroja un algoritmo implementado en \emph{Python} que, según los resultados de la propia investigación, ha probado tener una eficacia (con buena iluminación) de hasta un 95\%.
 
 El tiempo de ejecución del algoritmo sugerido por \textsc{estrada \& recinos \& vidal (2017)}: ``Detección de vehículos mediante imagen de fondo '' es de 1.5 segundos (implementado en Python), sin embargo al implementarse en C++ alcanza un tiempo de 0.03 segundos, es decir, 3 centésimas de segundo. Por lo que se recomienda el uso de este algoritmo implementado en C++.
 
-\textbf{Mejoras:} A tal algoritmo se le recomienda agregar una fase donde se compense la perspectiva desde la cual se tome la foto, ya que debido a esto, los autos más lejanos podrían no cubrir la cuota de pixeles mínima y por ende pasarían desapercibidos para el semáforo.
+\textbf{Mejoras.}
+A tal algoritmo se le recomienda agregar una fase donde se compense la perspectiva desde la cual se tome la foto, ya que debido a esto, los autos más lejanos podrían no cubrir la cuota de pixeles mínima y por ende pasarían desapercibidos para el semáforo.
