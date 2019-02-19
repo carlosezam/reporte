@@ -1,29 +1,35 @@
-\documentclass[letterpaper,12pt,openany]{book}
-%\usepackage[total={16.59cm,22.94cm},top=3cm,left=3cm]{geometry}
-\usepackage[total={16.59cm,21.94cm},top=3cm,left=3cm]{geometry}
-\usepackage{helvet}
+\documentclass[letterpaper,12pt,openany]{book} 
 
-\pagestyle{myheadings}
+\usepackage[total={16.59cm,21.94cm},top=3cm,left=3cm]{geometry}
+
+\usepackage{helvet} % tipo de letra similar a arial
+
+\pagestyle{myheadings} % permite modificar el estilo de los encabezados de página
 
 %\renewcommand{\baselinestretch}{1.5}
 
 %\linespread{1.6}
 
-%Paquete para símbolos matematicos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Paquete para símbolos matematicos %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{amsmath,amssymb,amsfonts,latexsym,cancel} %paquetes para simbolos matematicos
-\usepackage[utf8]{inputenc} % codificación de entrada
-\usepackage[T1]{fontenc} % fundición de salida
+\usepackage[utf8]{inputenc}     % codificación de entrada
+\usepackage[T1]{fontenc}        % fundición de salida
 
 \usepackage[x11names,table]{xcolor}
 
 \usepackage{pdfpages}
 \usepackage{comment}
+
 \usepackage{tikz} %graficos
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{trees}
 \usetikzlibrary{positioning}
 \usetikzlibrary{intersections}
+
 \usepackage{tikz-uml}
+
 \usepackage{pgf-pie}
 \usepackage{listingsutf8}
 \usepackage{wrapfig} %figuras flotantes
@@ -50,22 +56,7 @@
 \newcommand{\statement}[2]{\emph{#1} es \emph{#2}}
 \newcommand{\ifthen}[4]{\conditional{\statement{#1}{#2}}{\statement{#3}{#4}}}
 \newcommand{\fullref}[1]{\ref{#1} de la página \pageref{#1}}
-\begin{document}
 
-%define el título
-\author{Escobar Zamora Carlos\\Camacho Bello Darcy Michelle\\Farrera Ramos Javier Antonio}
-\title{Implementación de un algoritmo de sincronización de semáforos usando Inteligencia Artificial}
-
-% genera el título
-%\maketitle
-\includepdf{Portada}
-
-% inserta el índice
-{\setlength{\baselineskip}{1.1\baselineskip}
-\tableofcontents
-\listoffigures
-\listoftables
-}
 
 \lstset{literate=
 	{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
@@ -107,6 +98,39 @@
 	stringstyle=\color[HTML]{534bae},
 	identifierstyle=\color[HTML]{C30000} %002171 0071A8
 }
+
+\begin{document}
+
+%define el título
+%\author{Escobar Zamora Carlos\\Camacho Bello Darcy Michelle\\Farrera Ramos Javier Antonio}
+%\title{Implementación de un algoritmo de sincronización de semáforos usando Inteligencia Artificial}
+%\maketitle
+
+% Inclusion de la portada
+\includepdf{Anexos/Portada}
+
+% Inclusion de la hoja en blanco
+\newpage
+$\ $
+\thispagestyle{empty}
+
+% Inclusion de la portada
+\includepdf{Anexos/Aprobacion}
+
+% Inclusion de la portada
+\includepdf{Anexos/Autorizacion}
+
+\include{Dedicatoria}
+% :::::::::::::::::::::::::::::::::::::::::::::::::
+%  Genera la lista de contenidos, figuras y tablas
+% :::::::::::::::::::::::::::::::::::::::::::::::::
+{\setlength{\baselineskip}{1.1\baselineskip}
+\tableofcontents
+\listoffigures
+\listoftables
+}
+
+
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
