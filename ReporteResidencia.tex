@@ -2,7 +2,11 @@
 
 \usepackage[total={16.59cm,21.94cm},top=3cm,left=3cm]{geometry}
 
-\usepackage{helvet} % tipo de letra similar a arial
+%\usepackage{helvet} % tipo de letra similar a arial
+
+
+
+
 
 \pagestyle{myheadings} % permite modificar el estilo de los encabezados de página
 
@@ -99,6 +103,8 @@
 	identifierstyle=\color[HTML]{C30000} %002171 0071A8
 }
 
+\renewcommand{\rmdefault}{phv}
+
 \begin{document}
 
 %define el título
@@ -121,6 +127,10 @@ $\ $
 \includepdf{Anexos/Autorizacion}
 
 \include{Dedicatoria}
+
+% Inclusion de la portada
+\includepdf{Anexos/Contraportada}
+
 % :::::::::::::::::::::::::::::::::::::::::::::::::
 %  Genera la lista de contenidos, figuras y tablas
 % :::::::::::::::::::::::::::::::::::::::::::::::::
