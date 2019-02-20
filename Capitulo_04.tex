@@ -555,13 +555,15 @@ El siguiente diagrama muestra a grandes rasgos, el flujo de ejecución general d
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
-		[auto
+		[auto,
 		decision/.style	={diamond, draw=blue, thin, fill=yellow!20, text width=5cm, align=flush center, inner sep=1pt},
 		bucle/.style	={chamfered rectangle, draw=black, thin, fill=yellow!20, text width=5.5cm, align=flush center, minimum height=2em},
 		block/.style	={rectangle, draw=black, thin, fill=yellow!20, text width=5cm, align=center, minimum height=2em},
 		line/.style		={draw=black, semithick, -latex', shorten >= 2pt},
 		cloud/.style = {draw=red, thick, ellipse, fill=red!20, minimum height=2em}
 		]
+		\useasboundingbox (-8.3, 1) rectangle (9,-14);
+		\scope[transform canvas={scale=.9}]
 		\node at (-6.3cm,0) {Main};
 		\node at (0,0) {Semáforo};
 		\node at (6.3cm,0) {Sensor};
@@ -595,6 +597,7 @@ El siguiente diagrama muestra a grandes rasgos, el flujo de ejecución general d
 			\path	(inferir) -- (establecer);
 			\path	(establecer) -- +(-6,0) |- (repetir);
 		\end{scope}
+		\endscope
 	\end{tikzpicture}
 	\caption{Diagrama de actividades general}
 \end{figure}
@@ -608,8 +611,9 @@ En el diagrama anterior se muestra el bucle principal del sistema, ahora mediant
 Para fines de legibilidad, en el siguiente diagrama se omiten los nombres de las clases (\emph{FuzzySemaforo y SensorVehiculos}). Las funciones que se muestran pertenecen a la clase \emph{FuzzySemaforo} excepto una, la cual está indicada en el diagrama.
 \begin{figure}[H]
 	\centering
-	\tikzumlset{font=\small, call dt=9, call padding=4}
+	\tikzumlset{font=\small, call dt=7, call padding=3.5}
 	\begin{tikzpicture}
+
 	\begin{umlseqdiag}[]
 	\umlobject[]{run}
 	\umlobject[x=5]{read}
@@ -617,16 +621,17 @@ Para fines de legibilidad, en el siguiente diagrama se omiten los nombres de las
 	\umlobject[x=9.2]{getTime}
 	\umlobject[x=11.4]{setLights}
 	
-	\begin{umlfragment}[type=loop, label=para cada fase, inner xsep=10]
+	\begin{umlfragment}[type=loop, inner xsep=7]
 	\begin{umlcall}[op=read(), return={autos : vector<int>}]{run}{read}\end{umlcall}
 	\begin{umlcall}[op={get\_media(fase,vehiculos)}, return=vehículos : double]{run}{getMedia}\end{umlcall}
 	\begin{umlcall}[op={get\_media(fase,congestión)}, return=congestión : double]{run}{getMedia}\end{umlcall}
 	\begin{umlcall}[op=infiere tiempo en verde, return=segundos : double, name=call]{run}{getTime}\end{umlcall}
-	\begin{umlcall}[op=establece la siguiente fase]{run}{setLights}\end{umlcall}
+	\begin{umlcall}[op=establece la siguiente fase, return=void]{run}{setLights}\end{umlcall}
 	\end{umlfragment}
 	\umlnote[x=10, y=-3]{read}{Función miembro de la clase MySensor}
 	%\umlnote[x=11, y=-6]{call-1}{Llamada al Sistema de Inferencia Difusa}
 	\end{umlseqdiag}
+
 	\end{tikzpicture}
 	\caption{Diagrama de secuencia del bucle principal}	
 \end{figure}
