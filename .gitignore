@@ -2,9 +2,11 @@
 *.lof
 *.out
 *.log
+*.lot
 *.toc
 *.gz
 *.pdf
 !Portada.pdf
 !ReporteResidencia.pdf
+!Anexos/*.pdf
 ~*
