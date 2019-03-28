@@ -5,7 +5,7 @@
 % [openany]		los capitulos inician sin importar paginas pares o impares
 % [oneside]		los margenes se acomodan para imprimir a una sola cara
 
-\documentclass[letterpaper,12pt,openany,oneside]{book}
+\documentclass[letterpaper,10pt,openany,oneside]{book}
 
 
 
@@ -24,25 +24,47 @@
 \include{Packages}
 
 
+
 % {fontspec}	permite el uso de setmainfont
 % {Arial}		Toma la letra Arial del sistema y la establece para el documento
+
 \usepackage{fontspec}
-\setmainfont{Arial}
+%\setmainfont{Arial}
+
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+%\setmonofont{Cambria}
 
 % Letra parecida a Arial
-%\usepackage{helvet} 
-%\renewcommand{\rmdefault}{phv}
+
+% \usepackage{helvet} 
+% \renewcommand{\rmdefault}{phv}
+
 
 
 % Interlineado 1.5
+
 \linespread{1.3}
-%\renewcommand{\baselinestretch}{1.5} 
+% \renewcommand{\baselinestretch}{1.5} 
 
 
+
+
+% Configuracion de listings
 \include{Config_Listings}
 
 
 
+%
+\usepackage{titlesec}
+
+%\titleformat{\chapter}[display]{\large \textrm \bfseries}{\filcenter\chaptertitlename\ \thechapter}{6pt}{ \large\textrm\bfseries }
+
+%\titleformat*{\chapter}{\normalsize}
+
+%\titlelabel{\thetitle. \quad} A
+
+%\titleformat{\chapter}[display]{\normalfont\large\bfseries}{\filcenter\underline{\chaptertitlename\ \thechapter}}{20pt}{\small }
 
 
 
@@ -50,52 +72,53 @@
 
 
 % Inclusion de la portada
-\includepdf{Anexos/Portada}
+%\includepdf{Anexos/Portada}
 
 % Inclusion de la portada
-\includepdf{Anexos/Aprobacion}
+%\includepdf{Anexos/Aprobacion}
 
 % Inclusion de la portada
-\includepdf{Anexos/Autorizacion}
+%\includepdf{Anexos/Autorizacion}
 
-\include{Dedicatoria}
+%\include{Dedicatoria}
 
 % Inclusion de la portada
-\includepdf{Anexos/Contraportada}
+%\includepdf{Anexos/Contraportada}
 
 % :::::::::::::::::::::::::::::::::::::::::::::::::
 %  Genera la lista de contenidos, figuras y tablas
 % :::::::::::::::::::::::::::::::::::::::::::::::::
 {%\setlength{\baselineskip}{1.0\baselineskip} % old = 1.1
 \tableofcontents
-\listoffigures
-\listoftables
+%\listoffigures
+%\listoftables
 }
 
 
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+\setlength{\itemsep}{0mm}
 %\setlength{\baselineskip}{1.35\baselineskip}
 
 \include{Capitulo_01}
 
-%\include{Capitulo_02}
+\include{Capitulo_02}
 
-%\include{Capitulo_03}
+\include{Capitulo_03}
 
-%\include{Capitulo_04}
+\include{Capitulo_04}
 
-%\include{Capitulo_05}
+\include{Capitulo_05}
 
-%\include{Capitulo_06}
+\include{Capitulo_06}
 
 % Apendices
-%\appendix
-%\include{Appendice_A}
-%\include{Appendice_B}
+\appendix
+\include{Appendice_A}
+\include{Appendice_B}
 
 % Bibliografia
-%\include{Bibliografia}
+\include{Bibliografia}
 
 \end{document}
