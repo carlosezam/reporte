@@ -1,8 +1,6 @@
 \chapter{Marco teórico}
-
-\textsf{
 Durante los últimos XX años se ha intentado mitigar el problema del alto congestionamiento vehicular mediante el uso de Semáforos Inteligentes. Las recientes investigaciones arrojan propuestas que hacen uso  de técnicas de inteligencia artificial para resolver el problema.
-}
+
 A continuación, se muestra de manera resumida algunos de los trabajos de investigación más recientes, además, se hará una breve introducción a los conceptos necesarios, con el fin de facilitar y maximizar la comprensión del diseño del sistema propuesto para la optimización del tránsito.
 
 \section{Conceptos generales}
@@ -166,26 +164,27 @@ A continuación se ofrece un resumen de las principales ramas de la Inteligencia
 \subsubsection{Redes neuronales}
 
 El aparato de comunicación neuronal de los animales y del ser humano, está formado por el sistema nervioso y hormonal. Su misión es recoger informaciones, transmitirlas y elaborarlas, en parte también almacenarlas y enviarlas de nuevo en forma elaborada.
-\begin{floatingfigure}[r]{10.5cm}
-	\includegraphics[width=10.5cm]{Sources/neurona.png}
+
+\begin{wrapfigure}{r}{9cm}
+	\includegraphics[width=9cm]{Sources/neurona.png}
 	\captionof{figure}{Neurona biológica}
-\end{floatingfigure}
+\end{wrapfigure}
 
 El elemento estructural y funcional más esencial, en el sistema de comunicación neuronal, es la célula nerviosa o neurona. La mayoría de las neuronas utilizas sus productos de secreción como señales químicas (transmisores) para la transmisión de información. Dicha información se envía, entre las distintas neuronas, a través de prolongaciones, formando redes en las cuales se elabora y almacena información.
 
-La misión de las neuronas comprende generalmente cinco funciones parciales:
+La misión de las neuronas comprende generalmente cuatro funciones:
 
 {\setlength{\baselineskip}{0.7\baselineskip}\begin{itemize}
 	\item Las neuronas recogen la información que llega a ellas en forma de impulsos procedentes de otras neuronas o de receptores.
 	\item La integran en un código de activación propio de la célula.
 	\item La transmiten codificada en forma de frecuencia de impulsos a través de su axón. 
-	\item A través de sus ramificaciones el axón efectúa la distribución espacia de los mensajes.
+	\item A través de sus ramificaciones el axón efectúa la distribución espacial de los mensajes.
 \end{itemize}}
 
 Una Red de Neuronas Artificiales (en adelante, RNA) es un paradigma de procesamiento de información inicialmente inspirado en el modo en el que lo hace el cerebro. El elemento clave de este paradigma es su estructura. Las RNA están compuestas por un cierto número de elementos de procesamiento o neuronas que trabajan al unísono para resolver un problema específico. 
 
-\begin{wrapfigure}{l}{6.1cm}
-	\vspace{0.2cm}
+\begin{wrapfigure}{l}{6cm}
+%	\vspace{0.2cm}
 		\includegraphics[width=6cm]{Sources/modelo_neurona.png}
 		\captionsetup[figure]{margin=0.3cm, justification=centering}
 		\captionof{figure}{Modelo matemático de una neurona}\label{modeloneurona}
