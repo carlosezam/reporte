@@ -38,7 +38,7 @@ modelos de crecimiento urbano. Por tanto se ve la necesidad de la realización d
 procedimientos de aplicación de las diferentes metodologías y desarrollos en este campo
 cuyo modelo de crecimiento urbano, se manifiesta en la \emph{congestión del tráfico vehicular}.
 
-\paragraph{La congestión vehicular o vial} se refiere tanto urbana como interurbanamente, a la condición de un flujo vehicular que se ve saturado debido al exceso de demanda de las vías, produciendo incrementos en los tiempos de viaje y atascamientos. Este fenómeno se produce comúnmente en las horas punta u horas pico, y resultan frustrantes para los automovilistas, ya que resultan en pérdidas de tiempo y consumo excesivo de combustible.
+La congestión vehicular o vial se refiere tanto urbana como interurbanamente, a la condición de un flujo vehicular que se ve saturado debido al exceso de demanda de las vías, produciendo incrementos en los tiempos de viaje y atascamientos. Este fenómeno se produce comúnmente en las horas punta u horas pico, y resultan frustrantes para los automovilistas, ya que resultan en pérdidas de tiempo y consumo excesivo de combustible.
 
 Las consecuencias de las congestiones vehiculares denotan en accidentes, a pesar de que los automóviles no pueden circular a gran velocidad, ya que el automovilista pierde la calma al encontrarse estático por mucho tiempo en un lugar de la vía. Esto también deriva en violencia vial, por otro lado, reduce la gravedad de los accidentes ya que los vehículos no se desplazan a una velocidad importante para ser víctima de daños o lesiones de mayor gravedad. También, los vehículos pierden innecesariamente combustible debido a que se está inactivo por mucho tiempo en un mismo lugar, sin avanzar en el trayecto de un punto a otro.
 
@@ -85,7 +85,7 @@ Por lo general, el ciclo óptimo para una intersección en particular se encuent
 $$ 0.75C_0 \leq C_0 \leq 1.50C_0$$
 Las longitudes de ciclo deben estar entre 40 segundos y 120 segundos. Longitudes de ciclo fuera de estos valores son muy cortas o muy largas.
 
-\paragraph{Las fases} son la combinación de movimientos que operan simultáneamente, es decir, es la parte de un ciclo de un semáforo durante la cual uno o más movimientos reciben derecho de vía. Las fases se delimitarán en la vía cuando haya un cambio de derecho de paso, o sea, cuando un movimiento vehicular o peatonal es detenido y otro inicia, hay cambio de fase. El número de fases de un semáforo depende de la complejidad de la intersección. El número de fases tiene un rango que varía entre dos fases (el más simple) hasta ocho fases (el más complicado). La eficiencia de una intersección semaforizada decrece cuando el número de fases se aumenta.
+Las fases son la combinación de movimientos que operan simultáneamente, es decir, es la parte de un ciclo de un semáforo durante la cual uno o más movimientos reciben derecho de vía. Las fases se delimitarán en la vía cuando haya un cambio de derecho de paso, o sea, cuando un movimiento vehicular o peatonal es detenido y otro inicia, hay cambio de fase. El número de fases de un semáforo depende de la complejidad de la intersección. El número de fases tiene un rango que varía entre dos fases (el más simple) hasta ocho fases (el más complicado). La eficiencia de una intersección semaforizada decrece cuando el número de fases se aumenta.
 
 En los arreglos de las fases para un semáforo se deben tener las siguientes consideraciones: \label{consideracionesfases}
 
@@ -109,7 +109,6 @@ Recomendaciones para las fases: \label{recomendacionesfases}
 \section{Conceptos técnicos}
 
 \subsection{Inteligencia artificial}
-
 Lo que hoy se conoce como IA empezó hacia 1960 cuando en el Instituto Tecnológico de
 Massachusetts (MIT, por sus siglas en inglés), John McCarthy creó el LISP (el primer lenguaje
 de investigación dentro de la IA). Sin embargo, el término IA suele atribuírsele a Marvin Minsky,
@@ -166,7 +165,7 @@ A continuación se ofrece un resumen de las principales ramas de la Inteligencia
 El aparato de comunicación neuronal de los animales y del ser humano, está formado por el sistema nervioso y hormonal. Su misión es recoger informaciones, transmitirlas y elaborarlas, en parte también almacenarlas y enviarlas de nuevo en forma elaborada.
 
 \begin{wrapfigure}{r}{9cm}
-	\includegraphics[width=8cm]{Sources/neurona.png}
+	\includegraphics[width=8.5cm]{Sources/neurona.png}
 	\captionof{figure}{Neurona biológica}
 \end{wrapfigure}
 
@@ -182,14 +181,13 @@ La misión de las neuronas comprende generalmente cuatro funciones:
 	\item A través de sus ramificaciones el axón efectúa la distribución espacial de los mensajes.
 \end{itemize}}
 
-Una Red de Neuronas Artificiales (en adelante, RNA) es un paradigma de procesamiento de información inicialmente inspirado en el modo en el que lo hace el cerebro. El elemento clave de este paradigma es su estructura. Las RNA están compuestas por un cierto número de elementos de procesamiento o neuronas que trabajan al unísono para resolver un problema específico. 
-
 \begin{wrapfigure}{l}{6cm}
-%	\vspace{0.2cm}
-		\includegraphics[width=6cm]{Sources/modelo_neurona.png}
-		\captionsetup[figure]{margin=0.3cm, justification=centering}
-		\captionof{figure}{Modelo matemático de una neurona}\label{modeloneurona}
+	%	\vspace{0.2cm}
+	\includegraphics[width=5.9cm]{Sources/modelo_neurona.png}
+	\captionsetup[figure]{margin=0.3cm, justification=centering}
+	\captionof{figure}{Modelo matemático de una neurona}\label{modeloneurona}
 \end{wrapfigure}
+Una Red de Neuronas Artificiales (en adelante, RNA) es un paradigma de procesamiento de información inicialmente inspirado en el modo en el que lo hace el cerebro. El elemento clave de este paradigma es su estructura. Las RNA están compuestas por un cierto número de elementos de procesamiento o neuronas que trabajan al unísono para resolver un problema específico. 
 
 Las redes neuronales actuales se basan en el modelo matemático de neurona propuesto por \textit{McCulloch} y \textit{Pitts} en 1943. En dicho modelo (véase Figura \ref{modeloneurona} ) cada neurona recibe un conjunto de entradas ${x1, x2,...,xD}$ y devuelve una única salida . Además, dentro de una RNA existen numerosas conexiones entre las distintas neuronas que la forman. Estas conexiones simulan las conexiones neuronales del cerebro y, al igual que éstas, pueden establecerse con mayor o menor intensidad. En el caso de las RNA esta intensidad la determinan los pesos sinápticos (o simplemente pesos). De este modo, cada entrada $x_i$ de una neurona se encuentra afectada por un peso $w_i$.
 
@@ -314,15 +312,15 @@ y $ 0 < \mu_A(x) < 1 $ si $x$ está parcialmente en $A$.
 Este valor entre 0 y 1 representa el grado de pertenencia $\mu$ al conjunto $A$.
 
 
-\textit{Definición formal}\\
+\subsubsection{Definición formal}
 Un conjunto difuso $A$ definido en el universo de discurso $U$ es caracterizado por una función de membresía $\mu_A : U \rightarrow [0,1]$ que asocia a cada elemento $u$ de $U$ un valor $\mu_A(u)$ en el intervalo [0,1], con $\mu_A(u)$ representando el grado de membresía de $u$ en $A$.
 
 Algunas características:
-{\setlength{\baselineskip}{0.7\baselineskip}\begin{description}
+{\setlength{\baselineskip}{0.7\baselineskip}\begin{itemize}
 	\item El soporte de A son los puntos en $U$ en los cuales $\mu_A(u)$ es positivo.
 	\item La altura de A es el valor máximo de $\mu_A(u)$ sobre $U$.
 	\item El punto de cruce de A es un punto en $U$ donde el valor de membresía en $A$ es $0.5$
-\end{description}}
+\end{itemize}}
 
 
 
@@ -331,8 +329,7 @@ Algunas características:
 \subsubsection{Principio isomorfo}
 
 Es bien conocido que la teoría de conjuntos, el \textit{Álgebra booleana} y la Lógica tradicional son isomorfas, bajo transformaciones adecuadas. Esto significa que tienen una estructura subyacente similar, y que por tanto, las definiciones que se hagan en una de las tres teorías se pueden llevar a las otras dos, mediante las transformaciones adecuadas.
-En la siguiente tabla se muestra la correspondencia de algunos operadores.\\\\
-
+En la siguiente tabla se muestra la correspondencia de algunos operadores.
 
 \begin{longtable}{|c|c|c|} 
 	\hline
@@ -484,7 +481,8 @@ Algunas de las funciones de membresía básicas son las siguientes.
 	\caption{Función triangular}
 	\label{fig:trimf}
 \end{wrapfigure}
-La imagen de la función, como su nombre lo indica, asemeja un triángulo. Realmente la función está compuesta por dos líneas rectas, una con pendiente positiva hasta alcanzar la unidad, y otra con pendiente negativa, hasta llegar a 0. Está definida por tres parámetros \textit{a, b, c} donde $ a \leq b \leq c$. Estos parámetros definen los vértices de la función.\\\\
+La imagen de la función, como su nombre lo indica, asemeja un triángulo. Realmente la función está compuesta por dos líneas rectas, una con pendiente positiva hasta alcanzar la unidad, y otra con pendiente negativa, hasta llegar a 0. Está definida por tres parámetros \textit{a, b, c} donde $ a \leq b \leq c$. Estos parámetros definen los vértices de la función.
+
 Su definición matemática es la siguiente:
 $$  f(x;a,b,c)= \left\lbrace \begin{array}{lcl}
 0	& \mbox{si} & x  \leq a \\ [.30cm]
@@ -518,9 +516,9 @@ La función triangular es adecuada para definir situaciones en las que se tiene 
 
 Una generalización de la función triangular es la función trapezoidal, que a diferencia de la triangular, tiene un núcleo más amplio. Esto es, el intervalo donde el valor de membresía es igual a 1 se extiende entre los vértices
 $b$ y $c$.
-La función está definida por cuatro parámetros \textit{a, b, c, d} donde $ a \leq b \leq c \leq  d$. En la figura \ref{fig:trapmf} se aprecia el trapecio que forman estos cuatro vértices.\\\\
-Su definición matemática es la siguiente:
+La función está definida por cuatro parámetros \textit{a, b, c, d} donde $ a \leq b \leq c \leq  d$. En la figura \ref{fig:trapmf} se aprecia el trapecio que forman estos cuatro vértices.
 
+Su definición matemática es la siguiente:
 $$  f(x;a,b,c,d)= \left\lbrace \begin{array}{lcl}
 						0		& \mbox{si} & x  \leq a \\ [.30cm]
 {\displaystyle \frac{x-a}{b-a}} & \mbox{si} & a \leq x \leq b \\ [.45cm]
@@ -561,9 +559,8 @@ Donde
 	\item $a$ determina el ancho o la pendiente.
 \end{description}}
 
-%test campana generalizada
-\paragraph{Campana generalizada.}
 
+\paragraph{Campana generalizada.}
 \begin{wrapfigure}{r}{0pt}
 		\begin{tikzpicture}[domain=0:8, xscale=0.5]
 			\draw[->] (0,0) -- (8,0) 	node[right] {$x$} 		coordinate (x axis);
@@ -578,9 +575,9 @@ Donde
 		\caption{Función campana generalizada}
 		\label{fig:gbellmf}
 \end{wrapfigure}
-Esta función al igual que la anterior, es una función simétrica con derivada continua. Juega el papel de una función trapezoidal, si observamos la figura \ref{fig:gbellmf}, podemos ver como la gráfica asemeja un trapecio suavizado, es decir, los vértices no tienen cambios abruptos sino graduales.\\\\
-Su definición matemática es la siguiente:
+Esta función al igual que la anterior, es una función simétrica con derivada continua. Juega el papel de una función trapezoidal, si observamos la figura \ref{fig:gbellmf}, podemos ver como la gráfica asemeja un trapecio suavizado, es decir, los vértices no tienen cambios abruptos sino graduales.
 
+Su definición matemática es la siguiente:
 \begin{displaymath}
 f(x;a,b,x_0)= \frac{1}{1 + \left(  \frac{x-x_0}{a}  \right)^{2b}}
 \end{displaymath}
