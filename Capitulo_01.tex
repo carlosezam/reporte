@@ -2,9 +2,9 @@
 \pagenumbering{arabic}
 \section{Introducción}
 
-En la ciudad de Tapachula Chiapas el índice demográfico se encuentra en constante crecimiento por lo que la movilidad urbana o el total de desplazamientos que se realizan en la ciudad es un factor importante que genera congestionamiento vehicular. La adecuada operación de los semáforos en las intersecciones es otro factor importante, debido a que, son estos quienes dirigen el flujo del tráfico.
+En la ciudad de Tapachula Chiapas el índice demográfico se encuentra en constante crecimiento por lo que la movilidad urbana o el total de desplazamientos que se realizan en la ciudad es un factor importante que genera congestionamiento vehicular. Otro factor importante es la operación adecuada de los semáforos en las intersecciones, debido a que, son estos quienes dirigen el flujo del tráfico.
 
-Desafortunadamente los semáforos convencionales tienen asignados tiempos fijos para el cambio de luces, esto a menudo ocasiona largos tiempos de espera innecesarios. Por ejemplo, cuando un semáforo asigna una fase verde con tiempo considerable a la avenida en que hay pocos o incluso, ningún automóvil.
+Desafortunadamente los semáforos convencionales tienen asignados tiempos fijos para el cambio de luces, esto a menudo ocasiona largos tiempos de espera innecesarios. Por ejemplo, cuando un semáforo asigna una fase verde con un tiempo considerable a la avenida en que hay pocos o incluso, ningún automóvil.
 
 En el presente documento se redacta el desarrollo de un sistema “inteligente” que hará uso de herramientas y técnicas de Inteligencia Artificial para la sincronización de los semáforos.
 
@@ -304,3 +304,35 @@ El proyecto “implementación de un algoritmo de sincronización de semáforos 
 \subsubsection*{Funciones}
 
 Planear, organizar, dirigir, controlar y evaluar de acuerdo con las normas y lineamientos establecidos, las actividades de docencia, investigación y vinculación del instituto tecnológico. Elaborar el programa operativo anual y el anteproyecto propuesto a la subdirección del instituto tecnológico para lo conducente. Coordinar las actividades de la subdirección con las demás áreas para los cumplimientos de los objetivos del instituto tecnológico.
+
+\section{Problemas a resolver}
+En la ciudad de Tapachula, no existen semáforos inteligentes que sean capaces de resolver los problemas que todos los días se presentan a consecuencia de la gran cantidad de automóviles que circulan en las calles.
+
+Debido a ello en un futuro se pretende la creación de estos semáforos, pero para su desarrollo es necesario el uso de un algoritmo de sincronización que permita la comunicación entre semáforos de avenidas intersectadas y decida el estatus de cada uno de ellos.
+
+\section{Alcances y limitaciones}
+\subsection*{Alcances del proyecto}
+\begin{itemize}
+	\item El algoritmo contará con un tiempo de respuesta en el orden de milisegundos para su implementación en el control de semáforos.
+\end{itemize}
+
+\subsection*{Limitaciones del proyecto}
+\begin{itemize}
+	\item El algoritmo solo comunicará los semáforos de cuatro avenidas que se intersectan.
+\end{itemize}
+
+\section{Objetivos}
+
+\subsection*{Objetivo general}
+Implementar un algoritmo de sincronización de semáforos utilizando inteligencia artificial.
+
+\subsection*{Objetivos específicos}
+\begin{itemize}
+	\item Seleccionar la técnica de inteligencia artificial que resuelva la sincronización entre los semáforos.
+	\item Implementar un algoritmo que use la técnica seleccionada y que determine el estatus de cada semáforo y el tiempo que permanecerá dicho estatus.
+\end{itemize}
+
+\section{Justificación}
+Las ciudades son lugares en donde se realiza una alta actividad económica y en donde transportarse forma parte de la vida cotidiana de las personas; mientras que para las empresas representa una parte esencial de su operación diaria. Estos factores hacen que en las calles principales de la ciudad exista tráfico vehicular y aumente la contaminación del medio ambiente, lo cual es perjudicial para las personas y el ambiente mismo.
+
+Tomando en cuenta los puntos antes mencionados, se considera importante, que en la ciudad de Tapachula, Chiapas, se debe de contar con un sistema inteligente que permita controlar de manera eficiente el flujo vehicular y peatonal, para lograr este objetivo será necesario que el sistema sea capaz de realizar el conteo de los automóviles de una forma rápida, logrando con ello tener un control que permita administrar el tiempo de espera para ceder el paso a los automóviles y así mismo a los peatones.

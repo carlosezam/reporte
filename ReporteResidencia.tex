@@ -5,7 +5,7 @@
 % [openany]		los capitulos inician sin importar paginas pares o impares
 % [oneside]		los margenes se acomodan para imprimir a una sola cara
 
-\documentclass[letterpaper,11pt,openany,oneside,final]{book}
+\documentclass[letterpaper,10pt,openany,oneside,final]{book}
 
 
 
@@ -60,14 +60,14 @@
 
 \titleformat
 {\chapter}[display]
-{\filcenter\bfseries\large}{\filcenter\chaptertitlename\thechapter}{0pt}{\bfseries\large}
+{\filcenter\bfseries\Large}{\filcenter\chaptertitlename\thechapter}{-10pt}{\bfseries\Large}
 
 \titleformat*{\section}{\bfseries\large}
 \titleformat*{\subsection}{\bfseries\normalsize}
 \titleformat*{\subsubsection}{\bfseries\itshape\normalsize}
 %\titleformat*{\paragraph}{\itshape\bfseries\normalsize}
 
-\titlespacing{\chapter}{0pt}{0pt}{0pt}
+\titlespacing{\chapter}{0pt}{0pt}{\parskip}
 \titlespacing{\section}{0pt}{\parskip}{-\parskip}
 \titlespacing{\subsection}{0pt}{\parskip}{-\parskip}
 \titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
