@@ -471,13 +471,14 @@ Para la correcta representación de los grados de pertenencia de cada uno de los
 Algunas de las funciones de membresía básicas son las siguientes.
 
 \paragraph{Triangular.}
-\begin{wrapfigure}{r}{0pt}
+\begin{wrapfigure}{r}{5cm}
+	\vspace{-\baselineskip}
 	\begin{tikzpicture}
 		\draw[->] (0,0) -- (4,0) 	node[right] {$x$} 		coordinate (x axis);
 		\draw[->] (0,0) -- (0,1) 	node[above]	{$\mu(x)$} 	coordinate (y axis);
 		\draw[blue,semithick] (0,0) -- (1,0) node[above] {a} -- (2,1) node[above] {b} -- (3,0) node[above] {c} -- (4,0);
 	\end{tikzpicture}
-	\captionsetup{margin=1cm,justification=centering}	
+	\captionsetup{margin=0.2cm,justification=centering}	
 	\caption{Función triangular}
 	\label{fig:trimf}
 \end{wrapfigure}
@@ -500,6 +501,7 @@ La función triangular es adecuada para definir situaciones en las que se tiene 
 
 \paragraph{Trapezoidal.}
 \begin{wrapfigure}{r}{0pt}
+	\vspace{-\baselineskip}
 	\begin{tikzpicture}
 		\draw[->] (0,0) -- (4,0) 	node[right] {$x$} 		coordinate (x axis);
 		\draw[->] (0,0) -- (0,1) 	node[above]	{$\mu(x)$} 	coordinate (y axis);		
@@ -509,7 +511,7 @@ La función triangular es adecuada para definir situaciones en las que se tiene 
 		(3,0)	node[above] {d} --
 		(4,0);
 	\end{tikzpicture}
-	\captionsetup{margin=1cm,justification=centering}	
+	\captionsetup{margin=0.2cm,justification=centering}	
 	\caption{Función triangular}
 	\label{fig:trapmf}
 \end{wrapfigure}
@@ -528,12 +530,11 @@ $$  f(x;a,b,c,d)= \left\lbrace \begin{array}{lcl}
 \end{array}
 \right.
 $$
-
 La forma de esta función es utilizada cuando hay un rango de valores óptimos. Un ejemplo de esto es la temperatura ambiente. Hay un rango de temperaturas que podemos considerar adecuadas, pero por debajo de este rango las personas comienzan a sentir frío, y por encima de él se consideraría un ambiente caluroso.
 
-
 \paragraph{Gaussiana.}
-\begin{wrapfigure}{r}{0pt}
+\begin{wrapfigure}{r}{5cm}
+	\vspace{-\baselineskip}
 	\begin{tikzpicture}[domain=0:8, xscale=0.5]
 	\draw[->] (0,0) -- (8,0) 	node[right] {$x$} 		coordinate (x axis);
 	\draw[->] (0,0) -- (0,1) 	node[above]	{$\mu(x)$} 	coordinate (y axis);
@@ -543,12 +544,12 @@ La forma de esta función es utilizada cuando hay un rango de valores óptimos. 
 	\draw[blue] (5.6,0.3) node[above] {$\sigma$};
 	
 	\end{tikzpicture}
-	\captionsetup{margin=1cm,justification=centering}	
+	\captionsetup{margin=0.2cm,justification=centering}	
 	\caption{Función gaussiana}
 	\label{fig:gaussmf}
 \end{wrapfigure}
+La función gaussiana es una función simétrica que juega el papel de la función triangular, solo que esta pertenece al grupo de las \textit{funciones con derivada continua}. Si observamos la figura \ref{fig:gaussmf} podemos ver como la gráfica asemeja un triángulo suavizado, es decir, los vértices no tienen cambios abruptos sino graduales.
 
-La \textit{función gaussiana} es una función simétrica que juega el papel de la función triangular, solo que esta pertenece al grupo de las funciones con derivada continua. Si observamos la figura \ref{fig:gaussmf} podemos ver como la gráfica asemeja un triángulo suavizado, es decir, los vértices no tienen cambios abruptos sino graduales.\\\\
 Su definición matemática es la siguiente:
 \begin{displaymath}
 f(x;a,x_0)=  e^{\displaystyle -\frac{1}{2} \left(  \frac{x-x_0}{a} \right)^2 }
@@ -561,7 +562,8 @@ Donde
 
 
 \paragraph{Campana generalizada.}
-\begin{wrapfigure}{r}{0pt}
+\begin{wrapfigure}{r}{5cm}
+	\vspace{-\baselineskip}
 		\begin{tikzpicture}[domain=0:8, xscale=0.5]
 			\draw[->] (0,0) -- (8,0) 	node[right] {$x$} 		coordinate (x axis);
 			\draw[->] (0,0) -- (0,1) 	node[above]	{$\mu(x)$} 	coordinate (y axis);
@@ -571,11 +573,11 @@ Donde
 			\draw[blue] (4,1) node[above] {$x_0$};
 			\draw[blue] (5.6,0.3) node[above] {$\sigma$};
 		\end{tikzpicture}
-		\captionsetup{margin=1cm,justification=centering}	
+		\captionsetup{margin=0.2cm,justification=centering}	
 		\caption{Función campana generalizada}
 		\label{fig:gbellmf}
 \end{wrapfigure}
-Esta función al igual que la anterior, es una función simétrica con derivada continua. Juega el papel de una función trapezoidal, si observamos la figura \ref{fig:gbellmf}, podemos ver como la gráfica asemeja un trapecio suavizado, es decir, los vértices no tienen cambios abruptos sino graduales.
+Esta función al igual que la anterior, es una función simétrica con derivada continua. Juega el papel de una función trapezoidal. Si observamos la figura \ref{fig:gbellmf}, podemos ver como la gráfica asemeja un trapecio suavizado, es decir, los vértices no tienen cambios abruptos sino graduales.
 
 Su definición matemática es la siguiente:
 \begin{displaymath}
@@ -591,20 +593,23 @@ Donde
 
 \paragraph{Sigmoidal.}
 
-\begin{wrapfigure}{r}{0pt}
+\begin{wrapfigure}{r}{5cm}
+	\vspace{-\baselineskip}
 	\begin{tikzpicture}[domain=0:8, xscale=0.5, yscale=1]
 		\draw[->] (0,0) -- (8,0) 	node[right] {$x$} 		coordinate (x axis);
 		\draw[->] (0,0) -- (0,1) 	node[above]	{$\mu(x)$} 	coordinate (y axis);
 		\draw[blue]	plot(\x,{ 1 / ( 1 + exp( -1 * -2 * (\x-3.5)  ) ) });
 	\end{tikzpicture}
-	\captionsetup{margin=1cm,justification=centering}	
+	\captionsetup{margin=0.2cm,justification=centering}	
 	\caption{Función Sigmoidal}
 	\label{fig:sigmf}
 \end{wrapfigure}
 
-Una sigmoidal es una función con derivada continua y abierta. Su gráfica recuerda la forma de un escalón. Tiene un parámetro $a$ que determina su pendiente, es decir, determina la suavidad de la transición entre los valores de membresía 0 a 1. Además el parámetro a también determina si la función abrirá por la izquierda o por la derecha. Un valor positivo de $a$ genera un gráfica abierta por la derecha
-y un valor negativo genera que l gráfica se abra por la izquierda.
-En la figura \ref{fig:sigmf} podemos observar una función sigmoidal abierta por la izquierda.\\\\
+Una sigmoidal es una función con derivada continua y abierta. Su gráfica recuerda la forma de un escalón. Tiene un parámetro $a$ que determina su pendiente, es decir, determina la suavidad de la transición entre los valores de membresía 0 a 1. Además el parámetro $a$ también determina si la función abrirá por la izquierda o por la derecha. Un valor positivo de $a$ genera un gráfica abierta por la derecha
+y un valor negativo genera una gráfica abierta por la izquierda.
+
+En la figura \ref{fig:sigmf} podemos observar una función sigmoidal abierta por la izquierda.
+
 Su definición matemática es la siguiente:
 \begin{displaymath}
 	f(x;a,x_0) = \frac{1}{1+e^{-a(x-x_0)}}
@@ -702,7 +707,7 @@ difuso.
 	\path (fl) edge[->] (df);
 	\end{tikzpicture}
 	
-	\caption{Diagrama esquemático de un sistema de inferencia difuso}
+	\caption{Diagrama esquemático de un sistema de inferencia difusa}
 	\label{fig:digfis}
 \end{figure}
 
