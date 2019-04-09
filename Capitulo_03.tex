@@ -160,19 +160,19 @@ A lo largo de la historia se han adoptado cuatro enfoques:
 
 \subsection{Principales ramas de la I.A.}\label{cap:ramasdelaia}
 A continuación se ofrece un resumen de las principales ramas de la Inteligencia Artificial, a saber: Redes Neuronales, Algoritmos Genéticos, Sistemas Expertos; La Lógica Difusa, que también es una rama de la IA, será tratada con más detalle en la siguiente sección (sección \ref{seccion:logicadifusa}).
-\subsubsection{Redes neuronales}
+\subsubsection{Redes neuronales artificiales}
 
-El aparato de comunicación neuronal de los animales y del ser humano, está formado por el sistema nervioso y hormonal. Su misión es recoger informaciones, transmitirlas y elaborarlas, en parte también almacenarlas y enviarlas de nuevo en forma elaborada.
-
-\begin{wrapfigure}{r}{9cm}
-	\includegraphics[width=8.5cm]{Sources/neurona.png}
-	\captionof{figure}{Neurona biológica}
+\begin{wrapfigure}{r}{5.5cm}
+	\vspace{-\baselineskip}
+	\includegraphics[width=5cm]{Sources/neurona.png}
+	\captionof{figure}{Equema de una RNA}
+	\vspace{-\baselineskip}
 \end{wrapfigure}
 
-El elemento estructural y funcional más esencial, en el sistema de comunicación neuronal, es la célula nerviosa o neurona. La mayoría de las neuronas utilizas sus productos de secreción como señales químicas (transmisores) para la transmisión de información. Dicha información se envía, entre las distintas neuronas, a través de prolongaciones, formando redes en las cuales se elabora y almacena información.
+El elemento estructural y funcional más esencial, en el sistema de comunicación neuronal, es la célula nerviosa o neurona. La mayoría de las neuronas utilizan sus productos de secreción como señales químicas (transmisores) para la transmisión de información. Dicha información se envía, entre las distintas neuronas, a través de prolongaciones, formando redes en las cuales se elabora y almacena información.
+\\\\
 
 La misión de las neuronas comprende generalmente cuatro funciones:
-
 {\setlength{\baselineskip}{0.7\baselineskip}
 \begin{itemize}
 	\item Las neuronas recogen la información que llega a ellas en forma de impulsos procedentes de otras neuronas o de receptores.
@@ -181,16 +181,17 @@ La misión de las neuronas comprende generalmente cuatro funciones:
 	\item A través de sus ramificaciones el axón efectúa la distribución espacial de los mensajes.
 \end{itemize}}
 
-\begin{wrapfigure}{l}{6cm}
-	%	\vspace{0.2cm}
-	\includegraphics[width=5.9cm]{Sources/modelo_neurona.png}
+Una Red de Neuronas Artificiales (en adelante, RNA) es un paradigma de procesamiento de información inicialmente inspirado en el modo en el que lo hace el cerebro. El elemento clave de este paradigma es su estructura. Las RNA están compuestas por un cierto número de elementos de procesamiento o neuronas que trabajan al unísono para resolver un problema específico.
+
+\begin{wrapfigure}{r}{6.1cm}
+	\includegraphics[width=6cm]{Sources/modelo_neurona.png}
 	\captionsetup[figure]{margin=0.3cm, justification=centering}
 	\captionof{figure}{Modelo matemático de una neurona}\label{modeloneurona}
 \end{wrapfigure}
-Una Red de Neuronas Artificiales (en adelante, RNA) es un paradigma de procesamiento de información inicialmente inspirado en el modo en el que lo hace el cerebro. El elemento clave de este paradigma es su estructura. Las RNA están compuestas por un cierto número de elementos de procesamiento o neuronas que trabajan al unísono para resolver un problema específico. 
 
 Las redes neuronales actuales se basan en el modelo matemático de neurona propuesto por \textit{McCulloch} y \textit{Pitts} en 1943. En dicho modelo (véase Figura \ref{modeloneurona} ) cada neurona recibe un conjunto de entradas ${x1, x2,...,xD}$ y devuelve una única salida . Además, dentro de una RNA existen numerosas conexiones entre las distintas neuronas que la forman. Estas conexiones simulan las conexiones neuronales del cerebro y, al igual que éstas, pueden establecerse con mayor o menor intensidad. En el caso de las RNA esta intensidad la determinan los pesos sinápticos (o simplemente pesos). De este modo, cada entrada $x_i$ de una neurona se encuentra afectada por un peso $w_i$.
 
+\pagebreak
 El primer paso para obtener la salida de la neurona es calcular la suma ponderada $a$ de las entradas, llamada activación de la neurona:
 $$a = \displaystyle \sum_{i=1}^{D} w_ix_i + w_0$$
 Donde w0 es un umbral o sesgo que se utiliza para compensar la diferencia entre el valor medio de las entradas, sobre todo el conjunto de entrenamiento, y el correspondiente valor medio de las salidas deseadas. Posteriormente, a partir de este valor a se obtiene la salida y de la neurona mediante la aplicación de una función, llamada función de activación o de transferencia g(a), es decir:
@@ -343,7 +344,6 @@ En la siguiente tabla se muestra la correspondencia de algunos operadores.
 Ahora bien, el razonamiento lógico consiste en la combinación de proposiciones para producir nuevas proposiciones; así, la combinación de las proposiciones \textit{X es A} y  \textit{Y es B} mediante el operador \textit{AND} da como resultado la proposición \textit{X es A AND Y es B}. La tabla \ref{table:tblop} sugiere que puede representarse esta combinación mediante un operador análogo a la intersección de conjuntos.
 
 Lo anterior es posible porque en lógica tradicional toda proposición puede tener uno de dos valores, \textit{verdadero} o \textit{falso}, lo que corresponde en la teoría de conjuntos discretos a los únicos dos valores que puede tomar la función de pertenencia para cualquier conjunto: 1 ó 0.
-
 
 Ahora bien, en lógica difusa una proposición puede representarse por un conjunto difuso \textit{X es A} corresponde a un conjunto A con función de pertenencia $\mu_A(x)$, mientras \textit{Y es B} corresponde a un conjunto B con función de pertenencia $\mu_B(x)$, y la combinación de estas dos proposiciones con el operador \textit{AND}, es decir, la proposición \textit{X es A AND Y es B} corresponde a un nuevo conjunto difuso \textit{A AND B} con función de pertenencia:
 
@@ -594,7 +594,7 @@ Donde
 \paragraph{Sigmoidal.}
 
 \begin{wrapfigure}{r}{5cm}
-	\vspace{-\baselineskip}
+%	\vspace{-\baselineskip}
 	\begin{tikzpicture}[domain=0:8, xscale=0.5, yscale=1]
 		\draw[->] (0,0) -- (8,0) 	node[right] {$x$} 		coordinate (x axis);
 		\draw[->] (0,0) -- (0,1) 	node[above]	{$\mu(x)$} 	coordinate (y axis);
@@ -680,6 +680,7 @@ cualquier significado $M(x)$  generado por $M$ es subjetivo y conocido \emph{a p
 
 Tomando en cuenta lo anterior, una variable lingüística se define básicamente por la siguiente tripla.
 $$(X,T(x),U)$$
+
 Donde:
 {\setlength{\baselineskip}{0.7\baselineskip}\begin{description}
 	\item $X$ es el nombre de la variable.
@@ -801,21 +802,34 @@ conjunto difuso que caracteriza a las salidas.
 	\label{fig:inference}
 \end{figure}
 
-\newpage
-En la figura \ref{fig:fuzzify} se aprecia gráficamente un ejemplo de un proceso de inferenciación, a saber, de tipo mamdani. Existen varios mecanismos de inferencia, la elección de uno de ellos dependerá de la situación. Algunos de los métodos de inferencia más usados son:
-{\setlength{\baselineskip}{0.7\baselineskip}\begin{itemize}
-		\item Mamdani.
-		\item Sugeno.
-		\item Tsukamoto.
-\end{itemize}}
 \subsubsection*{Defuzzificación}
 Una vez obtenidas las consecuencias, la tercera etapa es un proceso para determinar los valores
 óptimos de salida, conocido como defuzzificación, y que consiste en pasar el grado de pertenencia,
-proveniente de la consecuencia de las regla de inferencia (\textit{conjunto consecuencia}), a un valor nítido o real. Para hacer
-eso, previamente se sintonizaron funciones de membresía de cada una de las salidas con el fin de
-obtener un valor cuantificable. 
+proveniente de la consecuencia de las reglas de inferencia (\textit{conjunto consecuencia}), a un valor nítido o real. Para hacer
+esto, previamente se sintonizaron las funciones de membresía de cada una de las salidas con el fin de
+obtener un valor cuantificable útil.
 
+Entre los diversos métodos que existen para obtener la salida del sistema, uno de los más usados es el método de centroide que consiste en determinar el centro de gravedad del area resultante bajo la curva del conjunto resultado.
 
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[]
+	
+	\filldraw [fill=blue!20!white] (0,0) -- (1,0) -- (1.5,1) -- (2.5,1) -- (3,2) -- (4,2) -- (4.25,1.4) -- (5.25,1.4) -- (5.9,0) -- cycle;
+	\filldraw [gray] (3.7,0.8) circle [radius=4pt];
+	
+	\draw[->] (0,0) -- (7,0) 	node[right] {$x$} 		coordinate (x axis);
+	\draw[->] (0,0) -- (0,2) 	node[above]	{$\mu(x)$} 	coordinate (y axis);
+	
+	\draw [arrows = {-Stealth[inset=0pt, length=10pt]},gray,dashed,very thick] (3.7,0.6) -- (3.7,-0.5);
+	
+%	\draw[font=\scriptsize] (2,1) node[above] {$C$};
+%	\draw[font=\scriptsize] (2.5,0.45) node[below] {$C'$};
+	\end{tikzpicture}
+	\captionsetup{margin=1cm,justification=centering}	
+	\caption{Defuzzificación por \textit{centroide} de un conjunto resultado C'}
+	\label{fig:inference}
+\end{figure}
 
 Al final el control entregará valores nítidos o reales, consecuencia de las reglas lingüísticas previamente
 estructuradas, con lo cual este sistema interpretará las órdenes y realizará las acciones
@@ -830,7 +844,7 @@ pertinentes.
 \section{Estado del arte}\label{table:estadodelarte}
 
 \begin{center}
-	\begin{longtable}{|p{3.0cm}|p{7.4cm}|p{5.0cm}|}
+	\begin{longtable}{|p{2.7cm}|p{7cm}|p{5.0cm}|}
 		
 
 		
