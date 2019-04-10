@@ -500,7 +500,7 @@ La función triangular es adecuada para definir situaciones en las que se tiene 
 
 
 \paragraph{Trapezoidal.}
-\begin{wrapfigure}{r}{0pt}
+\begin{wrapfigure}{r}{5cm}
 	\vspace{-\baselineskip}
 	\begin{tikzpicture}
 		\draw[->] (0,0) -- (4,0) 	node[right] {$x$} 		coordinate (x axis);
@@ -594,7 +594,7 @@ Donde
 \paragraph{Sigmoidal.}
 
 \begin{wrapfigure}{r}{5cm}
-%	\vspace{-\baselineskip}
+	\vspace{0pt}
 	\begin{tikzpicture}[domain=0:8, xscale=0.5, yscale=1]
 		\draw[->] (0,0) -- (8,0) 	node[right] {$x$} 		coordinate (x axis);
 		\draw[->] (0,0) -- (0,1) 	node[above]	{$\mu(x)$} 	coordinate (y axis);
@@ -605,7 +605,7 @@ Donde
 	\label{fig:sigmf}
 \end{wrapfigure}
 
-Una sigmoidal es una función con derivada continua y abierta. Su gráfica recuerda la forma de un escalón. Tiene un parámetro $a$ que determina su pendiente, es decir, determina la suavidad de la transición entre los valores de membresía 0 a 1. Además el parámetro $a$ también determina si la función abrirá por la izquierda o por la derecha. Un valor positivo de $a$ genera un gráfica abierta por la derecha
+Una sigmoidal, es una función con derivada continua y abierta. Su gráfica recuerda la forma de un escalón. Tiene un parámetro $a$ que determina su pendiente, es decir, determina la suavidad de la transición entre los valores de membresía 0 a 1. Además el parámetro $a$ también determina si la función abrirá por la izquierda o por la derecha. Un valor positivo de $a$ genera un gráfica abierta por la derecha
 y un valor negativo genera una gráfica abierta por la izquierda.
 
 En la figura \ref{fig:sigmf} podemos observar una función sigmoidal abierta por la izquierda.
@@ -823,7 +823,7 @@ Entre los diversos métodos que existen para obtener la salida del sistema, uno 
 	
 	\draw [arrows = {-Stealth[inset=0pt, length=10pt]},gray,dashed,very thick] (3.7,0.6) -- (3.7,-0.5);
 	
-%	\draw[font=\scriptsize] (2,1) node[above] {$C$};
+	\draw[font=\scriptsize] (3.7,-0.5) node[below] {$Z_0$};
 %	\draw[font=\scriptsize] (2.5,0.45) node[below] {$C'$};
 	\end{tikzpicture}
 	\captionsetup{margin=1cm,justification=centering}	
