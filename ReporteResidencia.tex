@@ -60,12 +60,12 @@
 
 \titleformat
 {\chapter}[hang]
-{\bfseries\Large}{\thechapter. }{6pt}{\bfseries\Large}
+{\bfseries\Large}{Capítulo \thechapter: }{6pt}{\bfseries\Large}
 
 \titleformat*{\section}{\bfseries\large}
 \titleformat*{\subsection}{\bfseries\normalsize}
-\titleformat*{\subsubsection}{\bfseries\itshape\normalsize}
-%\titleformat*{\paragraph}{\itshape\bfseries\normalsize}
+\titleformat*{\subsubsection}{\bfseries\normalsize}
+\titleformat*{\paragraph}{\bfseries\normalsize}
 
 \titlespacing{\chapter}{0pt}{0pt}{\parskip}
 \titlespacing{\section}{0pt}{\parskip}{-\parskip}
@@ -113,11 +113,12 @@
 % :::::::::::::::::::::::::::::::::::::::::::::::::
 %  Genera la lista de contenidos, figuras y tablas
 % :::::::::::::::::::::::::::::::::::::::::::::::::
-{%\setlength{\baselineskip}{1.0\baselineskip} % old = 1.1
+
+\pagenumbering{Roman}
 \tableofcontents
 \listoffigures
 \listoftables
-}
+
 
 
 
