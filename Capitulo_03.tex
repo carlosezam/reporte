@@ -184,7 +184,7 @@ Una Red de Neuronas Artificiales (en adelante, RNA) es un paradigma de procesami
 \begin{wrapfigure}{r}{6.1cm}
 	\includegraphics[width=6cm]{Sources/modelo_neurona.png}
 	\captionsetup[figure]{margin=0.3cm, justification=centering}
-	\captionof{figure}{Modelo matemático de una neurona}\label{modeloneurona}
+	\captionof{figure}{Modelo matemático de una neurona artificial}\label{modeloneurona}
 \end{wrapfigure}
 
 Las redes neuronales actuales se basan en el modelo matemático de neurona propuesto por \textit{McCulloch} y \textit{Pitts} en 1943. En dicho modelo (véase Figura \ref{modeloneurona} ) cada neurona recibe un conjunto de entradas ${x1, x2,...,xD}$ y devuelve una única salida . Además, dentro de una RNA existen numerosas conexiones entre las distintas neuronas que la forman. Estas conexiones simulan las conexiones neuronales del cerebro y, al igual que éstas, pueden establecerse con mayor o menor intensidad. En el caso de las RNA esta intensidad la determinan los pesos sinápticos (o simplemente pesos). De este modo, cada entrada $x_i$ de una neurona se encuentra afectada por un peso $w_i$.
@@ -510,7 +510,7 @@ La función triangular es adecuada para definir situaciones en las que se tiene 
 		(4,0);
 	\end{tikzpicture}
 	\captionsetup{margin=0.2cm,justification=centering}	
-	\caption{Función triangular}
+	\caption{Función trapezoidal}
 	\label{fig:trapmf}
 \end{wrapfigure}
 
@@ -599,7 +599,7 @@ Donde
 		\draw[blue]	plot(\x,{ 1 / ( 1 + exp( -1 * -2 * (\x-3.5)  ) ) });
 	\end{tikzpicture}
 	\captionsetup{margin=0.2cm,justification=centering}	
-	\caption{Función Sigmoidal}
+	\caption{Función sigmoidal}
 	\label{fig:sigmf}
 \end{wrapfigure}
 
@@ -796,7 +796,7 @@ conjunto difuso que caracteriza a las salidas.
 		\draw[font=\scriptsize] (2.5,0.45) node[below] {$C'$};
 	\end{tikzpicture}
 	\captionsetup{margin=1cm,justification=centering}	
-	\caption{Inferencia del conjunto resultado C}
+	\caption{Inferencia del conjunto resultado C'}
 	\label{fig:inference}
 \end{figure}
 
@@ -858,7 +858,7 @@ pertinentes.
 		\endfoot
 		
 		%\hline \multicolumn{3}{|r|}{{ \tablename\ \thetable{}: Estado del arte }}\\ \hline
-		\caption[Estado del Arte]{Estado del arte}\label{table:estadodelarte}\\
+		\caption[Estado del arte]{Estado del arte}\label{table:estadodelarte}\\
 		\endlastfoot
 		
 
