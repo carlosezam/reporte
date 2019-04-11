@@ -35,16 +35,12 @@
 \setsansfont{Arial}
 %\setmonofont{Cambria}
 
-% Letra parecida a Arial
-
-% \usepackage{helvet} 
-% \renewcommand{\rmdefault}{phv}
-
 
 
 % Interlineado 1.5
-
-\linespread{1.3}
+\usepackage{setspace}
+\onehalfspacing
+%\linespread{1.3}
 % \renewcommand{\baselinestretch}{1.5} 
 
 
@@ -55,42 +51,30 @@
 
 
 
-%
+% Formato de titulos
 \usepackage{titlesec}
 
+%\titleformat{\chapter}[display]{\large \textrm \bfseries}{\filcenter\chaptertitlename\ \thechapter}{6pt}{ \large\textrm\bfseries }
 \titleformat
 {\chapter}[hang]
-{\bfseries\Large}{Capítulo \thechapter: }{6pt}{\bfseries\Large}
+{\bfseries\Large}{\chaptertitlename\ \thechapter: }{6pt}{\bfseries\Large}
+
+\assignpagestyle{\chapter}{myheadings}
+
 
 \titleformat*{\section}{\bfseries\large}
 \titleformat*{\subsection}{\bfseries\normalsize}
 \titleformat*{\subsubsection}{\bfseries\normalsize}
 \titleformat*{\paragraph}{\bfseries\normalsize}
 
-\titlespacing{\chapter}{0pt}{0pt}{\parskip}
+\titlespacing{\chapter}{0pt}{-2em}{\parskip}
 \titlespacing{\section}{0pt}{\parskip}{-\parskip}
 \titlespacing{\subsection}{0pt}{\parskip}{-\parskip}
 \titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
 
-% Estilos: Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup
-%\usepackage[Sonny]{fncychap}
-
-
-%\titleformat{\chapter}[display]{\Large\bfseries}{\filcenter\chaptertitlename \thechapter}{0pt}{\LARGE }
-
-%\titleformat*{\section}{\bf\normalsize }
-
-%\titleformat*{\subsection}{\it\normalsize }
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\titleformat{\chapter}[display]{\large \textrm \bfseries}{\filcenter\chaptertitlename\ \thechapter}{6pt}{ \large\textrm\bfseries }
-
-%\titleformat*{\chapter}{\normalsize}
-
-%\titlelabel{\thetitle. \quad} A
-
-
-
+% Formato de la pagina, numeración en esquina superior izq
+%\usepackage{etoolbox}
+%\patchcmd{\chapter}{plain}{myheadings}{}{}
 
 
 \begin{document}
@@ -116,8 +100,16 @@
 
 \pagenumbering{Roman}
 \tableofcontents
+\clearpage
+
+\addcontentsline{toc}{section}{\listfigurename}
 \listoffigures
+\clearpage
+
+\addcontentsline{toc}{section}{\listtablename}
 \listoftables
+
+
 
 
 
