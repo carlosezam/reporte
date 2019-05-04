@@ -5,7 +5,7 @@
 % [openany]		los capitulos inician sin importar paginas pares o impares
 % [oneside]		los margenes se acomodan para imprimir a una sola cara
 
-\documentclass[letterpaper,10pt,openany,oneside,final]{book}
+\documentclass[letterpaper,12pt,openany,oneside,final]{book}
 
 
 
@@ -55,9 +55,7 @@
 \usepackage{titlesec}
 
 %\titleformat{\chapter}[display]{\large \textrm \bfseries}{\filcenter\chaptertitlename\ \thechapter}{6pt}{ \large\textrm\bfseries }
-\titleformat
-{\chapter}[display]
-{\bfseries\Large}{\chaptertitlename\ \thechapter}{-\parskip}{\bfseries\Large}
+\titleformat{\chapter}[display]{\bfseries\large}{\chaptertitlename\ \thechapter}{-\parskip}{\bfseries\Large}
 
 \assignpagestyle{\chapter}{myheadings}
 
@@ -67,10 +65,10 @@
 \titleformat*{\subsubsection}{\bfseries\normalsize}
 \titleformat*{\paragraph}{\bfseries\normalsize}
 
-\titlespacing{\chapter}{0pt}{-2em}{\parskip}
-\titlespacing{\section}{0pt}{\parskip}{-\parskip}
-\titlespacing{\subsection}{0pt}{\parskip}{-\parskip}
-\titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
+\titlespacing{\chapter}{0pt}{-2em}{2\parskip}
+%\titlespacing{\section}{0pt}{\parskip}{-\parskip}
+%\titlespacing{\subsection}{0pt}{\parskip}{-\parskip}
+%\titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
 
 % Formato de la pagina, numeración en esquina superior izq
 %\usepackage{etoolbox}

@@ -155,21 +155,21 @@ A lo largo de la historia se han adoptado cuatro enfoques:
 	base en ciertos supuestos. Un agente es algo capaz de percibir y actuar. De acuerdo con este
 	enfoque, se considera la IA como el estudio y construcción de agentes racionales.
 \end{enumerate}
-\pagebreak
+%\pagebreak
 \subsection{Principales ramas de la I.A.}\label{cap:ramasdelaia}
-A continuación se ofrece un resumen de las principales ramas de la Inteligencia Artificial, a saber: Redes Neuronales, Algoritmos Genéticos, Sistemas Expertos; La Lógica Difusa, que también es una rama de la IA, será tratada con más detalle en la siguiente sección (sección \ref{seccion:logicadifusa}).
+A continuación se ofrece un resumen de las principales ramas de la Inteligencia Artificial, a saber: Redes Neuronales, Algoritmos Genéticos, Sistemas Expertos y Lógica Difusa. Esta última que también es una rama de la IA, será tratada con más detalle en la siguiente sección (sección \ref{seccion:logicadifusa}).
 \subsubsection{Redes neuronales artificiales}
 
 \begin{wrapfigure}{r}{5.5cm}
 	\vspace{-\baselineskip}
 	\includegraphics[width=5cm]{Sources/neurona.png}
-	\captionof{figure}{Equema de una RNA}
+	\captionof{figure}{Esquema de una RNA}
 	\vspace{-\baselineskip}
 \end{wrapfigure}
 
 El elemento estructural y funcional más esencial, en el sistema de comunicación neuronal, es la célula nerviosa o neurona. La mayoría de las neuronas utilizan sus productos de secreción como señales químicas (transmisores) para la transmisión de información. Dicha información se envía, entre las distintas neuronas, a través de prolongaciones, formando redes en las cuales se elabora y almacena información.
-\\\\
 
+\pagebreak
 La misión de las neuronas comprende generalmente cuatro funciones:
 {\setlength{\baselineskip}{0.7\baselineskip}
 \begin{itemize}
@@ -179,7 +179,7 @@ La misión de las neuronas comprende generalmente cuatro funciones:
 	\item A través de sus ramificaciones el axón efectúa la distribución espacial de los mensajes.
 \end{itemize}}
 
-Una Red de Neuronas Artificiales (en adelante, RNA) es un paradigma de procesamiento de información inicialmente inspirado en el modo en el que lo hace el cerebro. El elemento clave de este paradigma es su estructura. Las RNA están compuestas por un cierto número de elementos de procesamiento o neuronas que trabajan al unísono para resolver un problema específico.
+Una Red de Neuronas Artificiales (en adelante, RNA) es un paradigma de procesamiento de información inicialmente \textbf{inspirado en el modo en que lo hace el cerebro}. El elemento clave de este paradigma es su estructura. Las RNA están compuestas por un cierto número de elementos de procesamiento o neuronas que trabajan al unísono para resolver un problema específico.
 
 \begin{wrapfigure}{r}{6.1cm}
 	\includegraphics[width=6cm]{Sources/modelo_neurona.png}
@@ -187,12 +187,12 @@ Una Red de Neuronas Artificiales (en adelante, RNA) es un paradigma de procesami
 	\captionof{figure}{Modelo matemático de una neurona artificial}\label{modeloneurona}
 \end{wrapfigure}
 
-Las redes neuronales actuales se basan en el modelo matemático de neurona propuesto por \textit{McCulloch} y \textit{Pitts} en 1943. En dicho modelo (véase Figura \ref{modeloneurona} ) cada neurona recibe un conjunto de entradas ${x1, x2,...,xD}$ y devuelve una única salida . Además, dentro de una RNA existen numerosas conexiones entre las distintas neuronas que la forman. Estas conexiones simulan las conexiones neuronales del cerebro y, al igual que éstas, pueden establecerse con mayor o menor intensidad. En el caso de las RNA esta intensidad la determinan los pesos sinápticos (o simplemente pesos). De este modo, cada entrada $x_i$ de una neurona se encuentra afectada por un peso $w_i$.
+Las redes neuronales actuales se basan en el modelo matemático de neurona propuesto por \textit{McCulloch} y \textit{Pitts} en 1943. En dicho modelo (véase Figura \ref{modeloneurona} ) cada neurona recibe un conjunto de entradas ${x_1, x_2,...,x_D}$ y devuelve una única salida . Además, dentro de una RNA existen numerosas conexiones entre las distintas neuronas que la forman. Estas conexiones simulan las conexiones neuronales del cerebro y, al igual que éstas, pueden establecerse con mayor o menor intensidad. En el caso de las RNA esta intensidad la determinan los pesos sinápticos (o simplemente pesos). De este modo, cada entrada $x_i$ de una neurona se encuentra afectada por un peso $w_i$.
 
-\pagebreak
+%\pagebreak
 El primer paso para obtener la salida de la neurona es calcular la suma ponderada $a$ de las entradas, llamada activación de la neurona:
 $$a = \displaystyle \sum_{i=1}^{D} w_ix_i + w_0$$
-Donde w0 es un umbral o sesgo que se utiliza para compensar la diferencia entre el valor medio de las entradas, sobre todo el conjunto de entrenamiento, y el correspondiente valor medio de las salidas deseadas. Posteriormente, a partir de este valor a se obtiene la salida y de la neurona mediante la aplicación de una función, llamada función de activación o de transferencia g(a), es decir:
+Donde $w_0$ es un umbral o sesgo que se utiliza para compensar la diferencia entre el valor medio de las entradas sobre todo el conjunto de entrenamiento y el correspondiente valor medio de las salidas deseadas. Posteriormente, a partir de este valor $a$ se obtiene la salida de la neurona mediante la aplicación de una función, llamada función de activación o de transferencia g(a), es decir:
 $$y = g(a) = g\left( \sum_{i=1}^{D}w_ix_i+w_0\right) = g\left( \sum_{i=0}^{D}w_ix_i \right) $$
 Donde, como se observa, es posible tratar el umbral $w_0$ como un peso más si se supone una entrada añadida $x_0$ con un valor fijo de 1. Finalmente, también es posible reescribir esta ecuación en notación vectorial como $g(a) = g(w^T x)$, si tomamos $w$ como el vector de pesos y $x$ como el vector de entradas a la red. La función de transferencia empleada en este modelo básico de \textit{McCulloch-Pitts} es la función escalón definida por la ecuación: 
 $$\displaystyle g(a) = \left\{ { 0 \mbox{ cuando } x < 0  \atop 1 \mbox{ cuando } a > 0 } \right.$$
@@ -209,17 +209,17 @@ En los modelos actuales se escogen otro tipo de funciones, normalmente monótona
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\linewidth]{Sources/funciones_activacion.png}
-	\caption{Funciones de activación}
+	\caption{Funciones de activación en MATLAB}
 \end{figure}
 
 \subsubsection{Algoritmos genéticos}
-Los Algoritmos Genéticos (AG) fueron introducidos inicialmente por Holland en 1975 para abstraer y explicar rigurosamente los procesos adaptativos de los sistemas naturales, así como para el diseño de sistemas artificiales de software que retengan los mecanismos importantes de los sistemas naturales. Fue unos años más tarde cuando su alumno, D. Goldberg, implementó el primer AG aplicado en problemas industriales. Estas y otras aplicaciones creadas por estudiantes de Holland convirtieron los AGs en un campo suficientemente aceptado.
+Los Algoritmos Genéticos (AG) fueron introducidos inicialmente por Holland en 1975 para \textbf{abstraer y explicar rigurosamente los procesos adaptativos de los sistemas naturales}, así como para el diseño de sistemas artificiales de software que retengan los mecanismos importantes de los sistemas naturales. Fue unos años más tarde cuando su alumno, D. Goldberg, implementó el primer AG aplicado en problemas industriales. Estas y otras aplicaciones creadas por estudiantes de Holland convirtieron los AGs en un campo suficientemente aceptado.
 
-En un AG, las soluciones potenciales al problema se representan normalmente mediante cadenas binarias de bits (0’s y 1’s) de una longitud determinada \emph{long} que vendrá impuesta por el número de variables existentes en la solución y por el número de bits necesarios para codificarlas. Otros términos usados a menudo para denominar una solución del problema en un AG son string o estructura, y, siguiendo el vocabulario de los sistemas biológicos, cromosoma.
+En un AG, las soluciones potenciales al problema se representan normalmente mediante cadenas binarias de bits (0’s y 1’s) de una longitud determinada \emph{long} que vendrá impuesta por el número de variables existentes en la solución y por el número de bits necesarios para codificarlas. Otros términos usados a menudo para denominar una solución del problema en un AG son string o estructura, y, siguiendo el vocabulario de los sistemas biológicos, \textit{cromosoma}.
 
-Así, los cromosomas están compuestos por unidades binarias que se denominan genes. Al valor de un gen determinado se le denomina alelo, y a su posición en el cromosoma locus. Al paquete genético total se le denomina genotipo, y a la interacción del genotipo con su entorno se le denomina fenotipo, que se traduce en la decodificación del cromosoma para la obtención de una solución alternativa (conjunto de parámetros particulares, o un punto en el espacio de búsqueda). De esta forma, podemos representar un cromosoma $c_i^t$ en una generación (iteración) determinada $t$ como:
+Así, los cromosomas están compuestos por unidades binarias que se denominan \textit{genes}. Al valor de un gen determinado se le denomina \textit{alelo}, y a su posición en el cromosoma \textit{locus}. Al paquete genético total se le denomina \textit{genotipo}, y a la interacción del genotipo con su entorno se le denomina \textit{fenotipo}, que se traduce en la decodificación del cromosoma para la obtención de una solución alternativa (conjunto de parámetros particulares, o un punto en el espacio de búsqueda). De esta forma, podemos representar un cromosoma $c_i^t$ en una generación (iteración) determinada $t$ como:
 {\large $$ c_i^t = \displaystyle (b_{i_1}^t \ldots b_{i_long}^t)$$}
-Con $b_{i_j}^t$ $\in$ \{0, 1\}, $j$ = 1,$\ldots$, $long$. El término individuo es frecuentemente utilizado para referirse al conjunto de información genotipo-fenotipo adecuación. Así, podemos representar un individuo $X_i^t$ en una generación $t$, como la terna:
+Con $b_{i_j}^t$ $\in$ \{0, 1\}, $j$ = 1,$\ldots$, $long$. El término \textit{individuo} es frecuentemente utilizado para referirse al conjunto de información genotipo-fenotipo adecuación. Así, podemos representar un individuo $X_i^t$ en una generación $t$, como la terna:
 {\large $$ X_i^t = \displaystyle (c_i^t, x_i^t, f_i^t)$$}
 Donde $X_i^t$ es la decodificación (fenotipo) del cromosoma $c_i^t$, y $f_i^t$ es la adecuación de la solución al entorno o \textit{fitness}.
 
@@ -227,15 +227,15 @@ Donde $X_i^t$ es la decodificación (fenotipo) del cromosoma $c_i^t$, y $f_i^t$ 
 
 En la década de los setenta se inicia la explosión de aplicaciones de la IA en términos de sistemas basados en reglas a los que se les llama primero “Sistemas Expertos” y después “Sistemas Basados en Conocimiento”. El reconocimiento de la insuficiencia de la lógica como herramienta única de representación da lugar al desarrollo de otras formas de representación e inferencia mediante redes causales y asociativas (semánticas, neuronales y bayesianas) y marcos, objetos y agentes.
 
-El área de sistemas expertos es una aproximación muy exitosa a la solución de problemas clásicos de AI en la programación de inteligencia. El profesor Edward Feigenbaum de la Universidad de Stanford, pionero en la tecnología de los sistemas expertos, los ha definido como “un programa de computación inteligente que usa el conocimiento y procedimientos de inferencia para resolver problemas que son lo suficientemente difícil como para requerir significativa experiencia humana para su solución, es decir, un sistema experto es un sistema de cómputo que emula la habilidad de tomar decisiones de un especialista humano.
+El área de sistemas expertos es una aproximación muy exitosa a la solución de problemas clásicos de IA en la programación de inteligencia. El profesor Edward Feigenbaum de la Universidad de Stanford, pionero en la tecnología de los sistemas expertos, los ha definido como “un programa de computación inteligente que usa el conocimiento y procedimientos de inferencia para resolver problemas que son lo suficientemente difícil como para requerir significativa experiencia humana para su solución, es decir, un sistema experto es un sistema de cómputo que \textbf{emula la habilidad de tomar decisiones de un especialista humano}.
 
 El conocimiento de un sistema experto puede representarse de varias maneras (puede estar encapsulado en reglas y objetos). Un método común de representar el conocimiento es en forma de reglas tipo SI…ENTONCES, como:
 \begin{center}
 	\textit{SI la luz es roja ENTONCES deténgase.}
 \end{center}
-Aunque se trata de un ejemplo muy simple, se han construido muchos sistemas expertos significativos expresando en reglas el conocimiento de especialistas.
+Aunque se trata de un ejemplo muy simple, se han construido muchos sistemas expertos significativos expresando el conocimiento de especialistas mediante reglas.
 
-Los sistemas expertos se han aplicado casi a todos los campos del conocimiento, debido a eso a continuación se mencionarán algunos:
+Los sistemas expertos se han aplicado casi a todos los campos del conocimiento, a continuación en la tabla \ref{table:se} se mencionan algunos de ellos.
 
 
 \begin{longtable}[c]{lll} \toprule
@@ -245,6 +245,7 @@ Los sistemas expertos se han aplicado casi a todos los campos del conocimiento, 
 	LITHO & Geología & Interpretar los datos de registro de pozos petroleros.\\
 	TIMM & Informática & Diagnosticar computadoras DEC.\\\bottomrule
 	\caption{Ejemplos de sistemas expertos}
+	\label{table:se}
 \end{longtable}
 
 
@@ -273,7 +274,7 @@ de la lógica convencional, en la que el rango se limita a dos valores: el cero 
 
 \subsection{Conjuntos difusos}
 
-El concepto de conjunto difuso fue propuesto por Zadeh(1965): ``Un conjunto difuso es una colección de objetos con un \textit{grado de membresía} continuo. Un conjunto tal, es caracterizado por una \textit{función de membresía} que asigna a cada objeto un grado de membresía en un rango de 0 a 1.'' (p.338).
+El concepto de conjunto difuso fue propuesto por Zadeh(1965): ``Un conjunto difuso es una colección de objetos con un \textit{grado de membresía} continuo. Un conjunto tal, es caracterizado por una \textit{función de membresía} que asigna a cada objeto un grado de membresía en un rango de 0 a 1.''.
 
 En teoría clásica de conjuntos, un conjunto tiene unos límites \textit{nítidos} bien definidos (límites \textit{crisp}). Por ejemplo, el conjunto A de los números más grandes que 8 se representa como:
 
@@ -281,11 +282,11 @@ En teoría clásica de conjuntos, un conjunto tiene unos límites \textit{nítid
 	A = \lbrace  x \ | \ x > 8 \rbrace
 \end{displaymath}
 
-Sin embargo, los conceptos manejados por el ser humano como \textit{frío} y \textit{caliente}, tienen una transición gradual. Así, un conjunto difuso, lidia con la vaguedad inherente de estos conceptos, conteniendo los elementos sólo con un cierto grado de pertenencia.
+Sin embargo, los conceptos manejados por el ser humano como \textit{frío} y \textit{caliente}, tienen una transición gradual. Así, un conjunto difuso, lidia con la vaguedad inherente de estos conceptos, conteniendo a los elementos sólo con un cierto grado de pertenencia.
  
 En teoría de conjuntos difusos, los conceptos se asocian a conjuntos difusos (asociando sus \emph{valores de pertenencia}) en un proceso llamado \emph{fuzzificación}. Una vez que tenemos los valores \emph{fuzzificados} podemos trabajar con \emph{reglas lingüísticas} y obtener una salida, que podrá seguir siendo difusa o \emph{defuzzificada} para obtener un valor discreto.
 
-Sea $X$ el \emph{Universo del discurso}, y sus elementos se denotan como $x$; En la teoría clásica de conjuntos se define un conjunto $C$ sobre $X$ mediante la \emph{función característica} de $C$ como $f_c$ .
+Sea $X$ el \emph{Universo del discurso}, y sus elementos se denotan como $x$; En la teoría clásica de conjuntos se define un conjunto $C$ sobre $X$ mediante una \emph{función característica} de $C$ como $f_c$ .
 
 $$\displaystyle f_c(x) = \left\{ { 1 \mbox{ cuando } x \in C  \atop 0 \mbox{ cuando } x \notin C } \right.$$
 
@@ -327,7 +328,7 @@ Algunas características:
 
 \subsubsection{Principio isomorfo}
 
-Es bien conocido que la teoría de conjuntos, el \textit{Álgebra booleana} y la Lógica tradicional son isomorfas, bajo transformaciones adecuadas. Esto significa que tienen una estructura subyacente similar, y que por tanto, las definiciones que se hagan en una de las tres teorías se pueden llevar a las otras dos, mediante las transformaciones adecuadas.
+Es bien conocido que la \textit{Teoría de conjuntos}, el \textit{Álgebra booleana} y la \textit{Lógica tradicional} son isomorfas, bajo transformaciones adecuadas. Esto significa que tienen una estructura subyacente similar, y que por tanto, las definiciones que se hagan en una de las tres teorías se pueden llevar a las otras dos, mediante las transformaciones adecuadas.
 En la siguiente tabla se muestra la correspondencia de algunos operadores.
 
 \begin{longtable}{|c|c|c|} 
@@ -349,15 +350,11 @@ Ahora bien, en lógica difusa una proposición puede representarse por un conjun
 \mu_{A \cap B}(x,y) =  \min(\mu_A(x),\mu_B(y))
 \end{displaymath}
 
-En donde se ha utilizado el operador $\min$ parara efectuar la intersección de los dos conjuntos, pero en general podría haberse utilizado cualquier norma T.
+En donde se ha utilizado el operador \textit{min} parara efectuar la intersección de los dos conjuntos, pero en general podría haberse utilizado cualquier \textit{norma T}.
 
 Nótese que los universos de discurso sobre los cuales están definidos los conjuntos A y B no son necesariamente el mismo; son, por ejemplo U y V respectivamente, mientras el conjunto $A \cap B$ está definido sobre el universo $U \times V$.
 
-En forma análoga, al operador lógico $OR$ puede hacerse corresponder a una \textit{norma S}, mientras al operador lógico $NOT$ puede hacerse corresponder el complemento.
-
-
-
-
+En forma análoga, al operador lógico $OR$ puede hacerse corresponder a una \textit{norma S}, mientras al operador lógico $NOT$ puede hacerse corresponder con el complemento.
 
 
 
@@ -365,7 +362,7 @@ En forma análoga, al operador lógico $OR$ puede hacerse corresponder a una \te
 
 \subsection{Operaciones de conjuntos difusos}
 
-Las tres operaciones básicas entre conjuntos discretos: \emph{unión, intersección y complemento}, se definen también para los conjuntos difusos, intentando mantener el significado de tales operaciones. La definición de estas operaciones se hace empleando el concepto de función de pertenencia de los conjuntos.
+Las tres operaciones básicas entre conjuntos discretos: \emph{unión, intersección y complemento}, se definen también para los conjuntos difusos, intentando mantener el significado de tales operaciones. La definición de estas operaciones se hace empleando el concepto de \textit{función de pertenencia} de los conjuntos.
 
 \subsubsection{Intersección}
 
@@ -384,7 +381,7 @@ Donde $T$, debe satisfacer las siguientes propiedades:
 \begin{enumerate}
 	\item \textsl{Elemento unidad:} $T(a,1) = a$ y $T(a,1)=T(1,a)=a$
 	\item \textsl{Conmutatividad:} $T(a,b) = T(b,a)$
-	\item \textsl{Monotonicidad:} Si $a \leq c$ y $b \leq d$ entonces $T(a,b) = T(c,d)$
+	\item \textsl{Monotonicidad:} $T(a,b) \leq T(c,d)$ si $a \leq c$ y $b \leq d$
 	\item \textsl{Asociatividad:} $T(T(a,b),c) = T(a,T(b,c))$
 \end{enumerate}
 
@@ -416,7 +413,7 @@ Donde $S$, debe satisfacer las siguientes propiedades:
 \begin{enumerate}
 	\item \textsl{Elemento Neutro:} $S(1,1)=1$ y $S(a,0) = S(0,a) = a$
 	\item \textsl{Conmutatividad:} $S(a,b) = S(b,a)$
-	\item \textsl{Monotonicidad:} Si $a \leq c$ y $b \leq d$ entonces $S(a,b) = S(c,d)$
+	\item \textsl{Monotonicidad:} $S(a,b) \leq S(c,d)$ si $a \leq c$ y $b \leq d$
 	\item \textsl{Asociatividad:} $S(S(a,b),c) = S(a,S(b,c))$
 \end{enumerate}
 
@@ -539,7 +536,7 @@ La forma de esta función es utilizada cuando hay un rango de valores óptimos. 
 	
 	\draw[blue, semithick]	plot(\x,{  exp( -1/2 * pow( ( (\x - 4) / 1 ) ,2) ) });
 	\draw[blue] (4,1) node[above] {$x_0$};
-	\draw[blue] (5.6,0.3) node[above] {$\sigma$};
+	\draw[blue] (5.6,0.3) node[above] {$a$};
 	
 	\end{tikzpicture}
 	\captionsetup{margin=0.2cm,justification=centering}	
@@ -554,7 +551,7 @@ f(x;a,x_0)=  e^{\displaystyle -\frac{1}{2} \left(  \frac{x-x_0}{a} \right)^2 }
 \end{displaymath}
 Donde
 {\setlength{\baselineskip}{0.7\baselineskip}\begin{description}
-	\item $x_0$ determina el centro o punto de cruce y,
+	\item $x_0$ determina el centro o núcleo,
 	\item $a$ determina el ancho o la pendiente.
 \end{description}}
 
@@ -568,8 +565,8 @@ Donde
 			
 			\draw[blue, semithick]	plot(\x,{ 1 / ( 1 + pow( (\x - 4)/ 1.5 , 2 * 2) ) });
 			\draw[blue] (4,1) node[above] {$x_0$};
-			\draw[blue] (4,1) node[above] {$x_0$};
-			\draw[blue] (5.6,0.3) node[above] {$\sigma$};
+			\draw[blue] (4,0.9) node[below] {$b$};
+			\draw[blue] (5.8,0.3) node[above] {$a$};
 		\end{tikzpicture}
 		\captionsetup{margin=0.2cm,justification=centering}	
 		\caption{Función campana generalizada}
@@ -579,31 +576,33 @@ Esta función al igual que la anterior, es una función simétrica con derivada 
 
 Su definición matemática es la siguiente:
 \begin{displaymath}
-f(x;a,b,x_0)= \frac{1}{1 + \left(  \frac{x-x_0}{a}  \right)^{2b}}
+f(x;a,b,x_0)= \frac{1}{1 + \left(  \frac{x-x_0}{b}  \right)^{2a}}
 \end{displaymath}
 Donde
 {\setlength{\baselineskip}{0.7\baselineskip}\begin{description}
-	\item $x_0$ determina el centro o punto de cruce,
-	\item $a$ determina el ancho y,
-	\item $b$ determina la pendiente.
+	\item $x_0$ determina el centro,
+	\item $a$ determina la pendiente y,
+	\item $b$ determina el ancho del núcleo.
 \end{description}}
 
 
 \paragraph{Sigmoidal.}
 
 \begin{wrapfigure}{r}{5cm}
-	\vspace{0pt}
+	\vspace{-\baselineskip}
 	\begin{tikzpicture}[domain=0:8, xscale=0.5, yscale=1]
 		\draw[->] (0,0) -- (8,0) 	node[right] {$x$} 		coordinate (x axis);
 		\draw[->] (0,0) -- (0,1) 	node[above]	{$\mu(x)$} 	coordinate (y axis);
 		\draw[blue]	plot(\x,{ 1 / ( 1 + exp( -1 * -2 * (\x-3.5)  ) ) });
+		\draw[blue] (4,0.3) node[above] {$x_0$};
+		\draw[blue] (2.5,0.9) node[below] {$a$};
 	\end{tikzpicture}
 	\captionsetup{margin=0.2cm,justification=centering}	
 	\caption{Función sigmoidal}
 	\label{fig:sigmf}
 \end{wrapfigure}
 
-Una sigmoidal, es una función con derivada continua y abierta. Su gráfica recuerda la forma de un escalón. Tiene un parámetro $a$ que determina su pendiente, es decir, determina la suavidad de la transición entre los valores de membresía 0 a 1. Además el parámetro $a$ también determina si la función abrirá por la izquierda o por la derecha. Un valor positivo de $a$ genera un gráfica abierta por la derecha
+Una sigmoidal, es una función abierta y con derivada continua. Su gráfica recuerda la forma de un escalón. Tiene un parámetro $a$ que determina su pendiente, es decir, determina la suavidad de la transición entre los valores de membresía 0 a 1. Además el parámetro $a$ también determina si la función abrirá por la izquierda o por la derecha. Un valor positivo de $a$ genera un gráfica abierta por la derecha
 y un valor negativo genera una gráfica abierta por la izquierda.
 
 En la figura \ref{fig:sigmf} podemos observar una función sigmoidal abierta por la izquierda.
@@ -619,9 +618,9 @@ Donde
 \end{description}}
 
 \subsection{Variables lingüísticas}
-Una variable lingüística adopta términos lingüísticos que permiten describir el estado de un objeto o fenómeno usando un lenguaje natural(o artificial); estos términos se pueden representar mediante conjuntos difusos. Una variable numérica toma valores numéricos, por ejemplo: \textit{carros = 2}, mientras que una variable lingüística toma valores lingüísticos: carros es \textit{``pocos''}.
+Una variable lingüística adopta términos lingüísticos que permiten describir el estado de un objeto o fenómeno usando un lenguaje natural(o artificial); estos términos se pueden representar mediante conjuntos difusos. Una variable numérica toma valores numéricos, por ejemplo: \textit{carros = 2}, mientras que una variable lingüística toma valores lingüísticos: \textit{carros} es \textit{``pocos''}.
 
-De manera más formal: Los valores de una variable lingüística $X$ son las etiquetas $T(x)$ de los subconjuntos difusos en U(conjunto universo). Las etiquetas pueden tener la forma de frases o sentencias en lenguaje natural o artificial. Por ejemplo, si U es la colección de enteros correspondiente a las edades de un grupo de personas:
+De manera más formal: Los valores de una variable lingüística $X$ son las etiquetas $T(x)$ de los subconjuntos difusos en U (conjunto universo). Las etiquetas pueden tener la forma de frases o sentencias en lenguaje natural o artificial. Por ejemplo, si $U$ es la colección de enteros correspondiente a las edades de un grupo de personas:
 $$U = 10 + 1 + 2 + ... + 70$$
 y la edad es una variable lingüística llamada \textit{x} definida en \textit{U}, entonces los valores de \textit{x} podrían ser \textit{niño, joven, adulto joven, adulto, anciano}, etc. Donde los posibles valores son las etiquetas de los conjuntos difusos que caracterizan las edades (véase la fig. \ref{fig:variableling}).
 
@@ -645,13 +644,13 @@ y la edad es una variable lingüística llamada \textit{x} definida en \textit{U
 	\label{fig:variableling}
 \end{figure}
 
-El significado de un término lingüístico $T(x)$ es caracterizado mediante una \textit{función de compatibilidad o membresía}: $C : U \rightarrow [0,1]$, la cual, asocia la compatibilidad (o grado de pertenencia) de cada $u$ en $U$, con $T(x)$. Así, la compatibilidad de una edad de \textit{27 años} con el término lingüístico \textit{joven} podría ser 0.7, mientras que una edad de \textit{35 años} podría ser de 0.2.
+El significado de un término lingüístico $T(x)$ es caracterizado mediante una \textit{función de compatibilidad o membresía}: $C : U \rightarrow [0,1]$, la cual, asocia la compatibilidad (o grado de pertenencia) de cada $u$ en $U$, con $T(x)$. Así, la compatibilidad de una edad de \textit{27 años} con el término lingüístico \textit{joven} podría ser 0.8, mientras que una edad de \textit{35 años} podría ser de 0.2.
 
 El concepto de variable lingüística proporciona un medio para definir de manera aproximada los fenómenos que son demasiado complejos o muy imprecisos como para ser receptivos de una descripción convencional en términos cuantitativos.
 
 Una variable lingüística está caracterizada mediante la quíntupla:
 $$(X,T(x),U,G,M)$$
-Donde
+Donde:
 {\setlength{\baselineskip}{0.7\baselineskip}\begin{description}
 	\item $X$ es el nombre de la variable.
 	\item $T(X)$ es el conjunto de términos o valores lingüísticos.
@@ -666,7 +665,7 @@ Primero, Es importante entender que la noción de membresía es distinta a la de
 La interpretación correcta es que el valor de membresía 0.7, es simplemente una indicación subjetiva de \emph{qué tanto encaja} la edad de ``28 años'' (\textit{en una escala de 0 a 1}) con el concepto ``joven''.
 %La interpretación correcta del valor de membresía 0.7, es que, simplemente es una indicación subjetiva de \emph{en qué grado} (\textit{en una escala de 0 a 1}) la edad de ``28 años'' encaja en el concepto ``joven''.
 
-Segundo, normalmente asumiremos que una variable lingüística está \emph{estructurada} tomando en cuenta dos reglas:
+Segundo, normalmente asumiremos que una variable lingüística está estructurada tomando en cuenta dos reglas:
 \begin{description}
 	\item[Regla (i).] La regla sintáctica, esta especifica la manera en que se generan los términos lingüísticos de la variable.
 	En relación a esta regla, normalmente asumiremos que los términos de la variable son generados por una gramática de contexto libre.
@@ -687,11 +686,10 @@ Donde:
 \end{description}}
 
 
- 
+\pagebreak
 \subsection{Sistema difuso}
-Un sistema de inferencia difuso (\textit{FIS}) consta, conceptualmente, de tres etapas. En la primer etapa se transforman (fuzzifican) las variables de entrada obteniendo valores de difusos. Posteriormente dichos valores son manejados por un sistema de inferencia que genera una salida, también difusa, a partir de las reglas establecidas y los propios valores de entrada. Finalmente el resultado pasa por un proceso llamado defuzzificación, a través del cual, se obtiene la salida real del sistema ya en valores concretos. La figura \ref{fig:digfis} muestra el diagrama esquemático del controlador
-difuso.
-
+Un sistema de inferencia difuso (\textit{FIS}) consta, conceptualmente, de tres etapas. En la primer etapa se transforman (fuzzifican) las variables de entrada obteniendo valores de difusos. Posteriormente dichos valores son manejados por un sistema de inferencia que genera una salida, también difusa, a partir de las reglas establecidas y los propios valores de entrada. Finalmente el resultado pasa por un proceso llamado defuzzificación, a través del cual, se obtiene la salida real del sistema ya en valores concretos. La figura \ref{fig:digfis} muestra el diagrama esquemático de un controlador difuso.
+\\
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}[scale=2]
@@ -754,14 +752,14 @@ Los conjuntos difusos son caracterizados mediante funciones de membresía ajusta
 %\subsection{Reglas difusas}
 En lógica difusa las proposiciones del tipo ``\ifthen{temperatura}{alta}{ventilador}{máximo}'' son usadas para modelar el conocimiento del experto sobre un fenómeno en un lenguaje natural y cotidiano. A estas proposiciones que operan sobre conjuntos difusos se les conoce como reglas difusas.
 
-El objetivo de las reglas difusas es capturar el conocimiento empírico del experto y al conjunto de reglas se le denomina Base de Conocimientos.
+El objetivo de las reglas difusas es capturar el conocimiento empírico del experto. Al conjunto de reglas se le denomina \textit{Base de Conocimientos}.
 
 Supongamos una proposición sencilla:
 \begin{center}
 	\ifthen{x}{a}{y}{b}.
 \end{center}
 
-En los sistemas de reglas clásicos, si el antecedente es cierto, el consecuente también lo es. En un sistema difuso donde el antecedente es difuso, todas las reglas se ejecutan parcialmente, el consecuente es cierto, pero solo en cierto grado.
+En los sistemas de reglas clásicos, si el antecedente es cierto, el consecuente también lo es. En un sistema difuso donde el antecedente es difuso, todas las reglas se ejecutan parcialmente, por lo que el consecuente es cierto o falso pero solo en cierto grado.
 
 \subsubsection*{Inferencia}
 En la segunda etapa se proponen reglas lingüísticas (\textit{inferencia}) que servirán para inferir la salida del sistema.
@@ -769,10 +767,10 @@ El grado de pertenencia de cada una de las variables se evalúa en un conjunto d
 reglas de inferencia. Dichas reglas de inferencia fueron determinadas con ayuda de un experto. El conjunto
 de reglas de inferencia determina una consecuencia, es decir, asigna un grado de pertenencia a un
 conjunto difuso que caracteriza a las salidas.
-
+\\
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[]
+	\begin{tikzpicture}[scale=1.5]
 
 	
 	\draw[->] (0,0) -- (4,0) 	node[right] {$x$} 		coordinate (x axis);
@@ -807,19 +805,19 @@ proveniente de la consecuencia de las reglas de inferencia (\textit{conjunto con
 esto, previamente se sintonizaron las funciones de membresía de cada una de las salidas con el fin de
 obtener un valor cuantificable útil.
 
-Entre los diversos métodos que existen para obtener la salida del sistema, uno de los más usados es el método de centroide que consiste en determinar el centro de gravedad del area resultante bajo la curva del conjunto resultado.
+Entre los diversos métodos que existen para obtener la salida del sistema, uno de los más usados es el método de \textit{centroide} que consiste en determinar el centro de gravedad del area resultante bajo la curva del conjunto resultado.
 
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}[]
+	\begin{tikzpicture}[scale=1.2]
 	
 	\filldraw [fill=blue!20!white] (0,0) -- (1,0) -- (1.5,1) -- (2.5,1) -- (3,2) -- (4,2) -- (4.25,1.4) -- (5.25,1.4) -- (5.9,0) -- cycle;
-	\filldraw [gray] (3.7,0.8) circle [radius=4pt];
+	\filldraw [gray] (3.7,0.6) circle [radius=4pt];
 	
 	\draw[->] (0,0) -- (7,0) 	node[right] {$x$} 		coordinate (x axis);
 	\draw[->] (0,0) -- (0,2) 	node[above]	{$\mu(x)$} 	coordinate (y axis);
 	
-	\draw [arrows = {-Stealth[inset=0pt, length=10pt]},gray,dashed,very thick] (3.7,0.6) -- (3.7,-0.5);
+	\draw [arrows = {-Stealth[inset=0pt, length=10pt]},gray,dashed,very thick] (3.7,0.4) -- (3.7,-0.5);
 	
 	\draw[font=\scriptsize] (3.7,-0.5) node[below] {$Z_0$};
 %	\draw[font=\scriptsize] (2.5,0.45) node[below] {$C'$};
