@@ -1,6 +1,6 @@
 \chapter{Desarrollo}
 \section{Resumen}
-En este capítulo se describe el desarrollo del sistema en general: la selección de la técnica, el desarrollo de la técnica seleccionada y la selección del lenguaje de programación.
+En este capítulo se describe el desarrollo del sistema en general: la selección de la técnica y del lenguaje de programación; y el proceso desarrollo del proyecto.
 
 A continuación, en la \textbf{sección \ref{section:selecciontecnica}} se describe, a manera de resumen: las diferentes técnicas tomadas en cuenta durante la investigación y los porqués de la técnica seleccionada.
 
@@ -11,40 +11,40 @@ Posteriormente en la \textbf{sección \ref{section:desarrolloAlgoritmo}} se mode
 \section{Preliminares}
 Antes de continuar con el diseño del sistema, se considera adecuado aclarar algunos puntos acerca de:
 
-\paragraph{El enfoque}presentado en este proyecto difiere con el resto en que, fue diseñado para ser embebido dentro de un algoritmo de sincronización de semáforos más general, de esta manera la tarea del \textit{FIS} se centra en determinar el tiempo en verde, dejando los detalles de sincronización en manos de un segundo algoritmo (también propuesto y desarrollado en este proyecto).
+\textbf{El enfoque} presentado en este proyecto difiere con el resto en que, fue diseñado para ser embebido dentro de un algoritmo de sincronización de semáforos más general, de esta manera la tarea del \textit{FIS} se centra en determinar el tiempo en verde, dejando los detalles de sincronización en manos de un segundo algoritmo (también propuesto y desarrollado en este proyecto).
 
 %El segundo algoritmo se encarga no solo del \emph{pre} y \emph{post} procesamiento de los datos de entrada y salida, sino que también define un marco de trabajo para la implementación final por parte del usuario final, valga la redundancia.
 
-\paragraph{El pre-procesamiento} de los datos permite, mediante un proceso matemático sencillo, adaptar el \emph{FIS} propuesto a cruces con un número arbitrario de avenidas y fases, por ejemplo, intersecciones de: 2 avenidas y 2 fases, 4 avenidas y 2 fases o 4 avenidas y 4 fases. De esta manera se logra integrar una técnica de inteligencia artificial con un segundo algoritmo para la sincronización de semáforos.
+\textbf{El pre-procesamiento} de los datos permite, mediante un proceso matemático sencillo, adaptar el \emph{FIS} propuesto a cruces con un número arbitrario de avenidas y fases, por ejemplo, intersecciones de: 2 avenidas y 2 fases, 4 avenidas y 2 fases o 4 avenidas y 4 fases. De esta manera se logra integrar una técnica de inteligencia artificial con un segundo algoritmo para la sincronización de semáforos.
 
 \begin{wrapfigure}{r}{4cm}
 	\includegraphics[width=4cm]{Sources/logo_cpp11.jpg}
 	\captionof{figure}{C++ 11}
 \end{wrapfigure}
 
-\paragraph{La elección del lenguaje de programación} para la implementación del algoritmo fue bastante sencilla. Se requería un lenguaje eficiente que permitiera tener un control fino del proceso de inferencia, además de que permitiera la portabilidad del algoritmo entre distintas plataformas (Windows y Linux principalmente). Por ello, se optó por el lenguaje de programación \emph{C++}, en específico, el estándar \emph{ISO C++11}.
+\textbf{La elección del lenguaje de programación} para la implementación del algoritmo fue bastante sencilla. Se requería un lenguaje eficiente que permitiera tener un control fino del proceso de inferencia, además de que permitiera la portabilidad del algoritmo entre distintas plataformas (Windows y Linux principalmente). Por ello, se optó por el lenguaje de programación \emph{C++}, en específico, el estándar \emph{ISO C++11}.
 
 C++ es uno de los lenguajes de programación más eficientes, con herramientas como punteros y referencias que evitan el desperdicio de memoria además de la \emph{semántica de movimiento} incluida en el estándar \textsc{C++11} que, aligera el paso de objetos de gran tamaño entre funciones (como los vectores usados en el proceso de inferencia). Por lo dicho anteriormente y por su amplia disponibilidad de compiladores en casi todas las plataformas, C++ resulta la elección perfecta para este proyecto.
 
 C++ es un lenguaje \textbf{multiparadigma}, permite trabajar usando programación estructurada, orientada a objetos e incluso funcional. En este proyecto se decidió hacer uso del paradigma orientado a objetos, debido a que se busca crear piezas de software altamente reutilizables y expresivas.
 
 \section{Selección de la técnica}\label{section:selecciontecnica}
-Después de investigar acerca de las principales ramas de la Inteligencia Artificial (véase sección \ref{cap:ramasdelaia}), se decidió optar por el uso de una técnica de Lógica Difusa; a saber, un \emph{Sistema Inferencia Difusa (FIS por sus siglas en inglés)}. Cabe mencionar que esta técnica está siendo ampliamente usada en la optimización del tráfico vehicular (véase la tabla \ref{table:estadodelarte}), esto se debe en parte, a que permite razonar sobre términos imprecisos como ``\emph{muchos carros}'' o ``\emph{poca congestión}''.
+Después de investigar acerca de las principales ramas de la Inteligencia Artificial (véase sección \ref{cap:ramasdelaia}), se decidió optar por el uso de una técnica de Lógica Difusa; a saber, un \emph{Sistema Inferencia Difusa (FIS por sus siglas en inglés)}. Cabe mencionar que esta técnica está siendo ampliamente usada en la optimización del tráfico vehicular (véase la tabla \ref{table:estadodelarte}), esto se debe en parte, a que permite razonar sobre términos imprecisos como ``\emph{muchos carros}'' o ``\emph{poca congestión}''.\\
 
-La elección de esta técnica sobre las otras se debe a varios factores: 
+La elección de esta técnica sobre las otras se debe a varios factores:\\
 
-\textbf{a) Algoritmos genéticos.} Son una buena opción ya que podrían permitir probar diferentes asignaciones de tiempo, evaluar su desempeño y, así, ir depurando hasta encontrar la configuración optima de tiempos. Sin embargo, debido que la evaluación del desempeño podría ocasionar una congestión bastante alta, no es factible evaluarlo en un entorno real. Otra opción es evaluar el algoritmo en un entorno simulado, por desgracia, el tiempo requerido para la desarrollo del AG, del entorno de simulación y su correspondiente modelo matemático, va más allá del disponible para este proyecto.
+\textbf{a) Algoritmos genéticos.} Son una buena opción ya que podrían permitir probar diferentes asignaciones de tiempo, evaluar su desempeño y, así, ir depurando hasta encontrar la configuración optima de tiempos. Sin embargo, debido que la evaluación del desempeño podría ocasionar una congestión bastante alta, no es factible evaluarlo en un entorno real. Otra opción es evaluar el algoritmo en un entorno simulado, por desgracia, el tiempo requerido para la desarrollo del AG, del entorno de simulación y su correspondiente modelo matemático, va más allá del disponible para este proyecto.\\
 
-\textbf{b) Redes neuronales artificiales.} Estas son de gran ayuda en tareas como reconocimiento de voz, clasificación automática, tratamiento de imágenes entre otros. Sin embargo, desarrollar de una RNA para determinar el cambio de fase de un semáforo, podría llevar a lidiar con dificultades innecesarias, dificultades inherentes al entrenamiento de la propia red.
+\textbf{b) Redes neuronales artificiales.} Estas son de gran ayuda en tareas como reconocimiento de voz, clasificación automática, tratamiento de imágenes entre otros. Sin embargo, desarrollar de una RNA para determinar el cambio de fase de un semáforo, podría llevar a lidiar con dificultades innecesarias, dificultades inherentes al entrenamiento de la propia red.\\
 
 \textbf{c) Sistemas expertos.} A primera vista puede parecer una buena idea, sin embargo, los problemas vienen al momento de expresar el conocimiento del experto en términos cuantitativos ya que no es muy fácil decidir en qué punto se le debe ceder el paso a una avenida u otra.
 
-Una variante, son los sistemas difusos. Aquí sucede algo importante: los controladores difusos y los sistemas expertos difusos son en esencia lo mismo: Sistema de Inferencia Difusa. Es decir, ambos se basan en la inferencia difusa, por ejemplo: la inferencia de mamdani.
+Una variante, son los sistemas difusos. Aquí sucede algo importante: los controladores difusos y los sistemas expertos difusos son en esencia lo mismo: Sistema de Inferencia Difusa. Es decir, ambos se basan en la inferencia difusa, por ejemplo: la inferencia de mamdani.\\
 
 \textbf{d) Sistema de inferencia difusa.} La gran ventaja de estos sistemas es que, gracias a que usan lógica difusa, permiten expresar el conocimiento (reglas) en términos coloquiales que poseen cierto grado de incertidumbre. Así, es posible modelar un sistema que de preferencia a las avenidas con muchos carros y, definir el término muchos carros con una función de membresía centrada en 7. De esta manera, entre más cercano sea a 7 el valor evaluado, mayor peso tendrá en la decisión tomada por el sistema.
 
-Estos sistemas permiten lidiar con la información que no es tan precisa o, en el caso de este proyecto, permite razonar sobre términos como \textit{``muchos carros''} o \textit{``poca congestión''}. Términos para los cuales, no es fácil asignar un intervalo de valores. Es por eso que se decidió usar un Sistema de Inferencia Difusa para dotar de cierto grado de ``inteligencia'' a un algoritmo de control de semáforos.
-\pagebreak
+Estos sistemas permiten lidiar con la información que no es tan precisa o, en el caso de este proyecto, permite razonar sobre términos como \textit{``muchos carros''} o \textit{``poca congestión''}. Términos para los cuales, no es fácil asignar un intervalo de valores. Es por eso que se decidió usar un Sistema de Inferencia Difusa para dotar de cierto grado de ``inteligencia'' a un algoritmo de control de semáforos.\\
+
 \section{Diseño del sistema de inferencia}\label{section:desarrolloFIS}
 En esta sección se expone de manera metodológica las diferentes configuraciones, resultados y conclusiones que se obtuvieron en el desarrollo del sistema. Para la configuración se sigue una estrategia de mejora iterativa hasta alcanzar el resultado deseado.
 
@@ -55,7 +55,7 @@ Se optó por el método de \textbf{Mamdani} debido a que emula mejor el razonami
 \subsubsection{Selección de operadores}
 Debido a la variedad de operadores que pueden ser usados en la inferencia difusa, a continuación se muestran los operadores usados en este proyecto.
 
-\begin{multicols}{2}
+%\begin{multicols}{2}
 \begin{itemize}
 	\item \textbf{Método AND:} operador mínimo \emph{min}.
 	\item \textbf{Método OR:} operador máximo \emph{max}.
@@ -63,7 +63,7 @@ Debido a la variedad de operadores que pueden ser usados en la inferencia difusa
 	\item \textbf{Agregación:} operador máximo \emph{max}.
 	\item \textbf{Defuzzificación:} centroide \emph{$\frac{\sum \mu(x).x}{\sum \mu(x)}$}.
 \end{itemize}
-\end{multicols}
+%\end{multicols}
 
 %\newpage
 \subsubsection{Selección de variables}
@@ -106,9 +106,9 @@ De esta manera el sistema resulta lo suficientemente flexible para ser aplicado 
 
 \newpage
 \subsection{Configuración A}
-La configuración presentada a continuación mantiene al mínimo el número de términos dentro de las variables de entrada y salida. 
+La configuración presentada a continuación mantiene al mínimo el número de términos dentro de las variables de entrada y salida.\\
 
-\textbf{Variable de entrada Vehículos.} Referente a la cantidad de vehículos en la avenida a la cual se le asignará la fase verde. La variable se encuentra definida en un universo de discurso $U = [0,12]$.
+\textbf{Variable de entrada Vehículos.} Referente a la cantidad de vehículos en la avenida a la cual se le asignará la fase verde. La variable se encuentra definida en un universo de discurso $U = [0,12]$.\\
 
 \begin{table}[!h]
 	\centering
@@ -117,11 +117,10 @@ La configuración presentada a continuación mantiene al mínimo el número de t
 		Pocos & Triangular & [0, 0, 12 ] \\
 		Muchos & Triangular & [0, 12, 12] \\ \bottomrule
 	\end{tabular}
-	\caption[Variable lingüística \textit{Vehículos} (configuración \textit{A})]{Variable lingüística \textit{Vehículos}}
+	\caption{Variable lingüística \textit{Vehículos} (configuración \textit{A})}
 \end{table}
 
-
-\textbf{Variable de entrada Congestión.} Se refiere al índice ponderado de la cantidad de vehículos en las avenidas que quedaran a la espera durante la fase verde actual. La variable se encuentra definida en un universo de discurso $U = [0,12]$.
+\textbf{Variable de entrada Congestión.} Se refiere al índice ponderado de la cantidad de vehículos en las avenidas que quedaran a la espera durante la fase verde actual. La variable se encuentra definida en un universo de discurso $U = [0,12]$.\\
 
 \begin{table}[!h]
 	\centering
@@ -130,18 +129,18 @@ La configuración presentada a continuación mantiene al mínimo el número de t
 		Baja & Triangular & [0, 0, 12 ] \\
 		Alta & Triangular & [0, 12, 12] \\ \bottomrule
 	\end{tabular}
-	\caption[Variable lingüística \textit{Congestión} (configuración \textit{A})]{Variable lingüística \textit{Congestión}}
+	\caption{Variable lingüística \textit{Congestión} (configuración \textit{A})}
 \end{table}
 
 \begin{figure}[H]
 	\centering
 	\subfigure[Variable lingüística \textit{Vehículos}]{\includegraphics[height=4cm, width=7.9cm]{Variables/ConfigA_input1.eps}}
 	\subfigure[Variable lingüística \textit{Congestión}]{\includegraphics[height=4cm, width=7.9cm]{Variables/ConfigA_input2.eps}}
-	\caption[Representación gráfica de las variables lingüísticas \textit{Vehículos} y \textit{Congestión} (configuración \textit{A})]{Representación gráfica de las variables lingüísticas \textit{Vehículos} y \textit{Congestión}}
+	\caption{Representación gráfica de las variables lingüísticas \textit{Vehículos} y \textit{Congestión} (configuración \textit{A})}
 \end{figure}
 
 \newpage
-\textbf{Variable de salida Tiempo.} Se refiere al tiempo en segundos que le será asignada a la fase verde actual. La variable se encuentra definida en un universo de discurso $U = [0,90]$.
+\textbf{Variable de salida Tiempo.} Se refiere al tiempo en segundos que le será asignada a la fase verde actual. La variable se encuentra definida en un universo de discurso $U = [0,90]$.\\
 
 \begin{table}[!h]
 	\centering
@@ -152,31 +151,31 @@ La configuración presentada a continuación mantiene al mínimo el número de t
 		Moderado & Triangular & [30, 60, 90] \\
 		Alto & Triangular & [60, 90, 90] \\ \bottomrule
 	\end{tabular}
-	\caption[Variable lingüística \textit{Tiempo} (configuración \textit{A})]{Variable lingüística \textit{Tiempo}}
+	\caption{Variable lingüística \textit{Tiempo} (configuración \textit{A})}
 \end{table}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[height=5cm, width=12cm]{Variables/ConfigA_output1.eps}
-	\caption[Representación gráfica de la variable lingüística \textit{Tiempo} (configuración \textit{A})]{Representación gráfica de la variable lingüística \textit{Tiempo}}
+	\caption{Representación gráfica de la variable lingüística \textit{Tiempo} (configuración \textit{A})}
 \end{figure}
 
 \subsubsection{Base de conocimientos}
-La siguiente tabla muestra las reglas difusas empleadas en esta configuración.
+La siguiente tabla muestra las reglas difusas empleadas en esta configuración.\\
 \begin{longtable}[c]{lclcl} \toprule
 	\multicolumn{3}{c}{Antecedente} & & Consecuente \\ \midrule
 	Vehículos Pocos & Y & Congestión Baja& $\rightarrow$ & Verde Medio \\
 	Vehículos Pocos & Y & Congestión Alta& $\rightarrow$ & Verde Bajo \\
 	Vehículos Muchos &Y& Congestión Baja& $\rightarrow$ & Verde Alto \\
 	Vehículos Muchos &Y& Congestión Alta& $\rightarrow$ & Verde Moderado \\ \hline
-	\caption[Reglas difusas (configuración \textit{A})]{Reglas difusas}
+	\caption{Reglas difusas (configuración \textit{A})}
 \end{longtable}
 
 \newpage
 \subsubsection{Resultados}
 
 
-Una vez diseñado e implementado el sistema de inferencia, se le suministraron valores de prueba para evaluar su desempeño. Los resultados de dicha evaluación se reflejan en la tabla siguiente:
+Una vez diseñado e implementado el sistema de inferencia, se le suministraron valores de prueba para evaluar su desempeño. Los resultados de dicha evaluación se reflejan en la tabla siguiente:\\
 
 \begin{table}[H]
 	\centering
@@ -189,9 +188,9 @@ Una vez diseñado e implementado el sistema de inferencia, se le suministraron v
 		12& 80.29 & 69.13 & 63.79 & 61.00 & 59.99 \\
 		%\caption{Resultados de la evaluación para la configuración \textit{A}}
 	\end{tabular}
-	\caption[Resultados de la evaluación (configuración \textit{A})]{Resultados de la evaluación}
+	\caption{Resultados de la evaluación (configuración \textit{A})}
 \end{table}
-Donde: la columna V son los valores de prueba de la variable Vehículos, la fila C son los valores de  prueba de la variable Congestión y las celdas son los tiempos (en segundos).
+Donde: la columna \textit{V} son los valores de prueba de la variable \textit{Vehículos}, la fila \textit{C} son los valores de  prueba de la variable \textit{Congestión} y las celdas son los tiempos (en segundos).\\
 
 
 
@@ -199,11 +198,11 @@ Donde: la columna V son los valores de prueba de la variable Vehículos, la fila
 \subsubsection{Observaciones}
 \begin{multicols}{2}
 
-Después de evaluar el desempeño de la primera configuración se observa como efectivamente el tiempo asignado varía de acuerdo a las variables de entrada; sin embargo, el tiempo asignado para las entradas Vehículos = 0 y Congestión = 6, resulta excesivo puesto que la cantidad de vehículos a los que se les cederá el paso es mínimo (0) mientras que el índice de vehículos (6) que se mantendrán a la espera es bastante considerable.
+Después de evaluar el desempeño de la primera configuración se observa como efectivamente el tiempo asignado varía de acuerdo a las variables de entrada; sin embargo, el tiempo asignado para las entradas \textit{Vehículos = 0} y \textit{Congestión = 6}, resulta excesivo puesto que la cantidad de vehículos a los que se les cederá el paso es mínimo (0) mientras que el índice de vehículos (6) que se mantendrán a la espera es bastante considerable.
 
 \begin{figure}[H]
 	\includegraphics[width=0.49\textwidth]{Surfaces/Surface2D_A.eps}
-	\caption[Superficie de control (configuración \textit{A})]{Superficie de control}
+	\caption{Superficie de control (configuración \textit{A})}
 \end{figure}
 
 \end{multicols}
@@ -213,9 +212,9 @@ Después de evaluar el desempeño de la primera configuración se observa como e
 
 \pagebreak
 \subsection{Configuración B}
-La configuración presentada en esta sección, ajusta los parámetros de las funciones de membresía de la variable de salida Tiempo. La configuración pasa a ser la siguiente: 
+La configuración presentada en esta sección, ajusta los parámetros de las funciones de membresía de la variable de salida Tiempo. La configuración pasa a ser la siguiente: \\
 
-\textbf{Variable de entrada Vehículos.} Se mantiene sin cambios.
+\textbf{Variable de entrada Vehículos.} Se mantiene sin cambios.\\
 
 \begin{table}[!h]
 	\centering
@@ -224,11 +223,11 @@ La configuración presentada en esta sección, ajusta los parámetros de las fun
 		Pocos & Triangular & [0, 0, 12 ] \\
 		Muchos & Triangular & [0, 12, 12] \\ \bottomrule
 	\end{tabular}
-	\caption[Variable lingüística \textit{Vehículos} (configuración \textit{B})]{Variable lingüística \textit{Vehículos}}
+	\caption{Variable lingüística \textit{Vehículos} (configuración \textit{B})}
 \end{table}
 
 
-\textbf{Variable de entrada Congestión.} Se mantiene sin cambios desde la configuración anterior.
+\textbf{Variable de entrada Congestión.} Se mantiene sin cambios desde la configuración anterior.\\
 
 
 \begin{table}[!h]
@@ -238,20 +237,19 @@ La configuración presentada en esta sección, ajusta los parámetros de las fun
 		Baja & Triangular & [0, 0, 12 ] \\
 		Alta & Triangular & [0, 12, 12] \\ \bottomrule
 	\end{tabular}
-	\caption[Variable lingüística \textit{Congestión} (configuración \textit{B})]{Variable lingüística \textit{Congestión}}
+	\caption{Variable lingüística \textit{Congestión} (configuración \textit{B})}
 \end{table}
 
 \begin{figure}[H]
 	\centering
 	\subfigure[Variable lingüística Vehículos]{\includegraphics[height=4cm, width=7.9cm]{Variables/ConfigA_input1.eps}}
 	\subfigure[Variable lingüística Congestión]{\includegraphics[height=4cm, width=7.9cm]{Variables/ConfigA_input2.eps}}
-	\caption[Representación gráfica de las variables lingüísticas \textit{Vehículos} y \textit{Congestión} (configuración \textit{B})]{Representación gráfica de las variables lingüísticas \textit{Vehículos} y \textit{Congestión}}
+	\caption{Representación gráfica de las variables lingüísticas \textit{Vehículos} y \textit{Congestión} (configuración \textit{B})}
 \end{figure}
 
 \pagebreak
 \textbf{Variable de salida Tiempo.}
 En esta ocasión los parámetros de las funciones de membresía fueron ajustados para generar tiempos más acertados. La nueva configuración de esta variable se muestra a continuación:
-
 
 \begin{table}[!h]
 	\centering
@@ -262,13 +260,13 @@ En esta ocasión los parámetros de las funciones de membresía fueron ajustados
 		Moderado & Triangular & [20, 45, 70] \\
 		Alto & Triangular & [45, 70, 70] \\ \bottomrule
 	\end{tabular}
-	\caption[Variable lingüística \textit{Tiempo} (configuración \textit{B})]{Variable lingüística \textit{Tiempo}}
+	\caption{Variable lingüística \textit{Tiempo} (configuración \textit{B})}
 \end{table}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[height=5cm, width=12cm]{Variables/ConfigB_output1.eps}
-	\caption[Representación gráfica de la variable lingüística \textit{Tiempo} (configuración \textit{B})]{Representación gráfica de la variable lingüística \textit{Tiempo}}
+	\caption{Representación gráfica de la variable lingüística \textit{Tiempo} (configuración \textit{B})}
 \end{figure}
 
 \subsubsection{Base de conocimientos}
@@ -279,7 +277,7 @@ La siguiente tabla muestra las reglas difusas empleadas en esta configuración q
 	Vehículos Pocos & Y & Congestión Alta& $\rightarrow$ & Verde Bajo \\
 	Vehículos Muchos &Y& Congestión Baja& $\rightarrow$ & Verde Alto \\
 	Vehículos Muchos &Y& Congestión Alta& $\rightarrow$ & Verde Moderado \\ \hline
-	\caption[Reglas difusas (configuración \textit{B})]{Reglas difusas}
+	\caption{Reglas difusas (configuración \textit{B})}
 \end{longtable}
 
 \pagebreak
@@ -293,18 +291,18 @@ Una vez reajustados los parámetros del sistema de inferencia, se le suministrar
 	6 & 35.87 & 35.51 & 35.00 & 34.49 & 34.13 \\
 	9 & 43.75 & 42.58 & 40.44 & 39.14 & 39.18 \\
 	12& 61.90 & 52.60 & 48.15 & 45.83 & 45.00 \\
-	\caption[Resultados de la evaluación (configuración \textit{B})]{Resultados de la evaluación}
+	\caption{Resultados de la evaluación (configuración \textit{B})}
 \end{longtable}
 
-Donde: la columna V son los valores de prueba de la variable Vehículos, la fila C son los valores de  prueba de la variable Congestión y las celdas son los tiempos (en segundos) obtenidos por la configuración actual.
+Donde: la columna \textit{V} son los valores de prueba de la variable \textit{Vehículos}, la fila \textit{C} son los valores de  prueba de la variable \textit{Congestión} y las celdas son los tiempos (en segundos) obtenidos por la configuración actual.
 
 \subsubsection{Observaciones}
 \begin{multicols}{2}
-Después de evaluar el desempeño de la segunda configuración se observa como efectivamente el tiempo asignado es más acorde a la cantidad de vehículos; sin embargo, el tiempo asignado para las entradas Vehículos = 0 y Congestión = 0, resulta generoso puesto que la cantidad de vehículos a los que se les cederá el paso es mínimo (0) mientras al igual que el índice de vehículos (6); Sería mejor que en estos casos el tiempo fuera más corto para acelerar el ciclo del semáforo y reducir la espera de las otras avenidas. En otro casos como V = 12 y C = 12, el tiempo podría resultar insuficiente para desahogar el tráfico, por lo que se ajustará en la siguiente configuración.
+Después de evaluar el desempeño de la segunda configuración se observa como efectivamente el tiempo asignado es más acorde a la cantidad de vehículos; sin embargo, el tiempo asignado para las entradas \textit{Vehículos = 0} y \textit{Congestión = 0}, resulta generoso puesto que la cantidad de vehículos a los que se les cederá el paso es mínimo (0) mientras al igual que el índice de vehículos (6); Sería mejor que en estos casos el tiempo fuera más corto para acelerar el ciclo del semáforo y reducir la espera de las otras avenidas. En otro casos como $V = 12$ y $C = 12$, el tiempo podría resultar insuficiente para desahogar el tráfico, por lo que se ajustará en la siguiente configuración.
 
 \begin{figure}[H]
 	\includegraphics[width=0.49\textwidth]{Surfaces/Surface2D_B.eps}
-	\caption[Superficie de control (configuración \textit{B})]{Superficie de control}
+	\caption{Superficie de control (configuración \textit{B})}
 \end{figure}
 
 \end{multicols}
@@ -312,9 +310,9 @@ Después de evaluar el desempeño de la segunda configuración se observa como e
 
 \pagebreak
 \subsection{Configuración C}
-En está ocasión los reajustes serán mayores a los de la configuración anterior. Puesto que se agregaran un nuevo termino lingüístico a las variables Vehículos y Tiempo.
+En está ocasión los reajustes serán mayores a los de la configuración anterior. Puesto que se agregaran un nuevo termino lingüístico a las variables \textit{Vehículos} y \textit{Tiempo}.\\
 
-\textbf{Variable de entrada Vehículos.} Se agrega un nuevo término lingüístico para aumentar la flexibilidad del sistema.
+\textbf{Variable de entrada Vehículos.} Se agrega un nuevo término lingüístico para aumentar la flexibilidad del sistema.\\
 
 \begin{table}[!h]
 	\centering
@@ -324,11 +322,11 @@ En está ocasión los reajustes serán mayores a los de la configuración anteri
 		Moderados & Triangular & [0, 6, 12 ] \\
 		Muchos & Triangular & [6, 12, 12] \\ \bottomrule
 	\end{tabular}
-	\caption[Variable lingüística \textit{Vehículos} (configuración \textit{C})]{Variable lingüística \textit{Vehículos}}
+	\caption{Variable lingüística \textit{Vehículos} (configuración \textit{C})}
 \end{table}
 
 
-\textbf{Variable de entrada Congestión.} Se mantiene sin cambios desde la configuración anterior.
+\textbf{Variable de entrada Congestión.} Se mantiene sin cambios desde la configuración anterior.\\
 
 
 \begin{table}[!h]
@@ -338,18 +336,18 @@ En está ocasión los reajustes serán mayores a los de la configuración anteri
 		Baja & Triangular & [0, 0, 12 ] \\
 		Alta & Triangular & [0, 12, 12] \\ \bottomrule
 	\end{tabular}
-	\caption[Variable lingüística \textit{Congestión} (configuración \textit{C})]{Variable lingüística \textit{Congestión}}
+	\caption{Variable lingüística \textit{Congestión} (configuración \textit{C})}
 \end{table}
 
 \begin{figure}[H]
 	\centering
 	\subfigure[Variable lingüística Vehículos]{\includegraphics[height=4cm, width=7.9cm]{Variables/ConfigC_input1.eps}}
 	\subfigure[Variable lingüística Congestión]{\includegraphics[height=4cm, width=7.9cm]{Variables/ConfigA_input2.eps}}
-	\caption[Representación gráfica de las variables lingüísticas \textit{Vehículos} y \textit{Congestión} (configuración \textit{C})]{Representación gráfica de las variables lingüísticas \textit{Vehículos} y \textit{Congestión}}
+	\caption{Representación gráfica de las variables lingüísticas \textit{Vehículos} y \textit{Congestión} (configuración \textit{C})}
 \end{figure}
 
 \pagebreak
-\textbf{Variable de salida Tiempo.} Al igual que la variable vehículos, se ha agregado un nuevo término lingüístico para aumentar la flexibilidad. Además los parámetros de las funciones fueron reajustados ligeramente al igual que sus etiquetas.
+\textbf{Variable de salida Tiempo.} Al igual que la variable \textit{Vehículos}, se ha agregado un nuevo término lingüístico para aumentar la flexibilidad. Además los parámetros de las funciones fueron reajustados ligeramente al igual que sus etiquetas.
 
 \begin{table}[!h]
 	\centering
@@ -361,13 +359,13 @@ En está ocasión los reajustes serán mayores a los de la configuración anteri
 		Alto & Triangular & [40, 60, 80] \\
 		Extra & Triangular & [60, 80, 80] \\ \bottomrule
 	\end{tabular}
-	\caption[Variable lingüística \textit{Tiempo} (configuración \textit{C})]{Variable lingüística \textit{Tiempo}}
+	\caption{Variable lingüística \textit{Tiempo} (configuración \textit{C})}
 \end{table}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[height=5cm, width=12cm]{Variables/ConfigC_output1.eps}
-	\caption[Representación gráfica de la variable lingüística \textit{Tiempo} (configuración \textit{C})]{Representación gráfica de la variable lingüística \textit{Tiempo}}
+	\caption{Representación gráfica de la variable lingüística \textit{Tiempo} (configuración \textit{C})}
 \end{figure}
 
 \subsubsection{Base de conocimientos}
@@ -379,12 +377,12 @@ La siguiente tabla muestra las reglas difusas empleadas en esta configuración q
 	Vehículos Moderados & Y & Congestión Alta& $\rightarrow$ & Verde Bajo \\
 	Vehículos Muchos &Y& Congestión Baja& $\rightarrow$ & Verde Extra \\
 	Vehículos Muchos &Y& Congestión Alta& $\rightarrow$ & Verde Alto \\ \hline
-	\caption[Reglas difusas (configuración \textit{C})]{Reglas difusas}
+	\caption{Reglas difusas (configuración \textit{C})}
 \end{longtable}
 
 \pagebreak
 \subsubsection{Resultados}
-Una vez reajustados los parámetros del sistema de inferencia, se le suministraron lo mismos valores de prueba para evaluar su desempeño respecto a la configuración anterior. Los resultados de dicha evaluación se reflejan en la tabla siguiente:
+Una vez reajustados los parámetros del sistema de inferencia, se le suministraron lo mismos valores de prueba para evaluar su desempeño respecto a la configuración anterior. Los resultados de dicha evaluación se reflejan en la tabla siguiente:\\
 
 \begin{longtable}[c]{cccccc} \toprule
 	$V \backslash C$ &  0 & 3 & 6 & 9 & 12 \\ \midrule
@@ -393,19 +391,19 @@ Una vez reajustados los parámetros del sistema de inferencia, se le suministrar
 	6 & 40.00 & 34.21 & 30.00 & 25.79 & 20.00 \\
 	9 & 59.74 & 44.49 & 42.44 & 40.75 & 40.00 \\
 	12& 73.33 & 65.87 & 62.38 & 60.59 & 60.00 \\
-	\caption[Resultados de la evaluación (configuración \textit{C})]{Resultados de la evaluación}
+	\caption{Resultados de la evaluación (configuración \textit{C})}
 \end{longtable}
 
-Donde: la columna V son los valores de prueba de la variable Vehículos, la fila C son los valores de  prueba de la variable Congestión y las celdas son los tiempos (en segundos) obtenidos por la configuración actual.
+Donde: la columna \textit{V} son los valores de prueba de la variable \textit{Vehículos}, la fila \textit{C} son los valores de  prueba de la variable \textit{Congestión} y las celdas son los tiempos (en segundos) obtenidos por la configuración actual.\\
 
 \subsubsection{Observaciones}
 \begin{multicols}{2}
 
-	En esta tercera configuración se aprecia que hubo mejoras considerables en los tiempos inferidos por el sistema. Si se observa la salida para V = 12 y C = 12, cuya salida es 60, se nota que es un tiempo bastante acertado que ayudaría a desahogar la congestión. Por otro lado cuando V = 12 y C = 0, el sistema otorga 13 segundos extra. En el caso contrario, cuando V = 0 y C = 12, el sistema asigna el tiempo mínimo de 10 segundos. Hace falta un nuevo ajuste para saber si los tiempos pueden mejorar aún más.
+	En esta tercera configuración se aprecia que hubo mejoras considerables en los tiempos inferidos por el sistema. Si se observa la salida para $V = 12$ y $C = 12$, cuya salida es $60$, se nota que es un tiempo bastante acertado que ayudaría a desahogar la congestión. Por otro lado cuando $V = 12$ y $C = 0$, el sistema otorga 13 segundos extra. En el caso contrario, cuando $V = 0$ y $C = 12$, el sistema asigna el tiempo mínimo de 10 segundos. Hace falta un nuevo ajuste para realizar una última mejora.
 	
 	\begin{figure}[H]
 		\includegraphics[width=0.49\textwidth]{Surfaces/Surface2D_C.eps}
-		\caption[Superficie de control (configuración \textit{C})]{Superficie de control}
+		\caption{Superficie de control (configuración \textit{C})}
 	\end{figure}
 \end{multicols}
 \pagebreak
@@ -415,20 +413,23 @@ Donde: la columna V son los valores de prueba de la variable Vehículos, la fila
 
 
 \subsection{Configuración D}\label{section:configd}
-Existen funciones de membresía que modelan mejor el modo de clasificación que realiza la mente humana, estas funciones son las curvas tales como: \textit{Sigmoidales, Gaussianas y Campanas Generalizadas}; en esta configuración se explota el potencial de las primeras dos.
+Existen funciones de membresía que modelan mejor el modo de clasificación que realiza la mente humana, estas funciones son las curvas tales como: \textit{Sigmoidales, Gaussianas y Campanas Generalizadas}; en esta configuración se explota el potencial de las primeras dos.\\
 
-\textbf{Variable de entrada Vehículos.} Las funciones de membresía \textit{triangulares} se remplazan por funciones \textit{Sigmoidales y Gaussianas}, estás modelan de manera más eficiente la manera en que el ser humano suele clasificar los fenómenos.
-\begin{center}
+\textbf{Variable de entrada Vehículos.} Las funciones de membresía \textit{triangulares} se remplazan por funciones \textit{Sigmoidales y Gaussianas}, estás modelan de manera más eficiente la manera en que el ser humano suele clasificar los fenómenos.\\
+
+\begin{table}[!h]
+	\centering
 	\begin{tabular}{llr} \toprule
 		Termino lingüístico & Función de membresía & Parámetros \\ \midrule
 		Pocos & Sigmoidal & [ -0.8, 4 ] \\
 		Moderados & Gaussiana & [ 1.6, 7 ] \\
 		Muchos & Sigmoidal & [ 0.8, 10] \\ \bottomrule
 	\end{tabular}
-	\captionof{table}[Variable lingüística \textit{Vehículos} (configuración \textit{D})]{Variable lingüística \textit{Vehículos}}
-\end{center}
+	\caption{Variable lingüística \textit{Vehículos} (configuración \textit{D})}
+\end{table}
 
-\textbf{Variable de entrada Congestión.} También se remplaza las funciones triangulares por \textit{funciones Sigmoidales}.
+
+\textbf{Variable de entrada Congestión.} También se remplaza las funciones triangulares por \textit{funciones Sigmoidales}.\\
 
 \begin{table}[!h]
 	\centering
@@ -437,16 +438,17 @@ Existen funciones de membresía que modelan mejor el modo de clasificación que 
 		Baja & Sigmoidal & [ -0.8, 5 ] \\
 		Alta & Sigmoidal & [ 0.8, 5 ] \\ \bottomrule
 	\end{tabular}
-	\caption[Variable lingüística \textit{Congestión} (configuración \textit{D})]{Variable lingüística \textit{Congestión}}
+	\caption{Variable lingüística \textit{Congestión} (configuración \textit{D})}
 \end{table}
+
 \begin{figure}[H]
 	\centering
 	\subfigure[Variable lingüística Vehículos]{\includegraphics[height=4cm, width=7.9cm]{Variables/ConfigD_input1.eps}}
 	\subfigure[Variable lingüística Congestión]{\includegraphics[height=4cm, width=7.9cm]{Variables/ConfigD_input2.eps}}
-	\caption[Representación gráfica de las variables lingüísticas \textit{Vehículos} y \textit{Congestión} (configuración \textit{D})]{Representación gráfica de las variables lingüísticas \textit{Vehículos} y \textit{Congestión}}
+	\caption{Representación gráfica de las variables lingüísticas \textit{Vehículos} y \textit{Congestión} (configuración \textit{D})}
 \end{figure}
 \newpage
-\textbf{Variable de salida Tiempo.} Esta variable únicamente tiene un ajuste menor en el término lingüístico \textit{Mínimo}, el resto de términos permanece intacto.
+\textbf{Variable de salida Tiempo.} Esta variable únicamente tiene un ajuste menor en el término lingüístico \textit{Mínimo}, el resto de términos permanece intacto.\\
 
 \begin{table}[!h]
 	\centering
@@ -458,17 +460,17 @@ Existen funciones de membresía que modelan mejor el modo de clasificación que 
 		Alto & Triangular & [40, 60, 80] \\
 		Extra & Triangular & [60, 80, 80] \\ \bottomrule
 	\end{tabular}
-	\caption[Variable lingüística \textit{Tiempo} (configuración \textit{D})]{Variable lingüística \textit{Tiempo}}
+	\caption{Variable lingüística \textit{Tiempo} (configuración \textit{D})}
 \end{table}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[height=5cm, width=12cm]{Variables/ConfigD_output1.eps}
-	\caption[Representación gráfica de la variable lingüística \textit{Tiempo} (configuración \textit{D})]{Representación gráfica de la variable lingüística \textit{Tiempo}}
+	\caption{Representación gráfica de la variable lingüística \textit{Tiempo} (configuración \textit{D})}
 \end{figure}
 
 \subsubsection{Base de conocimientos}
-La siguiente tabla muestra las reglas difusas empleadas en esta configuración que se mantiene sin cambios.
+La siguiente tabla muestra las reglas difusas empleadas en esta configuración que se mantiene sin cambios.\\
 \begin{longtable}[c]{lclcl} \toprule
 	\multicolumn{3}{c}{Antecedente} & & Consecuente \\ \midrule
 	\multicolumn{3}{c}{Vehículos Pocos} & $\rightarrow$ & Verde Mínimo \\
@@ -476,12 +478,12 @@ La siguiente tabla muestra las reglas difusas empleadas en esta configuración q
 	Vehículos Moderados & Y & Congestión Alta& $\rightarrow$ & Verde Bajo \\
 	Vehículos Muchos &Y& Congestión Baja& $\rightarrow$ & Verde Extra \\
 	Vehículos Muchos &Y& Congestión Alta& $\rightarrow$ & Verde Alto \\ \hline
-	\caption[Reglas difusas (configuración \textit{D})]{Reglas difusas}
+	\caption{Reglas difusas (configuración \textit{D})}
 \end{longtable}
 
 \pagebreak
 \subsubsection{Resultados}
-Después de remplazar algunas de las funciones de membresía y realizar los ajustes necesarios, se le suministró los mismos valores de prueba para evaluar su desempeño respecto a la configuración anterior. Los resultados de dicha evaluación se reflejan en la tabla siguiente:
+Después de remplazar algunas de las funciones de membresía y realizar los ajustes necesarios, se le suministró los mismos valores de prueba para evaluar su desempeño respecto a la configuración anterior. Los resultados de dicha evaluación se reflejan en la tabla siguiente:\\
 
 \begin{longtable}[c]{cccccc} \toprule
 	$V \backslash C$ &  0 & 3 & 6 & 9 & 12 \\ \midrule
@@ -490,18 +492,19 @@ Después de remplazar algunas de las funciones de membresía y realizar los ajus
 	6 & 36.56 & 36.54 & 28.81 & 24.08 & 24.02 \\
 	9 & 47.81 & 43.60 & 39.23 & 37.65 & 37.62 \\
 	12& 70.83 & 66.58 & 60.27 & 59.40 & 59.39 \\
-	\caption[Resultados de la evaluación (configuración \textit{D})]{Resultados de la evaluación}
+	\caption{Resultados de la evaluación (configuración \textit{D})}
 \end{longtable}
 
-Donde: la columna V son los valores de prueba de la variable Vehículos, la fila C son los valores de  prueba de la variable Congestión y las celdas son los tiempos (en segundos) obtenidos por la configuración actual.
+Donde: la columna \textit{V} son los valores de prueba de la variable \textit{Vehículos}, la fila \textit{C} son los valores de  prueba de la variable \textit{Congestión} y las celdas son los tiempos (en segundos) obtenidos por la configuración actual.\\
 
 \subsubsection{Observaciones}
 
 \begin{multicols}{2}
-	Definitivamente, los resultados obtenidos tras remplazar las funciones triangulares por funciones sigmoidales y gaussianas, son mucho más acertadas. Al principio, los tiempos asignados incrementan más rápido conforme más se eleva el número de autos, después, el ritmo de crecimiento de los tiempos de asignación desacelera al acercarse al valor máximo para las variables de entrada. Se concluye que la configuración actual será la usada en la implementación.
+	Los resultados obtenidos tras remplazar las funciones triangulares por funciones sigmoidales y gaussianas, son mucho más acertadas. Al principio, los tiempos asignados incrementan más rápido conforme más se eleva el número de autos, después, el ritmo de crecimiento de los tiempos de asignación desacelera al acercarse al valor máximo para las variables de entrada. Por lo que se concluye que la configuración actual será la usada en la implementación.
+	
 	\begin{figure}[H]
 	\includegraphics[width=0.49\textwidth]{Surfaces/Surface2D_D.eps}
-	\caption[Superficie de control (configuración \textit{D})]{Superficie de control}
+	\caption{Superficie de control (configuración \textit{D})}
 \end{figure}
 \end{multicols}
 \pagebreak
@@ -517,7 +520,7 @@ A lo largo de las siguientes páginas se modela el desarrollo del algoritmo medi
 	\item \textbf{Diagrama de clases} de todo el sistema.
 	\item \textbf{Diagrama de secuencia} del bucle principal.
 \end{itemize}
-
+\vspace{\parskip}
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}
@@ -547,7 +550,7 @@ A lo largo de las siguientes páginas se modela el desarrollo del algoritmo medi
 
 \newpage
 \subsection{Diagrama de actividades}
-El siguiente diagrama muestra a grandes rasgos, el flujo de ejecución general del algoritmo. En él se puede observar el proceso de inicialización y configuración del semáforo y del sensor; además se muestra el bucle principal ``\emph{repetir siempre}'' que se encarga de obtener los datos del sensor, procesarlos y establecer el cambio de fase.
+El siguiente diagrama muestra a grandes rasgos, el flujo de ejecución general del algoritmo. En él se puede observar el proceso de inicialización y configuración del semáforo y del sensor; además se muestra el bucle principal ``\emph{repetir siempre}'' que se encarga de obtener los datos del sensor, procesarlos y establecer el cambio de fase.\\
 
 \begin{figure}[H]
 	\centering
@@ -605,7 +608,7 @@ El siguiente diagrama muestra a grandes rasgos, el flujo de ejecución general d
 \textbf{Diagrama de secuencia del bucle de control del semáforo}\\
 En el diagrama anterior se muestra el bucle principal del sistema, ahora mediante un diagrama de secuencia se detallarán dicho bucle debido a que es la parte central del sistema.
 
-Para fines de legibilidad, en el siguiente diagrama se omiten los nombres de las clases (\emph{FuzzySemaforo y SensorVehiculos}). Las funciones que se muestran pertenecen a la clase \emph{FuzzySemaforo} excepto una, la cual está indicada en el diagrama.
+Para fines de legibilidad, en el siguiente diagrama se omiten los nombres de las clases (\emph{FuzzySemaforo y SensorVehiculos}). Las funciones que se muestran pertenecen a la clase \emph{FuzzySemaforo} excepto una, la cual está indicada en el diagrama.\\
 \begin{figure}[H]
 	\centering
 	\tikzumlset{font=\small, call dt=7, call padding=3.5}
@@ -639,6 +642,7 @@ Para fines de legibilidad, en el siguiente diagrama se omiten los nombres de las
 En el siguiente diagrama se modela las clases que constituyen el sistema además, se muestran las diferentes relaciones que existen entre dichas clases.
 
 Para mayor legibilidad, el diagrama no modela atributos ni comportamientos de las clases; sin embargo, en el apéndice \ref{apendice:a} se modelan los elementos omitidos.
+\vspace{5\parskip}
 \begin{figure}[h]
 \begin{tikzpicture}
 

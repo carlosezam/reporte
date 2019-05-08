@@ -70,10 +70,6 @@
 %\titlespacing{\subsection}{0pt}{\parskip}{-\parskip}
 %\titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
 
-% Formato de la pagina, numeración en esquina superior izq
-%\usepackage{etoolbox}
-%\patchcmd{\chapter}{plain}{myheadings}{}{}
-
 
 \begin{document}
 
@@ -87,8 +83,9 @@
 % Inclusion de la portada
 \includepdf{Anexos/Autorizacion}
 
+{\setlength{\parindent}{0pt}
 \include{Dedicatoria}
-
+}
 % Inclusion de la portada
 \includepdf{Anexos/Contraportada}
 
