@@ -622,14 +622,13 @@ Para fines de legibilidad, en el siguiente diagrama se omiten los nombres de las
 	\umlobject[x=11.4]{setLights}
 	
 	\begin{umlfragment}[type=loop, inner xsep=7]
-	\begin{umlcall}[op=read(), return={autos : vector<int>}]{run}{read}\end{umlcall}
-	\begin{umlcall}[op={get\_media(fase,vehiculos)}, return=vehículos : double]{run}{getMedia}\end{umlcall}
-	\begin{umlcall}[op={get\_media(fase,congestión)}, return=congestión : double]{run}{getMedia}\end{umlcall}
-	\begin{umlcall}[op=infiere tiempo en verde, return=segundos : double, name=call]{run}{getTime}\end{umlcall}
-	\begin{umlcall}[op=establece la siguiente fase, return=void]{run}{setLights}\end{umlcall}
+	\begin{umlcall}[op=contar vehículos, return={autos : vector<int>}]{run}{read}\end{umlcall}
+	\begin{umlcall}[op={calcular media vehiculos}, return=vehículos : double]{run}{getMedia}\end{umlcall}
+	\begin{umlcall}[op={calcular media congestión}, return=congestión : double]{run}{getMedia}\end{umlcall}
+	\begin{umlcall}[op=inferir tiempo en verde, return=segundos : double, name=call]{run}{getTime}\end{umlcall}
+	\begin{umlcall}[op=establecer siguiente fase, return=void]{run}{setLights}\end{umlcall}
 	\end{umlfragment}
 	\umlnote[x=10, y=-3]{read}{Función miembro de la clase MySensor}
-	%\umlnote[x=11, y=-6]{call-1}{Llamada al Sistema de Inferencia Difusa}
 	\end{umlseqdiag}
 
 	\end{tikzpicture}
@@ -639,9 +638,9 @@ Para fines de legibilidad, en el siguiente diagrama se omiten los nombres de las
 \pagebreak
 \subsection{Diagrama de clases}\label{subsection:umlclases}
 \textbf{Modelado de las \textit{relaciones de clase} del sistema}\\
-En el siguiente diagrama se modela las clases que constituyen el sistema además, se muestran las diferentes relaciones que existen entre dichas clases.
+En el siguiente diagrama se modela las clases que constituyen el sistema, además, se muestran las diferentes relaciones que existen entre dichas clases.
 
-Para mayor legibilidad, el diagrama no modela atributos ni comportamientos de las clases; sin embargo, en el apéndice \ref{apendice:a} se modelan los elementos omitidos.
+Para mayor legibilidad, el diagrama no modela atributos ni comportamientos de las clases; sin embargo, en el apéndice \ref{apendice:a} se modelan los elementos aquí omitidos.
 \vspace{5\parskip}
 \begin{figure}[h]
 \begin{tikzpicture}

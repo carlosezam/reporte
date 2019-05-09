@@ -53,6 +53,7 @@
 
 % Formato de titulos
 \usepackage{titlesec}
+\usepackage{afterpage}
 
 %\titleformat{\chapter}[display]{\large \textrm \bfseries}{\filcenter\chaptertitlename\ \thechapter}{6pt}{ \large\textrm\bfseries }
 \titleformat{\chapter}[display]{\bfseries\large}{\chaptertitlename\ \thechapter}{-\parskip}{\bfseries\Large}
@@ -73,9 +74,13 @@
 
 \begin{document}
 
+\pagestyle{empty}
+\afterpage{\null\newpage}
+
 
 % Inclusion de la portada
 \includepdf{Anexos/Portada}
+
 
 % Inclusion de la portada
 \includepdf{Anexos/Aprobacion}
@@ -86,13 +91,14 @@
 {\setlength{\parindent}{0pt}
 \include{Dedicatoria}
 }
+
 % Inclusion de la portada
 \includepdf{Anexos/Contraportada}
 
 % :::::::::::::::::::::::::::::::::::::::::::::::::
 %  Genera la lista de contenidos, figuras y tablas
 % :::::::::::::::::::::::::::::::::::::::::::::::::
-
+\pagestyle{myheadings}
 \pagenumbering{Roman}
 \tableofcontents
 
