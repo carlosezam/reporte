@@ -1,7 +1,7 @@
 # Control difuso para conrtolar los semáforos de una interseccíon
 
-Este es un reporte técnico donde se puede ver el código comentado 
-de la propuesta. El proyecto usa un control difuso sencillo para tomar
+Este es un reporte técnico donde se puede ver la investigación de la propuesta.
+El proyecto usa un control difuso sencillo para tomar
 la decisión de a que via darle el paso.
 
 El input de este control es un modulo encargado de contar los vehiculos
